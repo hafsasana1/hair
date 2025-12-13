@@ -1,16 +1,42 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
   Calendar, 
   HeartPulse, 
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Scissors,
+  Apple,
+  Moon
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HairGrowthRoutine = () => {
+  const growthPhases = [
+    { phase: 'Anagen (Growth)', duration: '2-7 years', color: 'bg-pink-400', desc: 'The active growth phase. Hair grows about half an inch per month. Our goal is to keep hair in this phase as long as possible through nutrition and scalp health.' },
+    { phase: 'Catagen (Transition)', duration: '2-3 weeks', color: 'bg-yellow-400', desc: 'Hair stops growing and detaches from its blood supply. The follicle shrinks and the hair prepares to shed.' },
+    { phase: 'Telogen (Resting)', duration: '3 months', color: 'bg-green-400', desc: 'The hair rests in the follicle before falling out. New hair begins to grow underneath. Stress can push more hair into this phase prematurely.' }
+  ];
+
+  const nutrients = [
+    { name: 'Biotin (B7)', food: 'Eggs, nuts, whole grains', role: 'Supports keratin production - the protein that makes up hair' },
+    { name: 'Iron', food: 'Spinach, red meat, lentils', role: 'Carries oxygen to hair follicles; deficiency is a common cause of hair loss' },
+    { name: 'Zinc', food: 'Oysters, beef, pumpkin seeds', role: 'Essential for hair tissue growth and repair; keeps oil glands working' },
+    { name: 'Vitamin D', food: 'Sunlight, fatty fish, fortified foods', role: 'Helps create new hair follicles; deficiency linked to alopecia' },
+    { name: 'Protein', food: 'Meat, fish, eggs, legumes', role: 'Hair is made of protein (keratin); inadequate protein can weaken hair' },
+    { name: 'Omega-3', food: 'Salmon, walnuts, flaxseed', role: 'Nourishes hair and supports thickening; reduces inflammation' }
+  ];
+
+  const growthTips = [
+    { title: 'Scalp Massage', desc: 'Massage your scalp for 4 minutes daily. This increases blood flow to follicles, bringing more nutrients and oxygen. Studies show it can increase hair thickness.', icon: HeartPulse },
+    { title: 'Reduce Heat Styling', desc: 'Heat damages the hair shaft, leading to breakage. When you lose length from breakage, it cancels out your growth. Air dry when possible.', icon: TrendingUp },
+    { title: 'Sleep on Silk', desc: 'Cotton pillowcases create friction that causes breakage. Silk or satin allows hair to glide smoothly, preserving length and reducing damage.', icon: Moon },
+    { title: 'Regular Trims', desc: 'Trimming doesn\'t make hair grow faster, but it prevents split ends from traveling up the shaft and causing more damage and breakage.', icon: Scissors }
+  ];
+
   return (
     <>
       <Helmet>
@@ -28,110 +54,229 @@ const HairGrowthRoutine = () => {
               Maximize Your <span className="text-pink-500">Hair Growth</span> Potential
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Genetics play a role, but your routine determines if you reach your maximum potential. Here is the science of growing longer, stronger hair.
+              Genetics set your maximum potential, but your routine determines whether you reach it. Learn the science behind growing longer, stronger hair.
             </p>
           </div>
         </section>
 
-        <section className="py-16">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-pink-400">
-                <h3 className="text-xl font-bold mb-4">1. Anagen Phase</h3>
-                <p className="text-sm text-gray-600">The growth phase (2-7 years). Our goal is to keep hair in this phase as long as possible through nutrition and scalp health.</p>
-              </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-yellow-400">
-                <h3 className="text-xl font-bold mb-4">2. Catagen Phase</h3>
-                <p className="text-sm text-gray-600">The transition phase (2-3 weeks). Hair stops growing and detaches from blood supply.</p>
-              </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-green-400">
-                <h3 className="text-xl font-bold mb-4">3. Telogen Phase</h3>
-                <p className="text-sm text-gray-600">The resting phase. Hair falls out and the follicle rests before starting over. Stress can push more hair here prematurely.</p>
-              </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">Understanding the Hair Growth Cycle</h2>
+            <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+              Each hair follicle cycles through three phases independently. At any given time, about 90% of your hair is in the growth phase. Understanding this cycle helps you support healthy growth.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              {growthPhases.map((phase, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white p-8 rounded-2xl shadow-lg border-t-4"
+                  style={{ borderColor: phase.color.replace('bg-', '') }}
+                >
+                  <div className={`${phase.color} text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4`}>
+                    {phase.duration}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{phase.phase}</h3>
+                  <p className="text-gray-600">{phase.desc}</p>
+                </motion.div>
+              ))}
             </div>
+          </div>
+        </section>
 
-            <div className="bg-gray-900 text-white rounded-3xl p-8 md:p-12">
-              <h2 className="text-3xl font-bold mb-8 text-center">The Growth Protocol</h2>
-              <div className="grid md:grid-cols-2 gap-12">
-                <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-pink-400 flex items-center gap-2">
-                    <HeartPulse className="w-5 h-5" /> Stimulation
-                  </h3>
-                  <p className="text-gray-300">
-                    Blood flow delivers nutrients to the follicle. Perform a 4-minute scalp massage daily. Use rosemary oil (diluted) which studies show can rival minoxidil for growth support.
-                  </p>
+        <section className="py-16 bg-gray-900 text-white">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-3xl font-bold mb-4 text-center">The Two-Part Growth Strategy</h2>
+            <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
+              Growing long hair requires both growing new length AND keeping the length you already have. Most people focus only on growth and forget about retention.
+            </p>
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <HeartPulse className="w-8 h-8 text-pink-400" />
+                  <h3 className="text-2xl font-bold text-pink-400">Stimulation (Growth)</h3>
                 </div>
-                <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-green-400 flex items-center gap-2">
-                    <Sparkles className="w-5 h-5" /> Retention
-                  </h3>
-                  <p className="text-gray-300">
-                    Growing hair is useless if it breaks at the ends. Length retention requires protective styling, satin pillowcases, and regular dusting of split ends.
-                  </p>
+                <p className="text-gray-300">
+                  Blood flow delivers nutrients to the hair follicle. The more nutrients your follicle receives, the healthier and faster your hair can grow.
+                </p>
+                <ul className="space-y-3 text-gray-400">
+                  <li className="flex items-start gap-2">
+                    <span className="text-pink-400">•</span>
+                    <span>Perform a 4-minute scalp massage daily</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-pink-400">•</span>
+                    <span>Use rosemary oil (diluted) - studies show it rivals minoxidil</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-pink-400">•</span>
+                    <span>Ensure adequate nutrition (protein, iron, zinc)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-pink-400">•</span>
+                    <span>Reduce stress, which can push hair into telogen</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <Sparkles className="w-8 h-8 text-green-400" />
+                  <h3 className="text-2xl font-bold text-green-400">Retention (Keeping Length)</h3>
                 </div>
+                <p className="text-gray-300">
+                  Growing hair is pointless if it breaks off at the ends. Length retention ensures you keep every inch of growth you achieve.
+                </p>
+                <ul className="space-y-3 text-gray-400">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400">•</span>
+                    <span>Use protective styles that tuck ends away</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400">•</span>
+                    <span>Sleep on a satin or silk pillowcase</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400">•</span>
+                    <span>Keep ends moisturized and sealed</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-400">•</span>
+                    <span>Regular dustings to remove split ends before they travel</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </section>
 
         <section className="py-16 bg-white">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl font-bold mb-8 text-center">Essential Nutrients</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Biotin', 'Zinc', 'Iron', 'Vitamin D'].map((item) => (
-                <div key={item} className="bg-pink-50 p-4 rounded-xl text-center font-bold text-gray-800">
-                  {item}
-                </div>
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="flex items-center gap-4 mb-12">
+              <Apple className="w-10 h-10 text-pink-500" />
+              <h2 className="text-3xl font-bold text-gray-900">Essential Nutrients for Hair Growth</h2>
+            </div>
+            <p className="text-gray-600 mb-8 max-w-3xl">
+              Your hair is built from the nutrients you consume. Deficiencies in key vitamins and minerals can slow growth or cause increased shedding. Here's what your hair needs:
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {nutrients.map((nutrient, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-pink-50 p-6 rounded-xl border border-pink-100"
+                >
+                  <h4 className="font-bold text-lg text-pink-700 mb-1">{nutrient.name}</h4>
+                  <p className="text-sm text-gray-500 mb-2">Found in: {nutrient.food}</p>
+                  <p className="text-gray-600">{nutrient.role}</p>
+                </motion.div>
               ))}
             </div>
-            <p className="text-center text-sm text-gray-500 mt-4 italic">
-              *Always consult a doctor before starting supplements.
-            </p>
+            <div className="mt-8 bg-yellow-50 p-6 rounded-xl border border-yellow-100">
+              <h4 className="font-bold text-gray-900 mb-2">A Note on Supplements</h4>
+              <p className="text-gray-600">
+                If you eat a balanced diet, you likely get enough of these nutrients. Hair supplements help when you have a deficiency, but won't make normal hair grow faster. Before taking supplements, consider getting blood work to check for actual deficiencies - too much of certain vitamins can be harmful.
+              </p>
+            </div>
+          </div>
+        </section>
 
-            <div className="mt-16 border-t border-gray-100 pt-10">
-              <h3 className="text-2xl font-bold mb-6">Growth Routine FAQ</h3>
-              <div className="space-y-4">
-                <details className="group">
-                  <summary className="font-semibold cursor-pointer list-none flex justify-between">
-                    How fast does hair actually grow?
-                    <span className="group-open:rotate-180 transition-transform">▼</span>
-                  </summary>
-                  <p className="text-gray-600 mt-2 pl-4 border-l-2 border-pink-200">
-                    On average, 0.5 inches per month. Anyone promising 2+ inches a month is likely selling a scam. Patience is key.
-                  </p>
-                </details>
-                <details className="group">
-                  <summary className="font-semibold cursor-pointer list-none flex justify-between">
-                    Does trimming make hair grow faster?
-                    <span className="group-open:rotate-180 transition-transform">▼</span>
-                  </summary>
-                  <p className="text-gray-600 mt-2 pl-4 border-l-2 border-pink-200">
-                    No, growth happens at the root. However, trimming prevents split ends from traveling up the shaft and breaking hair off, making it <i>seem</i> like it's growing faster.
-                  </p>
-                </details>
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Daily & Weekly Growth Habits</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {growthTips.map((tip, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 rounded-2xl shadow-lg"
+                >
+                  <tip.icon className="w-10 h-10 text-pink-500 mb-4" />
+                  <h3 className="font-bold text-xl text-gray-900 mb-3">{tip.title}</h3>
+                  <p className="text-gray-600">{tip.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Hair Growth FAQs</h2>
+            <div className="space-y-6">
+              <div className="border-b border-gray-100 pb-6">
+                <h3 className="font-bold text-lg mb-2">How fast does hair actually grow?</h3>
+                <p className="text-gray-600">On average, hair grows about half an inch (1.25 cm) per month, or 6 inches per year. This rate is largely genetic and can't be dramatically increased. However, you can ensure you're reaching your personal maximum by eating well, caring for your scalp, and preventing breakage.</p>
+              </div>
+              <div className="border-b border-gray-100 pb-6">
+                <h3 className="font-bold text-lg mb-2">Does cutting hair make it grow faster?</h3>
+                <p className="text-gray-600">No, this is a myth. Hair grows from the follicle in your scalp, not from the ends. Cutting has no effect on growth rate. However, regular trims prevent split ends from traveling up the shaft and causing breakage, which helps you retain the length you grow.</p>
+              </div>
+              <div className="border-b border-gray-100 pb-6">
+                <h3 className="font-bold text-lg mb-2">Does rosemary oil really work for hair growth?</h3>
+                <p className="text-gray-600">Studies suggest yes! A 2015 study found rosemary oil to be as effective as minoxidil (Rogaine) for promoting hair growth, with fewer side effects like scalp itching. Dilute it with a carrier oil and massage into your scalp several times per week.</p>
+              </div>
+              <div className="border-b border-gray-100 pb-6">
+                <h3 className="font-bold text-lg mb-2">Why does my hair seem to stop growing at a certain length?</h3>
+                <p className="text-gray-600">Your hair has a genetically determined growth phase (anagen). When this phase ends, the hair stops growing and eventually falls out. This is why some people can grow hip-length hair while others struggle to get past their shoulders. Breakage can also make it seem like hair won't grow - the ends are breaking off at the same rate as new growth.</p>
+              </div>
+              <div className="border-b border-gray-100 pb-6">
+                <h3 className="font-bold text-lg mb-2">Can stress really cause hair loss?</h3>
+                <p className="text-gray-600">Yes, significant stress can trigger telogen effluvium, where a large number of hairs enter the resting phase simultaneously and fall out 2-3 months later. The good news is this type of hair loss is usually temporary and hair regrows once stress is managed.</p>
+              </div>
+              <div className="border-b border-gray-100 pb-6">
+                <h3 className="font-bold text-lg mb-2">How do I know if I'm losing too much hair?</h3>
+                <p className="text-gray-600">Losing 50-100 hairs per day is normal. If you're suddenly seeing more hair in your brush, shower drain, or on your pillow, or if you notice thinning or bald spots, that's worth investigating. Keep in mind that longer hair looks like more volume when it falls out, which can be misleading.</p>
+              </div>
+              <div className="border-b border-gray-100 pb-6">
+                <h3 className="font-bold text-lg mb-2">Do biotin supplements help hair grow?</h3>
+                <p className="text-gray-600">Biotin helps if you have a biotin deficiency, which is rare. For most people eating a normal diet, extra biotin won't speed up hair growth. It won't hurt (excess is excreted in urine), but don't expect miracles. Focus on overall nutrition rather than any single supplement.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-pink-500 to-rose-400 text-white text-center">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-6">Build Your Growth Plan</h2>
-            <p className="text-white/90 mb-8 max-w-xl mx-auto">
-              Get a customized schedule of scalp treatments, wash days, and protein balances to support maximum length.
-            </p>
-            <div className="flex flex-col md:flex-row justify-center gap-4">
-              <Link to="/quiz">
-                <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 font-bold px-8">
-                  Start Growth Quiz
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-2xl font-bold mb-8">Related Guides</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/hair-routine-for-damaged-hair">
+                <Button variant="outline" className="border-pink-300 text-pink-600 hover:bg-pink-50">
+                  Repair Damaged Hair
                 </Button>
               </Link>
-              <Link to="/hair-routine-for-damaged-hair">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Fix Damaged Hair
+              <Link to="/hair-routine-for-dry-scalp">
+                <Button variant="outline" className="border-pink-300 text-pink-600 hover:bg-pink-50">
+                  Dry Scalp Solutions
+                </Button>
+              </Link>
+              <Link to="/hair-routine-for-oily-scalp">
+                <Button variant="outline" className="border-pink-300 text-pink-600 hover:bg-pink-50">
+                  Oily Scalp Care
                 </Button>
               </Link>
             </div>
+          </div>
+        </section>
+
+        <section className="py-20 text-center bg-gradient-to-r from-pink-500 to-rose-500 text-white">
+          <div className="container mx-auto px-4">
+            <Sparkles className="w-12 h-12 text-pink-200 mx-auto mb-6" />
+            <h2 className="text-3xl font-bold mb-6">Get Your Personalized Growth Routine</h2>
+            <p className="text-pink-100 mb-8 max-w-xl mx-auto">
+              Our AI analyzes your hair type, goals, and current routine to create a customized plan for maximizing your hair growth potential.
+            </p>
+            <Link to="/quiz">
+              <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 font-bold px-8">
+                Start Free Analysis <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
           </div>
         </section>
       </div>
