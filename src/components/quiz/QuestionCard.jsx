@@ -45,10 +45,10 @@ const QuestionCard = ({ question, answer, onAnswer }) => {
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-4 flex-1">
                   {IconComponent && (
-                    <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${
+                    <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
                       isSelected(option.value) 
                         ? 'bg-green-500 text-white' 
-                        : 'bg-gray-100 text-gray-600'
+                        : `${option.iconBg || 'bg-gray-100'} ${option.iconColor || 'text-gray-600'}`
                     }`}>
                       <IconComponent className="w-5 h-5" />
                     </div>
