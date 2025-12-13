@@ -20,6 +20,7 @@ import HairGrowthRoutine from '@/pages/HairGrowthRoutine';
 import DamagedHairRoutine from '@/pages/DamagedHairRoutine';
 import DryScalpRoutine from '@/pages/DryScalpRoutine';
 import HighPorosityRoutine from '@/pages/HighPorosityRoutine';
+import StraightHairRoutine from '@/pages/StraightHairRoutine';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
               <Route path="/hair-routine-for-damaged-hair" element={<DamagedHairRoutine />} />
               <Route path="/hair-routine-for-dry-scalp" element={<DryScalpRoutine />} />
               <Route path="/hair-routine-for-high-porosity" element={<HighPorosityRoutine />} />
+              <Route path="/hair-routine-for-straight-hair" element={<StraightHairRoutine />} />
             </Routes>
           </main>
           <Footer />

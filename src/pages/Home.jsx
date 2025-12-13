@@ -108,14 +108,14 @@ const Home = () => {
   ];
 
   const targetAudiences = [
-    { icon: Waves, title: 'Curly Hair Routines', subtitle: 'Types 3a, 3b, 3c', link: '/hair-routine-for-curly-hair' },
-    { icon: Wind, title: 'Wavy Hair Care', subtitle: 'Types 2a, 2b, 2c', link: '/hair-routine-for-2b-hair' },
-    { icon: ArrowDown, title: 'Straight Hair', subtitle: 'Types 1a, 1b, 1c', link: '#' },
-    { icon: TrendingUp, title: 'Hair Growth', subtitle: 'Length & Volume', link: '#' },
-    { icon: AlertCircle, title: 'Damaged & Frizzy', subtitle: 'Repair & Smooth', link: '/hair-routine-for-frizzy-hair' },
-    { icon: Droplets, title: 'Hair Porosity', subtitle: 'Low, Medium, High', link: '/hair-routine-for-low-porosity' },
-    { icon: Droplet, title: 'Oily Scalp', subtitle: 'Balance & Cleanse', link: '#' },
-    { icon: Sun, title: 'Dry Scalp', subtitle: 'Hydrate & Soothe', link: '#' }
+    { icon: Waves, title: 'Curly Hair Routines', subtitle: 'Types 3a, 3b, 3c', link: '/hair-routine-for-curly-hair', color: 'from-purple-500 to-violet-600', bgColor: 'bg-purple-50', textColor: 'text-purple-600' },
+    { icon: Wind, title: 'Wavy Hair Care', subtitle: 'Types 2a, 2b, 2c', link: '/hair-routine-for-2b-hair', color: 'from-teal-500 to-cyan-600', bgColor: 'bg-teal-50', textColor: 'text-teal-600' },
+    { icon: ArrowDown, title: 'Straight Hair', subtitle: 'Types 1a, 1b, 1c', link: '/hair-routine-for-straight-hair', color: 'from-blue-500 to-indigo-600', bgColor: 'bg-blue-50', textColor: 'text-blue-600' },
+    { icon: TrendingUp, title: 'Hair Growth', subtitle: 'Length & Volume', link: '/hair-routine-for-hair-growth', color: 'from-pink-500 to-rose-600', bgColor: 'bg-pink-50', textColor: 'text-pink-600' },
+    { icon: AlertCircle, title: 'Damaged & Frizzy', subtitle: 'Repair & Smooth', link: '/hair-routine-for-frizzy-hair', color: 'from-amber-500 to-orange-600', bgColor: 'bg-amber-50', textColor: 'text-amber-600' },
+    { icon: Droplets, title: 'Hair Porosity', subtitle: 'Low, Medium, High', link: '/hair-routine-for-low-porosity', color: 'from-emerald-500 to-green-600', bgColor: 'bg-emerald-50', textColor: 'text-emerald-600' },
+    { icon: Droplet, title: 'Oily Scalp', subtitle: 'Balance & Cleanse', link: '/hair-routine-for-oily-scalp', color: 'from-lime-500 to-green-600', bgColor: 'bg-lime-50', textColor: 'text-lime-600' },
+    { icon: Sun, title: 'Dry Scalp', subtitle: 'Hydrate & Soothe', link: '/hair-routine-for-dry-scalp', color: 'from-yellow-500 to-amber-600', bgColor: 'bg-yellow-50', textColor: 'text-yellow-600' }
   ];
 
   const features = [
@@ -296,12 +296,13 @@ const Home = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border border-gray-100 h-full hover:border-green-400 flex flex-col items-center text-center"
+                    className={`bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-gray-100 h-full hover:border-transparent hover:ring-2 hover:ring-offset-2 flex flex-col items-center text-center group`}
+                    style={{ '--ring-color': 'currentColor' }}
                   >
-                    <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mb-4 text-green-600">
-                      <item.icon className="w-6 h-6" />
+                    <div className={`w-14 h-14 ${item.bgColor} rounded-2xl flex items-center justify-center mb-4 ${item.textColor} group-hover:scale-110 transition-transform`}>
+                      <item.icon className="w-7 h-7" />
                     </div>
-                    <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
+                    <h3 className={`font-bold mb-1 bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>{item.title}</h3>
                     <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">{item.subtitle}</p>
                   </motion.div>
                 </Link>
