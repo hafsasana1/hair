@@ -389,7 +389,7 @@ const Home = () => {
               <p className="text-gray-500 text-lg">Common questions about our <span className="text-blue-600 font-medium">AI hair routine generator</span></p>
             </motion.div>
 
-            <div className="space-y-4">
+            <div className="grid md:grid-cols-2 gap-6">
               {faqs.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -397,15 +397,22 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+                  whileHover={{ y: -4 }}
+                  className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all hover:border-blue-200 group"
                 >
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-start gap-3">
-                    <span className="text-green-500 font-bold">Q.</span>
-                    {faq.q}
-                  </h3>
-                  <p className="text-gray-600 ml-8 leading-relaxed">
-                    {faq.a}
-                  </p>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <span className="text-white font-bold text-sm">Q{index + 1}</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug">
+                        {faq.q}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                        {faq.a}
+                      </p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
