@@ -2,7 +2,50 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Check } from 'lucide-react';
+import { 
+  ChevronLeft, 
+  ChevronRight, 
+  Check,
+  Minus,
+  Waves,
+  CircleDot,
+  Zap,
+  Droplets,
+  DropletOff,
+  Droplet,
+  HelpCircle,
+  Feather,
+  Layers,
+  Layers3,
+  Sun,
+  Wind,
+  AlertTriangle,
+  CircleSlash,
+  TrendingDown,
+  Sparkles,
+  ThumbsUp,
+  CloudRain,
+  CloudSun,
+  Snowflake,
+  Thermometer,
+  Calendar,
+  CalendarDays,
+  CalendarRange,
+  CalendarClock,
+  TrendingUp,
+  Shield,
+  Star,
+  Volume2,
+  Target,
+  Wrench,
+  Heart,
+  Leaf,
+  Beaker,
+  Rabbit,
+  Wallet,
+  Crown,
+  CircleEqual
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useQuiz } from '@/context/QuizContext';
 import { useToast } from '@/components/ui/use-toast';
@@ -15,29 +58,29 @@ const quizQuestions = [
     id: 'hairType',
     question: 'What is your hair type?',
     options: [
-      { value: 'straight', label: 'Straight', description: 'Type 1 - No curls or waves' },
-      { value: 'wavy', label: 'Wavy', description: 'Type 2 - Loose S-shaped waves' },
-      { value: 'curly', label: 'Curly', description: 'Type 3 - Defined spiral curls' },
-      { value: 'coily', label: 'Coily/Kinky', description: 'Type 4 - Tight coils or zigzag pattern' }
+      { value: 'straight', label: 'Straight', description: 'Type 1 - No curls or waves', icon: Minus },
+      { value: 'wavy', label: 'Wavy', description: 'Type 2 - Loose S-shaped waves', icon: Waves },
+      { value: 'curly', label: 'Curly', description: 'Type 3 - Defined spiral curls', icon: CircleDot },
+      { value: 'coily', label: 'Coily/Kinky', description: 'Type 4 - Tight coils or zigzag pattern', icon: Zap }
     ]
   },
   {
     id: 'porosity',
     question: 'What is your hair porosity?',
     options: [
-      { value: 'low', label: 'Low Porosity', description: 'Hair resists moisture, takes long to dry' },
-      { value: 'medium', label: 'Medium Porosity', description: 'Hair absorbs moisture well, balanced' },
-      { value: 'high', label: 'High Porosity', description: 'Hair absorbs moisture quickly, dries fast' },
-      { value: 'unsure', label: 'Not Sure', description: 'I need help determining this' }
+      { value: 'low', label: 'Low Porosity', description: 'Hair resists moisture, takes long to dry', icon: DropletOff },
+      { value: 'medium', label: 'Medium Porosity', description: 'Hair absorbs moisture well, balanced', icon: Droplet },
+      { value: 'high', label: 'High Porosity', description: 'Hair absorbs moisture quickly, dries fast', icon: Droplets },
+      { value: 'unsure', label: 'Not Sure', description: 'I need help determining this', icon: HelpCircle }
     ]
   },
   {
     id: 'density',
     question: 'What is your hair density?',
     options: [
-      { value: 'thin', label: 'Thin/Fine', description: 'Can easily see scalp' },
-      { value: 'medium', label: 'Medium', description: 'Moderate scalp visibility' },
-      { value: 'thick', label: 'Thick/Dense', description: 'Difficult to see scalp' }
+      { value: 'thin', label: 'Thin/Fine', description: 'Can easily see scalp', icon: Feather },
+      { value: 'medium', label: 'Medium', description: 'Moderate scalp visibility', icon: Layers },
+      { value: 'thick', label: 'Thick/Dense', description: 'Difficult to see scalp', icon: Layers3 }
     ]
   },
   {
@@ -45,34 +88,34 @@ const quizQuestions = [
     question: 'What are your main hair concerns? (Select all that apply)',
     multiSelect: true,
     options: [
-      { value: 'dryness', label: 'Dryness' },
-      { value: 'frizz', label: 'Frizz' },
-      { value: 'damage', label: 'Damage/Breakage' },
-      { value: 'dandruff', label: 'Dandruff/Scalp Issues' },
-      { value: 'oiliness', label: 'Oiliness' },
-      { value: 'hairLoss', label: 'Hair Loss/Thinning' },
-      { value: 'dullness', label: 'Lack of Shine' },
-      { value: 'none', label: 'No Major Concerns' }
+      { value: 'dryness', label: 'Dryness', icon: Sun },
+      { value: 'frizz', label: 'Frizz', icon: Wind },
+      { value: 'damage', label: 'Damage/Breakage', icon: AlertTriangle },
+      { value: 'dandruff', label: 'Dandruff/Scalp Issues', icon: CircleSlash },
+      { value: 'oiliness', label: 'Oiliness', icon: Droplets },
+      { value: 'hairLoss', label: 'Hair Loss/Thinning', icon: TrendingDown },
+      { value: 'dullness', label: 'Lack of Shine', icon: Sparkles },
+      { value: 'none', label: 'No Major Concerns', icon: ThumbsUp }
     ]
   },
   {
     id: 'climate',
     question: 'What climate do you live in?',
     options: [
-      { value: 'humid', label: 'Humid', description: 'High moisture in the air' },
-      { value: 'dry', label: 'Dry/Arid', description: 'Low moisture in the air' },
-      { value: 'cold', label: 'Cold', description: 'Low temperatures year-round' },
-      { value: 'temperate', label: 'Temperate', description: 'Moderate, seasonal changes' }
+      { value: 'humid', label: 'Humid', description: 'High moisture in the air', icon: CloudRain },
+      { value: 'dry', label: 'Dry/Arid', description: 'Low moisture in the air', icon: Sun },
+      { value: 'cold', label: 'Cold', description: 'Low temperatures year-round', icon: Snowflake },
+      { value: 'temperate', label: 'Temperate', description: 'Moderate, seasonal changes', icon: CloudSun }
     ]
   },
   {
     id: 'washFrequency',
     question: 'How often do you wash your hair?',
     options: [
-      { value: 'daily', label: 'Daily', description: 'Every day' },
-      { value: 'alternate', label: 'Every Other Day', description: '3-4 times per week' },
-      { value: 'weekly', label: 'Weekly', description: '1-2 times per week' },
-      { value: 'biweekly', label: 'Bi-weekly', description: 'Every 2 weeks or less' }
+      { value: 'daily', label: 'Daily', description: 'Every day', icon: Calendar },
+      { value: 'alternate', label: 'Every Other Day', description: '3-4 times per week', icon: CalendarDays },
+      { value: 'weekly', label: 'Weekly', description: '1-2 times per week', icon: CalendarRange },
+      { value: 'biweekly', label: 'Bi-weekly', description: 'Every 2 weeks or less', icon: CalendarClock }
     ]
   },
   {
@@ -80,26 +123,26 @@ const quizQuestions = [
     question: 'What are your main hair goals? (Select all that apply)',
     multiSelect: true,
     options: [
-      { value: 'growth', label: 'Promote Growth' },
-      { value: 'moisture', label: 'Add Moisture' },
-      { value: 'strength', label: 'Strengthen Hair' },
-      { value: 'shine', label: 'Increase Shine' },
-      { value: 'volume', label: 'Add Volume' },
-      { value: 'definition', label: 'Curl Definition' },
-      { value: 'repair', label: 'Repair Damage' },
-      { value: 'maintain', label: 'Maintain Health' }
+      { value: 'growth', label: 'Promote Growth', icon: TrendingUp },
+      { value: 'moisture', label: 'Add Moisture', icon: Droplet },
+      { value: 'strength', label: 'Strengthen Hair', icon: Shield },
+      { value: 'shine', label: 'Increase Shine', icon: Star },
+      { value: 'volume', label: 'Add Volume', icon: Volume2 },
+      { value: 'definition', label: 'Curl Definition', icon: Target },
+      { value: 'repair', label: 'Repair Damage', icon: Wrench },
+      { value: 'maintain', label: 'Maintain Health', icon: Heart }
     ]
   },
   {
     id: 'preferences',
     question: 'Product preferences?',
     options: [
-      { value: 'natural', label: 'Natural/Organic', description: 'Prefer natural ingredients' },
-      { value: 'sulfateFree', label: 'Sulfate-Free', description: 'No harsh sulfates' },
-      { value: 'vegan', label: 'Vegan/Cruelty-Free', description: 'Ethically sourced' },
-      { value: 'budget', label: 'Budget-Friendly', description: 'Affordable options' },
-      { value: 'premium', label: 'Premium/Luxury', description: 'High-end products' },
-      { value: 'noPreference', label: 'No Preference', description: 'Open to all options' }
+      { value: 'natural', label: 'Natural/Organic', description: 'Prefer natural ingredients', icon: Leaf },
+      { value: 'sulfateFree', label: 'Sulfate-Free', description: 'No harsh sulfates', icon: Beaker },
+      { value: 'vegan', label: 'Vegan/Cruelty-Free', description: 'Ethically sourced', icon: Rabbit },
+      { value: 'budget', label: 'Budget-Friendly', description: 'Affordable options', icon: Wallet },
+      { value: 'premium', label: 'Premium/Luxury', description: 'High-end products', icon: Crown },
+      { value: 'noPreference', label: 'No Preference', description: 'Open to all options', icon: CircleEqual }
     ]
   }
 ];

@@ -28,33 +28,47 @@ const QuestionCard = ({ question, answer, onAnswer }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {question.options.map((option) => (
-          <motion.button
-            key={option.value}
-            onClick={() => onAnswer(option.value)}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className={`relative p-6 rounded-xl border-2 text-left transition-all ${
-              isSelected(option.value)
-                ? 'border-green-500 bg-green-50 shadow-lg'
-                : 'border-gray-200 hover:border-green-300 hover:bg-gray-50'
-            }`}
-          >
-            <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <p className="font-semibold text-gray-900 mb-1">{option.label}</p>
-                {option.description && (
-                  <p className="text-sm text-gray-600">{option.description}</p>
+        {question.options.map((option) => {
+          const IconComponent = option.icon;
+          return (
+            <motion.button
+              key={option.value}
+              onClick={() => onAnswer(option.value)}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className={`relative p-6 rounded-xl border-2 text-left transition-all ${
+                isSelected(option.value)
+                  ? 'border-green-500 bg-green-50 shadow-lg'
+                  : 'border-gray-200 hover:border-green-300 hover:bg-gray-50'
+              }`}
+            >
+              <div className="flex items-start justify-between">
+                <div className="flex items-start gap-4 flex-1">
+                  {IconComponent && (
+                    <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${
+                      isSelected(option.value) 
+                        ? 'bg-green-500 text-white' 
+                        : 'bg-gray-100 text-gray-600'
+                    }`}>
+                      <IconComponent className="w-5 h-5" />
+                    </div>
+                  )}
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-900 mb-1">{option.label}</p>
+                    {option.description && (
+                      <p className="text-sm text-gray-600">{option.description}</p>
+                    )}
+                  </div>
+                </div>
+                {isSelected(option.value) && (
+                  <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center ml-4">
+                    <Check className="w-4 h-4 text-white" />
+                  </div>
                 )}
               </div>
-              {isSelected(option.value) && (
-                <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center ml-4">
-                  <Check className="w-4 h-4 text-white" />
-                </div>
-              )}
-            </div>
-          </motion.button>
-        ))}
+            </motion.button>
+          );
+        })}
       </div>
     </motion.div>
   );
