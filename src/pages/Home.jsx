@@ -228,11 +228,16 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-                What Our Tool Does
+              <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 rounded-full text-sm font-semibold mb-4">
+                How It Works
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-gray-900 via-green-800 to-gray-900 bg-clip-text text-transparent">
+                  What Our Tool Does
+                </span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                A complete hair analysis and routine builder in 4 simple steps
+              <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                A complete hair analysis and routine builder in <span className="text-green-600 font-semibold">4 simple steps</span>
               </p>
             </motion.div>
 
@@ -266,11 +271,16 @@ const Home = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-                Who This Hair Routine Generator Helps
+              <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-700 rounded-full text-sm font-semibold mb-4">
+                Perfect For Everyone
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                <span className="text-gray-900">Who This </span>
+                <span className="bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">Hair Routine Generator</span>
+                <span className="text-gray-900"> Helps</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Customized solutions for every hair type and concern
+              <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                Customized solutions for <span className="text-amber-600 font-semibold">every hair type</span> and concern
               </p>
             </motion.div>
 
@@ -330,11 +340,17 @@ const Home = () => {
                 transition={{ duration: 0.6 }}
                 className="space-y-6"
               >
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
-                  Comprehensive Hair Care Plans
+                <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full text-sm font-semibold">
+                  Complete Care System
+                </span>
+                <h2 className="text-3xl md:text-5xl font-bold">
+                  <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                    Comprehensive
+                  </span>
+                  <span className="text-gray-900"> Hair Care Plans</span>
                 </h2>
-                <p className="text-xl text-gray-600">
-                  We don't just recommend products; we build a complete lifestyle plan for your hair.
+                <p className="text-xl text-gray-500 leading-relaxed">
+                  We don't just recommend products; we build a <span className="text-purple-600 font-semibold">complete lifestyle plan</span> for your hair.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {features.map((feature, index) => (
@@ -363,10 +379,14 @@ const Home = () => {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Frequently Asked Questions
+              <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+                Got Questions?
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="text-gray-900">Frequently </span>
+                <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Asked Questions</span>
               </h2>
-              <p className="text-gray-600">Common questions about our AI hair routine generator</p>
+              <p className="text-gray-500 text-lg">Common questions about our <span className="text-blue-600 font-medium">AI hair routine generator</span></p>
             </motion.div>
 
             <div className="space-y-4">
