@@ -1,17 +1,239 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Download, Share2, RefreshCw, Sparkles, Clock, Droplets, Sun, Moon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Download, 
+  Share2, 
+  RefreshCw, 
+  Sparkles, 
+  Clock, 
+  Droplets, 
+  Sun, 
+  Moon,
+  Minus,
+  Waves,
+  CircleDot,
+  Zap,
+  DropletOff,
+  Droplet,
+  Feather,
+  Layers,
+  Layers3,
+  Wind,
+  AlertTriangle,
+  CircleSlash,
+  TrendingDown,
+  ThumbsUp,
+  CloudRain,
+  CloudSun,
+  Snowflake,
+  HelpCircle,
+  ChevronDown,
+  MessageCircleQuestion
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useQuiz } from '@/context/QuizContext';
 import { useToast } from '@/components/ui/use-toast';
+
+// Icon and color mapping for hair profile attributes
+const profileIconMap = {
+  type: {
+    straight: { icon: Minus, color: 'text-slate-600', bg: 'bg-slate-100' },
+    wavy: { icon: Waves, color: 'text-sky-600', bg: 'bg-sky-100' },
+    curly: { icon: CircleDot, color: 'text-purple-600', bg: 'bg-purple-100' },
+    coily: { icon: Zap, color: 'text-amber-600', bg: 'bg-amber-100' }
+  },
+  porosity: {
+    low: { icon: DropletOff, color: 'text-orange-500', bg: 'bg-orange-100' },
+    medium: { icon: Droplet, color: 'text-blue-500', bg: 'bg-blue-100' },
+    high: { icon: Droplets, color: 'text-cyan-500', bg: 'bg-cyan-100' },
+    unsure: { icon: HelpCircle, color: 'text-gray-500', bg: 'bg-gray-100' }
+  },
+  density: {
+    thin: { icon: Feather, color: 'text-pink-500', bg: 'bg-pink-100' },
+    medium: { icon: Layers, color: 'text-indigo-500', bg: 'bg-indigo-100' },
+    thick: { icon: Layers3, color: 'text-emerald-600', bg: 'bg-emerald-100' }
+  },
+  climate: {
+    humid: { icon: CloudRain, color: 'text-blue-500', bg: 'bg-blue-100' },
+    dry: { icon: Sun, color: 'text-orange-500', bg: 'bg-orange-100' },
+    cold: { icon: Snowflake, color: 'text-cyan-500', bg: 'bg-cyan-100' },
+    temperate: { icon: CloudSun, color: 'text-sky-500', bg: 'bg-sky-100' }
+  },
+  concerns: {
+    dryness: { icon: Sun, color: 'text-yellow-500', bg: 'bg-yellow-100' },
+    frizz: { icon: Wind, color: 'text-teal-500', bg: 'bg-teal-100' },
+    damage: { icon: AlertTriangle, color: 'text-red-500', bg: 'bg-red-100' },
+    dandruff: { icon: CircleSlash, color: 'text-slate-500', bg: 'bg-slate-100' },
+    oiliness: { icon: Droplets, color: 'text-lime-600', bg: 'bg-lime-100' },
+    hairLoss: { icon: TrendingDown, color: 'text-rose-500', bg: 'bg-rose-100' },
+    dullness: { icon: Sparkles, color: 'text-amber-500', bg: 'bg-amber-100' },
+    none: { icon: ThumbsUp, color: 'text-green-500', bg: 'bg-green-100' }
+  }
+};
+
+// Dynamic FAQs based on hair profile
+const getFAQsForProfile = (hairProfile, answers) => {
+  const faqs = [];
+  
+  // Hair Type FAQs
+  const hairType = answers?.hairType || hairProfile?.type;
+  if (hairType === 'straight' || hairType === 'Straight') {
+    faqs.push({
+      question: 'How can I add volume to my straight hair?',
+      answer: 'Use volumizing shampoos and conditioners, apply mousse at the roots, blow-dry upside down, and consider layered haircuts to add natural movement and body.'
+    });
+    faqs.push({
+      question: 'Why does my straight hair get oily quickly?',
+      answer: 'Straight hair allows oils to travel down the shaft easily. Use dry shampoo between washes, avoid over-conditioning at roots, and wash with a clarifying shampoo weekly.'
+    });
+  } else if (hairType === 'wavy') {
+    faqs.push({
+      question: 'How do I enhance my natural waves?',
+      answer: 'Apply a sea salt spray or wave-enhancing cream to damp hair, scrunch gently, and let air dry. Avoid brushing dry waves to prevent frizz.'
+    });
+    faqs.push({
+      question: 'Why do my waves fall flat by the end of the day?',
+      answer: 'Try using lighter products, apply styling products to damp hair, and refresh with water or a wave spray. Sleeping with a loose bun can help maintain waves.'
+    });
+  } else if (hairType === 'curly') {
+    faqs.push({
+      question: 'How do I define my curls without crunch?',
+      answer: 'Apply curl cream or gel to soaking wet hair, scrunch out excess water, and let air dry or diffuse. Once fully dry, "scrunch out the crunch" to soften the cast.'
+    });
+    faqs.push({
+      question: 'Why are my curls so frizzy?',
+      answer: 'Frizz often means your curls need more moisture. Use a deep conditioner weekly, apply leave-in conditioner, and avoid touching your hair while it dries.'
+    });
+  } else if (hairType === 'coily') {
+    faqs.push({
+      question: 'How often should I wash my coily hair?',
+      answer: 'Coily hair typically benefits from washing once a week or every two weeks. Co-washing between washes can help maintain moisture without stripping natural oils.'
+    });
+    faqs.push({
+      question: 'What\'s the best way to detangle coily hair?',
+      answer: 'Always detangle when hair is wet and saturated with conditioner. Use a wide-tooth comb or your fingers, starting from the ends and working up to the roots.'
+    });
+  }
+
+  // Porosity FAQs
+  const porosity = answers?.porosity || hairProfile?.porosity;
+  if (porosity === 'low') {
+    faqs.push({
+      question: 'Why won\'t products absorb into my low porosity hair?',
+      answer: 'Low porosity hair has tightly closed cuticles. Use heat (warm water, steamer, or heat cap) when deep conditioning, and opt for lightweight, water-based products.'
+    });
+  } else if (porosity === 'high') {
+    faqs.push({
+      question: 'How do I retain moisture in high porosity hair?',
+      answer: 'Layer products using the LOC method (Liquid, Oil, Cream), use protein treatments to fill gaps in the cuticle, and seal with heavier oils like castor or olive oil.'
+    });
+  }
+
+  // Concerns FAQs
+  const concerns = answers?.concerns || [];
+  if (concerns.includes('frizz')) {
+    faqs.push({
+      question: 'What causes frizz and how can I prevent it?',
+      answer: 'Frizz is caused by humidity and lack of moisture. Use anti-humidity products, sleep on silk pillowcases, avoid touching your hair, and ensure deep conditioning regularly.'
+    });
+  }
+  if (concerns.includes('damage')) {
+    faqs.push({
+      question: 'How can I repair damaged hair?',
+      answer: 'Use protein treatments to strengthen, deep condition weekly, trim split ends regularly, minimize heat styling, and protect hair from sun and chlorine exposure.'
+    });
+  }
+  if (concerns.includes('hairLoss')) {
+    faqs.push({
+      question: 'What can I do about hair thinning?',
+      answer: 'Massage your scalp to increase blood flow, use gentle hair care products, avoid tight hairstyles, ensure adequate protein and iron in your diet, and consult a dermatologist if concerned.'
+    });
+  }
+
+  // Climate FAQs
+  const climate = answers?.climate || hairProfile?.climate;
+  if (climate === 'humid') {
+    faqs.push({
+      question: 'How do I manage my hair in humid weather?',
+      answer: 'Use anti-humidity serums, apply light oils to seal the cuticle, opt for protective styles, and embrace your natural texture rather than fighting it.'
+    });
+  } else if (climate === 'dry') {
+    faqs.push({
+      question: 'How do I keep my hair hydrated in a dry climate?',
+      answer: 'Use humectant-rich products, deep condition twice weekly, apply leave-in conditioners, and consider using a humidifier at home.'
+    });
+  }
+
+  // Default FAQs if not enough specific ones
+  if (faqs.length < 4) {
+    faqs.push({
+      question: 'How often should I trim my hair?',
+      answer: 'Trim every 8-12 weeks to prevent split ends from traveling up the hair shaft. Regular trims keep hair healthy and can actually help it grow longer.'
+    });
+  }
+  if (faqs.length < 5) {
+    faqs.push({
+      question: 'Is it bad to wash my hair every day?',
+      answer: 'Daily washing can strip natural oils, leading to dryness or overproduction of oil. Most hair types benefit from washing 2-3 times per week or less.'
+    });
+  }
+
+  return faqs.slice(0, 6); // Return max 6 FAQs
+};
+
+// FAQ Accordion Component
+const FAQItem = ({ question, answer, isOpen, onClick }) => (
+  <motion.div 
+    className="border-b border-gray-200 last:border-b-0"
+    initial={false}
+  >
+    <button
+      onClick={onClick}
+      className="w-full py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors rounded-lg px-4"
+    >
+      <span className="font-semibold text-gray-900 pr-4">{question}</span>
+      <motion.div
+        animate={{ rotate: isOpen ? 180 : 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0" />
+      </motion.div>
+    </button>
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: 'auto', opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="overflow-hidden"
+        >
+          <p className="px-4 pb-4 text-gray-600 leading-relaxed">{answer}</p>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </motion.div>
+);
 
 const Results = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const { answers, userEmail, generatedRoutine, setGeneratedRoutine, resetQuiz } = useQuiz();
   const [isGenerating, setIsGenerating] = useState(false);
+  const [openFAQ, setOpenFAQ] = useState(null);
+
+  // Get profile icon helper
+  const getProfileIcon = (key, value) => {
+    const normalizedValue = value?.toLowerCase()?.split(',')[0]?.trim();
+    const mapping = profileIconMap[key]?.[normalizedValue];
+    if (mapping) {
+      return mapping;
+    }
+    // Default icon
+    return { icon: Sparkles, color: 'text-green-500', bg: 'bg-green-100' };
+  };
 
   useEffect(() => {
     if (!answers || Object.keys(answers).length === 0) {
@@ -208,15 +430,29 @@ const Results = () => {
                 <Sparkles className="w-6 h-6 text-green-500" />
                 Your Hair Profile
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {Object.entries(generatedRoutine.hairProfile).map(([key, value]) => (
-                  <div key={key} className="bg-gradient-to-br from-green-50 to-yellow-50 p-4 rounded-xl">
-                    <p className="text-sm font-semibold text-gray-600 mb-1 capitalize">
-                      {key.replace(/([A-Z])/g, ' $1').trim()}
-                    </p>
-                    <p className="text-lg text-gray-900 capitalize">{value}</p>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {Object.entries(generatedRoutine.hairProfile).map(([key, value]) => {
+                  const iconData = getProfileIcon(key, value);
+                  const IconComponent = iconData.icon;
+                  return (
+                    <motion.div 
+                      key={key} 
+                      className="bg-gradient-to-br from-green-50 to-yellow-50 p-5 rounded-xl flex items-center gap-4"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${iconData.bg}`}>
+                        <IconComponent className={`w-6 h-6 ${iconData.color}`} />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-gray-500 capitalize">
+                          {key.replace(/([A-Z])/g, ' $1').trim()}
+                        </p>
+                        <p className="text-lg font-bold text-gray-900 capitalize">{value}</p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
 
@@ -334,6 +570,28 @@ const Results = () => {
                     </div>
                     <p className="text-gray-700">{tip}</p>
                   </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Personalized FAQs */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
+              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                <MessageCircleQuestion className="w-6 h-6 text-purple-500" />
+                FAQs for Your Hair Profile
+              </h2>
+              <p className="text-gray-600">
+                Answers tailored specifically to your hair type and concerns
+              </p>
+              <div className="divide-y divide-gray-100">
+                {getFAQsForProfile(generatedRoutine.hairProfile, answers).map((faq, idx) => (
+                  <FAQItem
+                    key={idx}
+                    question={faq.question}
+                    answer={faq.answer}
+                    isOpen={openFAQ === idx}
+                    onClick={() => setOpenFAQ(openFAQ === idx ? null : idx)}
+                  />
                 ))}
               </div>
             </div>
