@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Sparkles, 
   Target, 
@@ -20,11 +20,15 @@ import {
   AlertCircle,
   Droplets,
   Droplet,
-  Sun
+  Sun,
+  ChevronDown,
+  HelpCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Home = () => {
+  const [openFAQ, setOpenFAQ] = useState(null);
+
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -389,7 +393,7 @@ const Home = () => {
               <p className="text-gray-500 text-lg">Common questions about our <span className="text-blue-600 font-medium">AI hair routine generator</span></p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
               {faqs.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -397,22 +401,51 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -4 }}
-                  className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all hover:border-blue-200 group"
+                  className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <span className="text-white font-bold text-sm">Q{index + 1}</span>
+                  <button
+                    onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                    className="w-full p-6 flex items-center gap-4 text-left hover:bg-gray-50 transition-colors"
+                  >
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all ${
+                      openFAQ === index 
+                        ? 'bg-gradient-to-br from-blue-500 to-cyan-400' 
+                        : 'bg-gradient-to-br from-blue-100 to-cyan-100'
+                    }`}>
+                      <HelpCircle className={`w-5 h-5 ${openFAQ === index ? 'text-white' : 'text-blue-600'}`} />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug">
-                        {faq.q}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {faq.a}
-                      </p>
-                    </div>
-                  </div>
+                    <h3 className="flex-1 text-lg font-bold text-gray-900 leading-snug">
+                      {faq.q}
+                    </h3>
+                    <motion.div
+                      animate={{ rotate: openFAQ === index ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                        openFAQ === index ? 'bg-blue-500' : 'bg-gray-100'
+                      }`}
+                    >
+                      <ChevronDown className={`w-5 h-5 ${openFAQ === index ? 'text-white' : 'text-gray-500'}`} />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {openFAQ === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-6 pt-0">
+                          <div className="pl-14 border-l-4 border-blue-400 ml-5">
+                            <p className="text-gray-600 leading-relaxed pl-4">
+                              {faq.a}
+                            </p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </motion.div>
               ))}
             </div>
