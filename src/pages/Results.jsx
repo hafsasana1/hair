@@ -1557,12 +1557,6 @@ const Results = () => {
               </div>
             </div>
 
-            {/* AdSense Placeholder */}
-            <div className="bg-white border-2 border-dashed border-gray-300 rounded-lg p-12 text-center">
-              <p className="text-gray-500 font-semibold">Advertisement Space</p>
-              <p className="text-sm text-gray-400 mt-2">Google AdSense Placeholder</p>
-            </div>
-
             {/* CTA */}
             <div className="bg-gradient-to-r from-green-500 to-yellow-400 rounded-2xl p-8 text-center text-white space-y-4">
               <h2 className="text-2xl font-bold">Love Your Results?</h2>

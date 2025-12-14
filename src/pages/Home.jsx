@@ -498,16 +498,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* AdSense Placeholder */}
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
-              <p className="text-gray-500 font-semibold">Advertisement</p>
-              <p className="text-sm text-gray-400 mt-2">Support us by keeping this tool free</p>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-green-500 to-yellow-400">
           <div className="container mx-auto px-4 text-center">
