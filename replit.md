@@ -68,7 +68,10 @@ This is a Vite + React application with Tailwind CSS styling. It features a hair
   - Weekly routine schedule (Wash Day, Refresh Day, Deep Conditioning, Protein Treatment)
   - Personalized product recommendations
   - Advanced hair care tips with NLP-rich content
-  - FAQ schema for SEO
+  - **JSON-LD Structured Data** (Updated Dec 14, 2025):
+    - FAQ schema with dynamic questions based on hair profile
+    - HowTo schema for morning routine steps
+    - Product schema for the personalized routine
   - Pinterest-style shareable routine card
   - SEO-friendly URL routing (/routine/:slug)
   - LocalStorage persistence for returning visitors
