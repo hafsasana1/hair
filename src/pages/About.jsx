@@ -302,8 +302,8 @@ const About = () => {
               viewport={{ once: true }}
               className="max-w-2xl mx-auto text-center space-y-4"
             >
-              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-yellow-400 rounded-full flex items-center justify-center mx-auto">
-                <Target className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-yellow-400 rounded-full flex items-center justify-center mx-auto">
+                <Target className="w-4 h-4 text-white" />
               </div>
               <h2 className="text-xl md:text-2xl font-bold text-gray-900">Our Mission</h2>
               <p className="text-sm text-gray-600 leading-relaxed">
@@ -357,8 +357,8 @@ const About = () => {
                   transition={{ delay: index * 0.1 }}
                   className="text-center space-y-3 group"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-yellow-400 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                    <value.icon className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-yellow-400 rounded-lg flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                    <value.icon className="w-4 h-4 text-white" />
                   </div>
                   <h3 className="text-base font-bold text-gray-900">{value.title}</h3>
                   <p className="text-gray-600 text-sm">{value.description}</p>
