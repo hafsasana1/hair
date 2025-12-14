@@ -333,17 +333,17 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative flex items-center justify-center"
               >
-                <div className="relative z-10 bg-white p-6 rounded-3xl shadow-2xl border border-gray-100">
-                  <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4">
-                    <img alt="AI hair routine generator result preview" className="rounded-xl w-full h-auto max-h-[400px] object-contain" src="/images/blog/hair_types_comparison_guide.webp" loading="lazy" />
-                  </div>
-                  <div className="mt-4 text-center">
-                    <p className="text-sm font-medium text-gray-600">All Hair Types: 1A - 4C</p>
-                    <p className="text-xs text-gray-400 mt-1">Straight • Wavy • Curly • Coily</p>
+                <div className="relative z-10">
+                  <img alt="AI hair routine generator result preview" className="w-full h-auto max-h-[450px] object-contain drop-shadow-2xl" src="/images/blog/hair_types_comparison_guide.webp" loading="lazy" />
+                  <div className="mt-6 flex justify-center gap-3">
+                    <span className="px-3 py-1.5 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-semibold rounded-full shadow-lg">Straight 1A-1C</span>
+                    <span className="px-3 py-1.5 bg-gradient-to-r from-amber-500 to-yellow-500 text-white text-xs font-semibold rounded-full shadow-lg">Wavy 2A-2C</span>
+                    <span className="px-3 py-1.5 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-semibold rounded-full shadow-lg">Curly 3A-3C</span>
+                    <span className="px-3 py-1.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-semibold rounded-full shadow-lg">Coily 4A-4C</span>
                   </div>
                 </div>
-                <div className="absolute -top-6 -right-6 w-80 h-80 bg-green-200 rounded-full blur-3xl opacity-40 -z-10"></div>
-                <div className="absolute -bottom-6 -left-6 w-80 h-80 bg-yellow-200 rounded-full blur-3xl opacity-40 -z-10"></div>
+                <div className="absolute -top-8 -right-8 w-96 h-96 bg-gradient-to-br from-green-300 to-emerald-200 rounded-full blur-3xl opacity-30 -z-10"></div>
+                <div className="absolute -bottom-8 -left-8 w-96 h-96 bg-gradient-to-br from-yellow-300 to-amber-200 rounded-full blur-3xl opacity-30 -z-10"></div>
               </motion.div>
             </div>
           </div>
