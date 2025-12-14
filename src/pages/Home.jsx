@@ -37,7 +37,7 @@ const Home = () => {
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "AI Hair Routine Generator by Hair Type & Climate",
+        "name": "AI Hair Routine Generator – Personalized Hair Care by Hair Type & Porosity",
         "alternateName": "Free Hair Routine Generator",
         "applicationCategory": "LifestyleApplication",
         "applicationSubCategory": "Beauty & Personal Care",
@@ -48,13 +48,14 @@ const Home = () => {
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock"
         },
-        "description": "Free AI-powered hair routine generator that creates personalized daily hair care plans based on your hair type (1a-4c), porosity level, and local climate conditions.",
+        "description": "Free AI-powered hair routine generator that creates personalized daily and weekly hair care plans based on your hair type (1A-4C), porosity level, scalp condition, and local climate.",
         "featureList": [
           "AI-powered hair type analysis",
           "Climate-based routine optimization",
           "Porosity level detection",
           "Custom product recommendations",
-          "Step-by-step daily plans",
+          "Step-by-step daily and weekly plans",
+          "Scalp condition assessment",
           "Seasonal adjustment tips"
         ],
         "author": {
@@ -64,46 +65,85 @@ const Home = () => {
         }
       },
       {
+        "@type": "HowTo",
+        "name": "How the Hair Routine Generator Works",
+        "description": "Generate a personalized hair care routine in 4 simple steps",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Analyze Your Hair",
+            "text": "Analyze your hair type, porosity, and scalp condition through our smart quiz"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Identify Goals",
+            "text": "Identify your hair care goals and lifestyle preferences"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Generate Routine",
+            "text": "Generate a personalized daily and weekly hair routine using AI"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Follow and Adjust",
+            "text": "Follow your routine and adjust based on results for optimal hair health"
+          }
+        ]
+      },
+      {
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Is this AI hair routine generator completely free?",
+            "name": "Is this hair routine generator really free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, this is a 100% free AI-powered tool to help you build a personalized hair care routine without any cost, signup, or hidden fees."
+              "text": "Yes, our hair routine generator is 100% free to use. There are no hidden fees, subscriptions, or signup requirements. Simply take our quick quiz, and you'll receive a complete personalized hair care routine instantly. We believe everyone deserves access to professional-quality hair care advice."
             }
           },
           {
             "@type": "Question",
-            "name": "How does climate affect my hair routine?",
+            "name": "How does hair porosity affect my routine?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Climate significantly impacts hair health. Humid environments cause frizz, dry climates lead to brittle hair, and cold weather strips moisture. Our AI factors in your local climate to recommend optimal products and techniques."
+              "text": "Hair porosity determines how well your hair absorbs and retains moisture. Low porosity hair has tightly closed cuticles that resist moisture, requiring lightweight products and heat during conditioning. High porosity hair absorbs moisture quickly but loses it fast, needing heavier products and protein treatments. Our AI analyzes your porosity to recommend the right products and techniques for optimal moisture balance."
             }
           },
           {
             "@type": "Question",
-            "name": "How do I determine my hair porosity?",
+            "name": "Is this routine suitable for curly and coily hair?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our quiz includes a specific section to help you identify your hair porosity (low, medium, or high) through simple observation questions, ensuring your routine is perfectly matched to your hair's moisture absorption needs."
+              "text": "Absolutely! Our hair routine generator is designed for all hair types from straight 1A to coily 4C. For curly and coily hair, we recommend specific techniques like the LOC/LCO method, diffusing tips, protective styling routines, and products that enhance curl definition while providing deep hydration."
             }
           },
           {
             "@type": "Question",
-            "name": "Does this work for all hair types (1a-4c)?",
+            "name": "How often should I wash my hair based on my hair type?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Absolutely. Our AI is trained on all hair patterns from straight 1a to coily 4c hair, providing specific product recommendations and techniques suited for each unique texture and curl pattern."
+              "text": "Wash frequency varies by hair type and lifestyle. Straight and oily hair may need washing every 1-2 days, while curly and coily hair benefits from washing once a week or less to prevent dryness. Our AI considers your hair type, scalp condition, activity level, and climate to recommend the ideal wash schedule."
             }
           },
           {
             "@type": "Question",
-            "name": "Can this help with damaged or frizzy hair?",
+            "name": "Can I use this routine for hair growth?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, our AI algorithm identifies damage levels and frizz concerns to recommend reparative treatments, protein-moisture balance, and hydration techniques to restore hair health."
+              "text": "Yes! Our hair routine generator includes specific recommendations for promoting hair growth. Based on your answers, we suggest scalp massage techniques, growth-stimulating ingredients like rosemary and peppermint oils, protein-moisture balance tips, and protective styling advice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does climate really affect hair care routines?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Climate has a significant impact on hair health. Humid environments cause frizz, dry climates lead to brittle hair, cold weather causes static and dryness, while hot weather increases oil production. Our AI factors in your local climate to recommend products and techniques that keep your hair healthy year-round."
             }
           }
         ]
@@ -136,9 +176,9 @@ const Home = () => {
 
   const targetAudiences = [
     { icon: Waves, title: 'Curly Hair Routines', subtitle: 'Types 3a, 3b, 3c', link: '/hair-routine-for-curly-hair', color: 'from-purple-500 to-violet-600', bgColor: 'bg-purple-50', textColor: 'text-purple-600' },
-    { icon: Wind, title: 'Wavy Hair Care', subtitle: 'Types 2a, 2b, 2c', link: '/hair-routine-for-2b-hair', color: 'from-teal-500 to-cyan-600', bgColor: 'bg-teal-50', textColor: 'text-teal-600' },
+    { icon: Wind, title: 'Wavy Hair Care', subtitle: 'Types 2a, 2b, 2c', link: '/hair-routine-for-wavy-hair', color: 'from-teal-500 to-cyan-600', bgColor: 'bg-teal-50', textColor: 'text-teal-600' },
     { icon: ArrowDown, title: 'Straight Hair', subtitle: 'Types 1a, 1b, 1c', link: '/hair-routine-for-straight-hair', color: 'from-blue-500 to-indigo-600', bgColor: 'bg-blue-50', textColor: 'text-blue-600' },
-    { icon: TrendingUp, title: 'Hair Growth', subtitle: 'Length & Volume', link: '/hair-routine-for-hair-growth', color: 'from-pink-500 to-rose-600', bgColor: 'bg-pink-50', textColor: 'text-pink-600' },
+    { icon: TrendingUp, title: 'Hair Growth', subtitle: 'Length & Volume', link: '/hair-growth-routine', color: 'from-pink-500 to-rose-600', bgColor: 'bg-pink-50', textColor: 'text-pink-600' },
     { icon: AlertCircle, title: 'Damaged & Frizzy', subtitle: 'Repair & Smooth', link: '/hair-routine-for-frizzy-hair', color: 'from-amber-500 to-orange-600', bgColor: 'bg-amber-50', textColor: 'text-amber-600' },
     { icon: Droplets, title: 'Hair Porosity', subtitle: 'Low, Medium, High', link: '/hair-routine-for-low-porosity', color: 'from-emerald-500 to-green-600', bgColor: 'bg-emerald-50', textColor: 'text-emerald-600' },
     { icon: Droplet, title: 'Oily Scalp', subtitle: 'Balance & Cleanse', link: '/hair-routine-for-oily-scalp', color: 'from-lime-500 to-green-600', bgColor: 'bg-lime-50', textColor: 'text-lime-600' },
@@ -156,24 +196,28 @@ const Home = () => {
 
   const faqs = [
     {
-      q: "Is this AI hair routine generator completely free?",
-      a: "Yes, this is a 100% free AI-powered tool to help you build a personalized hair care routine without any cost, signup, or hidden fees."
+      q: "Is this hair routine generator really free?",
+      a: "Yes, our hair routine generator is 100% free to use. There are no hidden fees, subscriptions, or signup requirements. Simply take our quick quiz, and you'll receive a complete personalized hair care routine instantly. We believe everyone deserves access to professional-quality hair care advice."
     },
     {
-      q: "How does climate affect my hair routine?",
-      a: "Climate significantly impacts hair health. Humid environments cause frizz, dry climates lead to brittle hair, and cold weather strips moisture. Our AI factors in your local climate to recommend optimal products and techniques."
+      q: "How does hair porosity affect my routine?",
+      a: "Hair porosity determines how well your hair absorbs and retains moisture. Low porosity hair has tightly closed cuticles that resist moisture, requiring lightweight products and heat during conditioning. High porosity hair absorbs moisture quickly but loses it fast, needing heavier products and protein treatments. Our AI analyzes your porosity to recommend the right products and techniques for optimal moisture balance."
     },
     {
-      q: "How do I determine my hair porosity?",
-      a: "Our quiz includes a specific section to help you identify your hair porosity (low, medium, or high) through simple observation questions, ensuring your routine is perfectly matched to your hair's moisture absorption needs."
+      q: "Is this routine suitable for curly and coily hair?",
+      a: "Absolutely! Our hair routine generator is designed for all hair types from straight 1A to coily 4C. For curly and coily hair, we recommend specific techniques like the LOC/LCO method, diffusing tips, protective styling routines, and products that enhance curl definition while providing deep hydration. Each routine is customized to your unique curl pattern."
     },
     {
-      q: "Does this work for all hair types (1a-4c)?",
-      a: "Absolutely. Our AI is trained on all hair patterns from straight 1a to coily 4c hair, providing specific product recommendations and techniques suited for each unique texture and curl pattern."
+      q: "How often should I wash my hair based on my hair type?",
+      a: "Wash frequency varies by hair type and lifestyle. Straight and oily hair may need washing every 1-2 days, while curly and coily hair benefits from washing once a week or less to prevent dryness. Our AI considers your hair type, scalp condition, activity level, and climate to recommend the ideal wash schedule for maintaining healthy, balanced hair."
     },
     {
-      q: "Can this help with damaged or frizzy hair?",
-      a: "Yes, our AI algorithm identifies damage levels and frizz concerns to recommend reparative treatments, protein-moisture balance, and hydration techniques to restore hair health."
+      q: "Can I use this routine for hair growth?",
+      a: "Yes! Our hair routine generator includes specific recommendations for promoting hair growth. Based on your answers, we suggest scalp massage techniques, growth-stimulating ingredients like rosemary and peppermint oils, protein-moisture balance tips, and protective styling advice. A consistent routine addressing your specific needs is key to achieving longer, stronger hair."
+    },
+    {
+      q: "Does climate really affect hair care routines?",
+      a: "Climate has a significant impact on hair health. Humid environments cause frizz and can make styling difficult, requiring anti-humidity products and sealants. Dry climates strip moisture, leading to brittle hair that needs extra hydration. Cold weather causes static and dryness, while hot weather increases oil production. Our AI factors in your local climate to recommend products and techniques that keep your hair healthy year-round."
     }
   ];
 
@@ -392,12 +436,50 @@ const Home = () => {
               <div className="flex flex-wrap justify-center gap-4 text-sm font-medium">
                 <Link to="/hair-routine-for-curly-hair" className="text-green-600 hover:underline">Curly Hair Guide</Link>
                 <span className="text-gray-300">•</span>
-                <Link to="/hair-routine-for-2b-hair" className="text-green-600 hover:underline">2B Hair Routine</Link>
+                <Link to="/hair-routine-for-wavy-hair" className="text-green-600 hover:underline">Wavy Hair Routine</Link>
+                <span className="text-gray-300">•</span>
+                <Link to="/hair-routine-for-straight-hair" className="text-green-600 hover:underline">Straight Hair Care</Link>
+                <span className="text-gray-300">•</span>
+                <Link to="/hair-growth-routine" className="text-green-600 hover:underline">Hair Growth Routine</Link>
                 <span className="text-gray-300">•</span>
                 <Link to="/hair-routine-for-low-porosity" className="text-green-600 hover:underline">Low Porosity Care</Link>
                 <span className="text-gray-300">•</span>
                 <Link to="/hair-routine-for-frizzy-hair" className="text-green-600 hover:underline">Anti-Frizz Solutions</Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works Schema Section */}
+        <section className="py-16 bg-white border-b border-gray-100">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-10"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                How the Hair Routine Generator Works
+              </h2>
+            </motion.div>
+            <div className="space-y-4 text-gray-700 max-w-2xl mx-auto">
+              <p className="flex items-start gap-3">
+                <span className="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+                <span><strong>Analyze your hair type, porosity, and scalp condition</strong> through our smart quiz that gathers details about your unique hair characteristics.</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span className="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+                <span><strong>Identify your hair care goals and lifestyle</strong> preferences to ensure your routine fits seamlessly into your daily life.</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span className="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
+                <span><strong>Generate a personalized daily and weekly hair routine</strong> using our AI that combines expert knowledge with your specific needs.</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <span className="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">4</span>
+                <span><strong>Follow your routine and adjust based on results</strong> to achieve optimal hair health over time.</span>
+              </p>
             </div>
           </div>
         </section>
