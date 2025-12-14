@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const DIYHairMasks = () => {
-  const publishDate = '2025-12-14';
-  const updateDate = '2025-12-14';
+  const publishDate = '2024-12-14';
+  const updateDate = '2024-12-14';
   const author = 'Hair Routine Generator Expert Team';
   const readTime = '22 min read';
 
@@ -38,7 +38,7 @@ const DIYHairMasks = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "DIY Hair Masks: 25+ Recipes for Every Hair Type [Complete Guide 2025]",
+    "headline": "DIY Hair Masks: 25+ Recipes for Every Hair Type [Complete Guide]",
     "description": "Discover 25+ homemade hair mask recipes using kitchen ingredients. Customized DIY treatments for dry, oily, damaged, color-treated, and curly hair with step-by-step instructions.",
     "image": [
       "/images/blog/diy_hair_mask_ingredients.webp",
@@ -245,13 +245,13 @@ const DIYHairMasks = () => {
   return (
     <>
       <Helmet>
-        <title>DIY Hair Masks: 25+ Recipes for Every Hair Type | Complete Guide 2025</title>
+        <title>DIY Hair Masks: 25+ Recipes for Every Hair Type | Complete Guide</title>
         <meta name="description" content="Discover 25+ homemade hair mask recipes for dry, oily, damaged, curly & color-treated hair. Easy kitchen ingredients, step-by-step instructions. Transform your hair naturally!" />
         <meta name="keywords" content="DIY hair mask, homemade hair mask, hair mask recipe, avocado hair mask, honey hair mask, coconut oil hair mask, hair mask for dry hair, hair mask for damaged hair, natural hair treatment" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://hairgen.com/blog/diy-hair-masks" />
         
-        <meta property="og:title" content="DIY Hair Masks: 25+ Recipes for Every Hair Type | Complete Guide 2025" />
+        <meta property="og:title" content="DIY Hair Masks: 25+ Recipes for Every Hair Type | Complete Guide" />
         <meta property="og:description" content="Transform your hair with 25+ homemade hair mask recipes. Easy kitchen ingredients, customized for every hair type. Start your natural hair care journey!" />
         <meta property="og:type" content="article" />
         <meta property="og:image" content="/images/blog/diy_hair_mask_ingredients.webp" />

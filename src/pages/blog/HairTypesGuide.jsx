@@ -6,8 +6,8 @@ import { ArrowLeft, Clock, Calendar, BookOpen, CheckCircle, AlertCircle, Star, S
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const HairTypesGuide = () => {
-  const publishDate = '2025-12-14';
-  const updateDate = '2025-12-14';
+  const publishDate = '2024-12-14';
+  const updateDate = '2024-12-14';
 
   const tableOfContents = [
     { id: 'introduction', title: 'Introduction to Hair Types' },
@@ -35,7 +35,7 @@ const HairTypesGuide = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "The Ultimate Guide to Hair Types and Textures: From Straight to Coily [2025]",
+    "headline": "The Ultimate Guide to Hair Types and Textures: From Straight to Coily",
     "description": "Master the Andre Walker hair typing system with our comprehensive guide. Learn to identify your hair type (1-4), understand texture and density, plus get expert care tips for every hair pattern.",
     "image": [
       "/images/blog/hair_types_comparison_guide.webp",
@@ -139,7 +139,7 @@ const HairTypesGuide = () => {
   return (
     <>
       <Helmet>
-        <title>Hair Types Guide: Complete Andre Walker System Explained (Types 1-4) | 2025</title>
+        <title>Hair Types Guide: Complete Andre Walker System Explained (Types 1-4)</title>
         <meta name="description" content="Master the Andre Walker hair typing system with our 3500+ word guide. Learn Types 1-4 (straight to coily), identify your pattern, plus get expert care tips and product recommendations for every hair type." />
         <meta name="keywords" content="hair types, hair type chart, Andre Walker hair system, Type 1 hair, Type 2 hair, Type 3 hair, Type 4 hair, straight hair, wavy hair, curly hair, coily hair, hair texture, hair density, curl pattern, hair classification, hair care by type" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -160,7 +160,7 @@ const HairTypesGuide = () => {
         <meta property="article:tag" content="curl pattern" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hair Types Guide: Complete Andre Walker System (1-4) | 2025" />
+        <meta name="twitter:title" content="Hair Types Guide: Complete Andre Walker System (1-4)" />
         <meta name="twitter:description" content="Master the hair typing system. Learn Types 1-4, identify your pattern, get expert care tips." />
         <meta name="twitter:image" content="/images/blog/hair_types_comparison_guide.webp" />
         
@@ -202,7 +202,7 @@ const HairTypesGuide = () => {
               <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <span>Updated: December 14, 2025</span>
+                  <span>Updated: December 14, 2024</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />

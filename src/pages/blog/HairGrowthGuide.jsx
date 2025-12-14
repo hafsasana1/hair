@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const HairGrowthGuide = () => {
-  const publishDate = '2025-12-14';
-  const updateDate = '2025-12-14';
+  const publishDate = '2024-12-14';
+  const updateDate = '2024-12-14';
   const readTime = '25 min read';
   const author = 'Hair Routine Generator Expert Team';
   const wordCount = '4,500+';
@@ -37,7 +37,7 @@ const HairGrowthGuide = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Complete Guide to Healthy Hair Growth: Science-Backed Tips & Proven Methods [2025]",
+    "headline": "Complete Guide to Healthy Hair Growth: Science-Backed Tips & Proven Methods",
     "description": "Discover proven methods to accelerate hair growth naturally. Learn about the hair growth cycle, best nutrients, scalp care, and treatments backed by science for faster, thicker, healthier hair.",
     "image": "/images/blog/healthy_hair_growth_results.webp",
     "author": {
@@ -153,13 +153,13 @@ const HairGrowthGuide = () => {
   return (
     <>
       <Helmet>
-        <title>Complete Guide to Healthy Hair Growth: Science-Backed Tips [2025]</title>
+        <title>Complete Guide to Healthy Hair Growth: Science-Backed Tips</title>
         <meta name="description" content="Discover proven methods to accelerate hair growth naturally. Learn about the hair growth cycle, best nutrients, scalp care, and treatments backed by science. Expert tips for faster, thicker, healthier hair." />
         <meta name="keywords" content="hair growth, how to grow hair faster, hair growth tips, hair loss prevention, scalp health, biotin for hair, hair growth cycle, natural hair growth, hair vitamins, thicker hair, healthy hair growth" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href="https://hairgen.com/blog/hair-growth-guide" />
         
-        <meta property="og:title" content="Complete Guide to Healthy Hair Growth: Science-Backed Tips [2025]" />
+        <meta property="og:title" content="Complete Guide to Healthy Hair Growth: Science-Backed Tips" />
         <meta property="og:description" content="Discover proven methods to accelerate hair growth naturally. Learn about the hair growth cycle, best nutrients, scalp care, and treatments backed by science." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://hairgen.com/blog/hair-growth-guide" />
@@ -169,7 +169,7 @@ const HairGrowthGuide = () => {
         <meta property="article:section" content="Hair Science" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Complete Guide to Healthy Hair Growth [2025]" />
+        <meta name="twitter:title" content="Complete Guide to Healthy Hair Growth" />
         <meta name="twitter:description" content="Science-backed tips and proven methods for faster, thicker, healthier hair growth." />
         <meta name="twitter:image" content="/images/blog/healthy_hair_growth_results.webp" />
         

@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const HeatDamageProtection = () => {
-  const publishDate = '2025-12-05';
-  const updateDate = '2025-12-14';
+  const publishDate = '2024-12-05';
+  const updateDate = '2024-12-14';
   const readTime = '14 min read';
   const author = 'Hair Routine Generator Expert Team';
 
@@ -53,13 +53,13 @@ const HeatDamageProtection = () => {
   return (
     <>
       <Helmet>
-        <title>How to Protect Hair from Heat Damage: Complete Guide to Safe Styling [2025]</title>
+        <title>How to Protect Hair from Heat Damage: Complete Guide to Safe Styling </title>
         <meta name="description" content="Protect your hair from heat damage with our expert guide. Learn safe temperatures for all hair types, choose the right heat protectant, and discover repair treatments. Science-backed tips inside!" />
         <meta name="keywords" content="heat damage hair, heat protectant, safe heat styling, protect hair flat iron, curling iron damage, heat styling tips, repair heat damaged hair" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://hairgen.com/blog/heat-damage-protection" />
         
-        <meta property="og:title" content="How to Protect Hair from Heat Damage: Complete Guide [2025]" />
+        <meta property="og:title" content="How to Protect Hair from Heat Damage: Complete Guide " />
         <meta property="og:description" content="Master heat styling without damaging your hair. Expert tips on temperatures, protectants, and repair treatments." />
         <meta property="og:type" content="article" />
         <meta property="og:image" content="/images/blog/woman_using_hair_str_d63b3565.webp" />

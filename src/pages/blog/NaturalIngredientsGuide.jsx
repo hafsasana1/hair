@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const NaturalIngredientsGuide = () => {
-  const publishDate = '2025-12-08';
-  const updateDate = '2025-12-14';
+  const publishDate = '2024-12-08';
+  const updateDate = '2024-12-14';
   const readTime = '12 min read';
   const author = 'Hair Routine Generator Expert Team';
 
@@ -56,13 +56,13 @@ const NaturalIngredientsGuide = () => {
   return (
     <>
       <Helmet>
-        <title>10 Natural Ingredients for Healthy Hair: Complete Guide with DIY Recipes [2025]</title>
+        <title>10 Natural Ingredients for Healthy Hair: Complete Guide with DIY Recipes </title>
         <meta name="description" content="Discover 10 science-backed natural ingredients for healthy hair. Learn how to use coconut oil, argan oil, aloe vera & more with DIY recipes. Transform your hair naturally!" />
         <meta name="keywords" content="natural hair care, coconut oil for hair, argan oil benefits, aloe vera hair, DIY hair masks, natural ingredients hair, healthy hair tips" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://hairgen.com/blog/natural-ingredients-for-healthy-hair" />
         
-        <meta property="og:title" content="10 Natural Ingredients for Healthy Hair: Complete Guide [2025]" />
+        <meta property="og:title" content="10 Natural Ingredients for Healthy Hair: Complete Guide " />
         <meta property="og:description" content="Discover science-backed natural ingredients that transform hair health. DIY recipes and expert tips included." />
         <meta property="og:type" content="article" />
         <meta property="og:image" content="/images/blog/natural_hair_care_in_fc40f08f.webp" />

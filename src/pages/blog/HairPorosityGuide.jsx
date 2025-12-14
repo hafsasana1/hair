@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const HairPorosityGuide = () => {
-  const publishDate = '2025-12-10';
-  const updateDate = '2025-12-14';
+  const publishDate = '2024-12-10';
+  const updateDate = '2024-12-14';
   const readTime = '15 min read';
   const author = 'Hair Routine Generator Expert Team';
 
@@ -35,7 +35,7 @@ const HairPorosityGuide = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Understanding Hair Porosity: The Complete Science-Backed Guide for 2025",
+    "headline": "Understanding Hair Porosity: The Complete Science-Backed Guide",
     "description": "Learn everything about hair porosity - what it is, how to test it at home, and the best care routines for low, medium, and high porosity hair types.",
     "image": "/images/blog/woman_examining_hair_0a03f537.webp",
     "author": {
@@ -92,13 +92,13 @@ const HairPorosityGuide = () => {
   return (
     <>
       <Helmet>
-        <title>Understanding Hair Porosity: Complete Guide to Testing & Care [2025]</title>
+        <title>Understanding Hair Porosity: Complete Guide to Testing & Care</title>
         <meta name="description" content="Master hair porosity with our comprehensive guide. Learn the float test, care tips for low, medium & high porosity hair, plus expert product recommendations. Science-backed advice for healthier hair." />
         <meta name="keywords" content="hair porosity, hair porosity test, low porosity hair, high porosity hair, medium porosity hair, hair care guide, hair moisture, hair cuticle" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href="https://hairgen.com/blog/hair-porosity-guide" />
         
-        <meta property="og:title" content="Understanding Hair Porosity: Complete Guide to Testing & Care [2025]" />
+        <meta property="og:title" content="Understanding Hair Porosity: Complete Guide to Testing & Care" />
         <meta property="og:description" content="Master hair porosity with our comprehensive guide. Learn the float test, care tips for low, medium & high porosity hair, plus expert product recommendations." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://hairgen.com/blog/hair-porosity-guide" />
@@ -108,7 +108,7 @@ const HairPorosityGuide = () => {
         <meta property="article:section" content="Hair Science" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Understanding Hair Porosity: Complete Guide [2025]" />
+        <meta name="twitter:title" content="Understanding Hair Porosity: Complete Guide" />
         <meta name="twitter:description" content="Master hair porosity with our comprehensive guide. Learn testing methods and care tips for all porosity types." />
         <meta name="twitter:image" content="/images/blog/woman_examining_hair_0a03f537.webp" />
         
@@ -139,7 +139,7 @@ const HairPorosityGuide = () => {
               </div>
 
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Understanding Hair Porosity: The Complete Science-Backed Guide for 2025
+                Understanding Hair Porosity: The Complete Science-Backed Guide
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed">

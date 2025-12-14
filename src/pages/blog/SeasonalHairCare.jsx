@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const SeasonalHairCare = () => {
-  const publishDate = '2025-12-14';
-  const updateDate = '2025-12-14';
+  const publishDate = '2024-12-14';
+  const updateDate = '2024-12-14';
   const author = 'Hair Routine Generator Expert Team';
   const readTime = '18 min read';
 
@@ -37,7 +37,7 @@ const SeasonalHairCare = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Seasonal Hair Care: The Complete Guide to Adapting Your Hair Routine for Every Season [2025]",
+    "headline": "Seasonal Hair Care: The Complete Guide to Adapting Your Hair Routine for Every Season ",
     "description": "Learn how to adapt your hair care routine for spring, summer, fall, and winter. Expert tips for protecting your hair from humidity, cold, sun damage, and climate changes with science-backed advice.",
     "image": [
       "/images/blog/autumn_fall_hair_care.webp",
