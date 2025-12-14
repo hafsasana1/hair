@@ -1488,7 +1488,7 @@ const Results = () => {
                   {/* Card Footer */}
                   <div className="text-center mt-6 relative z-10">
                     <p className="text-xs text-white/70">Get your routine at</p>
-                    <p className="font-bold text-sm">HairRoutineGenerator.com</p>
+                    <p className="font-bold text-sm">hairroutinegen.com</p>
                   </div>
                 </div>
               </div>
