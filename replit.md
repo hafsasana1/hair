@@ -73,7 +73,7 @@ The blog section contains comprehensive SEO-optimized articles located in `src/p
    - 8 FAQs with schema markup
    - Internal linking to related articles
 
-5. **Seasonal Hair Care Guide** (`/blog/seasonal-hair-care`) - 3,800+ words (Added Dec 14, 2025)
+5. **Seasonal Hair Care Guide** (`/blog/seasonal-hair-care`) - 3,200+ words (Added Dec 14, 2025)
    - Complete guide to adapting hair care routines for spring, summer, fall, winter
    - UV protection and sun damage prevention
    - Humidity and frizz control strategies
