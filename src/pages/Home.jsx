@@ -464,35 +464,71 @@ const Home = () => {
         </section>
 
         {/* How It Works Schema Section */}
-        <section className="py-16 bg-white border-b border-gray-100">
-          <div className="container mx-auto px-4 max-w-4xl">
+        <section className="py-20 bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+          <div className="container mx-auto px-4 max-w-5xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-10"
+              className="text-center mb-14"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                How the Hair Routine Generator Works
+              <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-teal-100 to-emerald-100 text-teal-700 rounded-full text-sm font-semibold mb-4">
+                Step-by-Step Process
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="text-gray-900">How the </span>
+                <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">Hair Routine Generator</span>
+                <span className="text-gray-900"> Works</span>
               </h2>
+              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+                Your journey to <span className="text-teal-600 font-semibold">healthier hair</span> starts here
+              </p>
             </motion.div>
-            <div className="space-y-4 text-gray-700 max-w-2xl mx-auto">
-              <p className="flex items-start gap-3">
-                <span className="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
-                <span><strong>Analyze your hair type, porosity, and scalp condition</strong> through our smart quiz that gathers details about your unique hair characteristics.</span>
-              </p>
-              <p className="flex items-start gap-3">
-                <span className="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
-                <span><strong>Identify your hair care goals and lifestyle</strong> preferences to ensure your routine fits seamlessly into your daily life.</span>
-              </p>
-              <p className="flex items-start gap-3">
-                <span className="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">3</span>
-                <span><strong>Generate a personalized daily and weekly hair routine</strong> using our AI that combines expert knowledge with your specific needs.</span>
-              </p>
-              <p className="flex items-start gap-3">
-                <span className="bg-green-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-sm font-bold flex-shrink-0">4</span>
-                <span><strong>Follow your routine and adjust based on results</strong> to achieve optimal hair health over time.</span>
-              </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  num: 1,
+                  title: "Analyze your hair type, porosity, and scalp condition",
+                  desc: "through our smart quiz that gathers details about your unique hair characteristics."
+                },
+                {
+                  num: 2,
+                  title: "Identify your hair care goals and lifestyle",
+                  desc: "preferences to ensure your routine fits seamlessly into your daily life."
+                },
+                {
+                  num: 3,
+                  title: "Generate a personalized daily and weekly hair routine",
+                  desc: "using our AI that combines expert knowledge with your specific needs."
+                },
+                {
+                  num: 4,
+                  title: "Follow your routine and adjust based on results",
+                  desc: "to achieve optimal hair health over time."
+                }
+              ].map((step, index) => (
+                <motion.div
+                  key={step.num}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white p-6 rounded-2xl shadow-lg border border-emerald-100 hover:shadow-xl hover:border-emerald-200 transition-all group"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-400 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
+                      <span className="text-white font-bold text-lg">{step.num}</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
