@@ -337,7 +337,7 @@ const Home = () => {
                   <img 
                     alt="AI hair routine generator result preview" 
                     className="rounded-3xl shadow-2xl w-full h-auto object-cover" 
-                    src="/attached_assets/stock_images/beautiful_healthy_sh_2ffeb95f.jpg" 
+                    src="/attached_assets/stock_images/woman_beautiful_long_2fd437f0.jpg" 
                     loading="lazy" 
                   />
                 </div>
