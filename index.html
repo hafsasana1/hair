@@ -1,14 +1,285 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="generator" content="Hostinger Horizons" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hostinger Horizons</title>
-	</head>
-	<body>
-		<div id="root"></div>
-		<script type="module" src="/src/main.jsx"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags (SSR) -->
+    <title>AI Hair Routine Generator by Hair Type & Climate | HairGen</title>
+    <meta name="title" content="AI Hair Routine Generator by Hair Type & Climate | HairGen" />
+    <meta name="description" content="Get your FREE personalized hair care routine in 60 seconds! Our AI analyzes your hair type (1a-4c), porosity & local climate to create a custom daily plan. Trusted by 50,000+ users. Start now!" />
+    <meta name="keywords" content="AI hair routine generator, personalized hair care, hair type routine, climate-based hair care, curly hair routine, wavy hair care, hair porosity, free hair routine generator, custom hair care plan" />
+    <meta name="author" content="HairGen" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hairgen.com/" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hairgen.com/" />
+    <meta property="og:title" content="AI Hair Routine Generator by Hair Type & Climate | HairGen" />
+    <meta property="og:description" content="Get your FREE personalized hair care routine in 60 seconds! Our AI analyzes your hair type, porosity & climate to create a custom daily plan. Trusted by 50,000+ users." />
+    <meta property="og:image" content="https://hairgen.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI Hair Routine Generator - Personalized hair care for every hair type" />
+    <meta property="og:site_name" content="HairGen" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://hairgen.com/" />
+    <meta name="twitter:title" content="AI Hair Routine Generator by Hair Type & Climate | HairGen" />
+    <meta name="twitter:description" content="Get your FREE personalized hair care routine in 60 seconds! AI-powered analysis for curly, wavy, straight & coily hair. Start now!" />
+    <meta name="twitter:image" content="https://hairgen.com/twitter-image.jpg" />
+    <meta name="twitter:image:alt" content="AI Hair Routine Generator - Personalized hair care" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#22c55e" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="HairGen" />
+    <meta name="application-name" content="HairGen" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="US" />
+    <meta name="geo.placename" content="United States" />
+    
+    <!-- Language and Content Type -->
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    
+    <!-- Schema.org Structured Data (Server-Side Rendered) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://hairgen.com/#website",
+          "url": "https://hairgen.com/",
+          "name": "HairGen - AI Hair Routine Generator",
+          "description": "AI-powered hair routine generator that creates personalized hair care plans based on hair type, porosity, and climate.",
+          "publisher": {
+            "@id": "https://hairgen.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://hairgen.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://hairgen.com/#organization",
+          "name": "HairGen",
+          "url": "https://hairgen.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://hairgen.com/logo.png",
+            "width": 512,
+            "height": 512
+          },
+          "description": "HairGen provides free AI-powered personalized hair care routines for all hair types and climates.",
+          "foundingDate": "2024",
+          "sameAs": [],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "url": "https://hairgen.com/contact",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://hairgen.com/#software",
+          "name": "AI Hair Routine Generator",
+          "alternateName": "HairGen Hair Routine Generator",
+          "applicationCategory": "LifestyleApplication",
+          "applicationSubCategory": "Beauty & Personal Care",
+          "operatingSystem": "Web Browser",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "description": "Free AI-powered tool that generates personalized daily hair care routines based on your hair type (1a-4c), porosity level, lifestyle, and local climate conditions.",
+          "featureList": [
+            "Personalized hair routine generation",
+            "Hair type analysis (1a-4c)",
+            "Porosity level detection",
+            "Climate-based recommendations",
+            "Custom product suggestions",
+            "Step-by-step daily plans",
+            "Seasonal adjustment tips",
+            "Downloadable PDF results"
+          ],
+          "author": {
+            "@id": "https://hairgen.com/#organization"
+          },
+          "provider": {
+            "@id": "https://hairgen.com/#organization"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://hairgen.com/#webapp",
+          "name": "HairGen AI Hair Routine Generator",
+          "url": "https://hairgen.com/quiz",
+          "applicationCategory": "HealthApplication",
+          "browserRequirements": "Requires JavaScript. Requires HTML5.",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://hairgen.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is an AI hair routine generator?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An AI hair routine generator is an intelligent tool that analyzes your hair type, porosity, lifestyle, and local climate to create a personalized daily hair care routine. HairGen uses advanced algorithms to recommend specific products, techniques, and schedules tailored to your unique hair needs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the HairGen hair routine generator free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, HairGen is a 100% free AI-powered tool. You can generate unlimited personalized hair care routines without any cost, signup requirements, or hidden fees."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does climate affect my hair care routine?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Climate significantly impacts hair health. Humid environments can cause frizz, while dry climates lead to brittle hair. Cold weather strips moisture, and hot weather increases oil production. Our AI factors in your local climate to recommend appropriate products and techniques for optimal hair health year-round."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What hair types does the generator support?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our AI supports all hair types including straight (1a-1c), wavy (2a-2c), curly (3a-3c), and coily (4a-4c) hair. We also account for hair porosity (low, medium, high), density, thickness, and specific concerns like frizz, damage, or oiliness."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How accurate is the AI hair analysis?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our AI hair analysis is highly accurate, developed using data from trichologists and hair care experts. The quiz asks targeted questions about your hair characteristics, and our algorithm processes this information to generate routines that have helped over 50,000 users achieve healthier hair."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I get a routine for damaged or color-treated hair?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! Our AI specifically addresses damaged, color-treated, chemically processed, and heat-styled hair. The generator recommends repair treatments, protein-moisture balance, color-safe products, and protective techniques to restore and maintain hair health."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://hairgen.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://hairgen.com/"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://hairgen.com/#routines",
+          "name": "Hair Routine Guides",
+          "description": "Specialized hair care routine guides for different hair types",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Curly Hair Routine",
+              "url": "https://hairgen.com/hair-routine-for-curly-hair"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Wavy Hair Routine (2B)",
+              "url": "https://hairgen.com/hair-routine-for-2b-hair"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Low Porosity Hair Routine",
+              "url": "https://hairgen.com/hair-routine-for-low-porosity"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Straight Hair Routine",
+              "url": "https://hairgen.com/hair-routine-for-straight-hair"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Hair Growth Routine",
+              "url": "https://hairgen.com/hair-routine-for-hair-growth"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Speakable Schema for Voice Search & AI Assistants -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".hero-description", ".faq-answer"]
+      },
+      "name": "AI Hair Routine Generator by Hair Type & Climate",
+      "description": "Get your FREE personalized hair care routine in 60 seconds! Our AI analyzes your hair type, porosity & climate to create a custom daily plan."
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

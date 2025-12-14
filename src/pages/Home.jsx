@@ -34,25 +34,49 @@ const Home = () => {
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "HairGen Hair Routine Generator",
+        "name": "AI Hair Routine Generator by Hair Type & Climate",
+        "alternateName": "HairGen",
         "applicationCategory": "LifestyleApplication",
-        "operatingSystem": "Web",
+        "applicationSubCategory": "Beauty & Personal Care",
+        "operatingSystem": "Web Browser",
         "offers": {
           "@type": "Offer",
           "price": "0",
-          "priceCurrency": "USD"
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
         },
-        "description": "Free AI-powered hair routine generator that creates personalized daily hair care plans based on hair type, porosity, and goals."
+        "description": "Free AI-powered hair routine generator that creates personalized daily hair care plans based on your hair type (1a-4c), porosity level, and local climate conditions.",
+        "featureList": [
+          "AI-powered hair type analysis",
+          "Climate-based routine optimization",
+          "Porosity level detection",
+          "Custom product recommendations",
+          "Step-by-step daily plans",
+          "Seasonal adjustment tips"
+        ],
+        "author": {
+          "@type": "Organization",
+          "name": "HairGen",
+          "url": "https://hairgen.com"
+        }
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Is this hair routine generator free?",
+            "name": "Is this AI hair routine generator completely free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, HairGen is a 100% free tool powered by AI to help you build a personalized hair care routine without any cost."
+              "text": "Yes, HairGen is a 100% free AI-powered tool to help you build a personalized hair care routine without any cost, signup, or hidden fees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does climate affect my hair routine?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Climate significantly impacts hair health. Humid environments cause frizz, dry climates lead to brittle hair, and cold weather strips moisture. Our AI factors in your local climate to recommend optimal products and techniques."
             }
           },
           {
@@ -60,15 +84,15 @@ const Home = () => {
             "name": "How do I determine my hair porosity?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our quiz includes a specific section to help you identify your hair porosity (low, medium, or high) through simple observation questions, ensuring your routine is perfectly matched to your hair's ability to absorb moisture."
+              "text": "Our quiz includes a specific section to help you identify your hair porosity (low, medium, or high) through simple observation questions, ensuring your routine is perfectly matched to your hair's moisture absorption needs."
             }
           },
           {
             "@type": "Question",
-            "name": "Does this work for curly hair (2a-4c)?",
+            "name": "Does this work for all hair types (1a-4c)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Absolutely. Our AI is trained on the specific needs of all curl patterns, from loose wavy 2a hair to tight coily 4c hair, providing product recommendations and techniques suited for each texture."
+              "text": "Absolutely. Our AI is trained on all hair patterns from straight 1a to coily 4c hair, providing specific product recommendations and techniques suited for each unique texture and curl pattern."
             }
           },
           {
@@ -76,7 +100,7 @@ const Home = () => {
             "name": "Can this help with damaged or frizzy hair?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, our algorithm identifies damage levels and frizz concerns to recommend reparative treatments, protein balances, and hydration techniques to restore hair health."
+              "text": "Yes, our AI algorithm identifies damage levels and frizz concerns to recommend reparative treatments, protein-moisture balance, and hydration techniques to restore hair health."
             }
           }
         ]
@@ -129,28 +153,49 @@ const Home = () => {
 
   const faqs = [
     {
-      q: "Is this hair routine generator free?",
-      a: "Yes, HairGen is a 100% free tool powered by AI to help you build a personalized hair care routine without any cost."
+      q: "Is this AI hair routine generator completely free?",
+      a: "Yes, HairGen is a 100% free AI-powered tool to help you build a personalized hair care routine without any cost, signup, or hidden fees."
+    },
+    {
+      q: "How does climate affect my hair routine?",
+      a: "Climate significantly impacts hair health. Humid environments cause frizz, dry climates lead to brittle hair, and cold weather strips moisture. Our AI factors in your local climate to recommend optimal products and techniques."
     },
     {
       q: "How do I determine my hair porosity?",
-      a: "Our quiz includes a specific section to help you identify your hair porosity (low, medium, or high) through simple observation questions, ensuring your routine is perfectly matched to your hair's ability to absorb moisture."
+      a: "Our quiz includes a specific section to help you identify your hair porosity (low, medium, or high) through simple observation questions, ensuring your routine is perfectly matched to your hair's moisture absorption needs."
     },
     {
-      q: "Does this work for curly hair (2a-4c)?",
-      a: "Absolutely. Our AI is trained on the specific needs of all curl patterns, from loose wavy 2a hair to tight coily 4c hair, providing product recommendations and techniques suited for each texture."
+      q: "Does this work for all hair types (1a-4c)?",
+      a: "Absolutely. Our AI is trained on all hair patterns from straight 1a to coily 4c hair, providing specific product recommendations and techniques suited for each unique texture and curl pattern."
     },
     {
       q: "Can this help with damaged or frizzy hair?",
-      a: "Yes, our algorithm identifies damage levels and frizz concerns to recommend reparative treatments, protein balances, and hydration techniques to restore hair health."
+      a: "Yes, our AI algorithm identifies damage levels and frizz concerns to recommend reparative treatments, protein-moisture balance, and hydration techniques to restore hair health."
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Free Hair Routine Generator (AI-Powered) | HairGen</title>
-        <meta name="description" content="Generate a free, personalized hair care routine with our AI tool. Perfect for curly, wavy, coily, or straight hair. Identify your porosity and build a daily plan." />
+        <title>AI Hair Routine Generator by Hair Type & Climate | HairGen</title>
+        <meta name="title" content="AI Hair Routine Generator by Hair Type & Climate | HairGen" />
+        <meta name="description" content="Get your FREE personalized hair care routine in 60 seconds! Our AI analyzes your hair type (1a-4c), porosity & local climate to create a custom daily plan. Trusted by 50,000+ users. Start now!" />
+        <meta name="keywords" content="AI hair routine generator, personalized hair care, hair type routine, climate-based hair care, curly hair routine, wavy hair care, hair porosity, free hair routine generator, custom hair care plan, 2a 2b 2c 3a 3b 3c 4a 4b 4c hair" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <link rel="canonical" href="https://hairgen.com/" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hairgen.com/" />
+        <meta property="og:title" content="AI Hair Routine Generator by Hair Type & Climate | HairGen" />
+        <meta property="og:description" content="Get your FREE personalized hair care routine in 60 seconds! AI-powered analysis for curly, wavy, straight & coily hair. Trusted by 50,000+ users." />
+        <meta property="og:image" content="https://hairgen.com/og-image.jpg" />
+        <meta property="og:site_name" content="HairGen" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Hair Routine Generator by Hair Type & Climate | HairGen" />
+        <meta name="twitter:description" content="Get your FREE personalized hair care routine in 60 seconds! AI-powered analysis for all hair types. Start now!" />
+        <meta name="twitter:image" content="https://hairgen.com/twitter-image.jpg" />
+        
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
         </script>
@@ -173,13 +218,13 @@ const Home = () => {
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                  Free Hair Routine Generator{' '}
+                  AI Hair Routine Generator{' '}
                   <span className="bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent">
-                    (AI-Powered)
+                    by Hair Type & Climate
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600">
-                  Build a fully personalized hair care routine in seconds. Our AI analyzes your hair type, porosity, and goals to create a custom day-by-day plan just for you.
+                <p className="text-xl text-gray-600 hero-description">
+                  Get your personalized hair care routine in 60 seconds. Our AI analyzes your hair type (1a-4c), porosity, and local climate to create a custom day-by-day plan tailored just for you.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/quiz">
