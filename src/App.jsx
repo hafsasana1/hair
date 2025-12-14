@@ -28,6 +28,7 @@ import HeatDamageProtection from '@/pages/blog/HeatDamageProtection';
 import HairTypesGuide from '@/pages/blog/HairTypesGuide';
 import SeasonalHairCare from '@/pages/blog/SeasonalHairCare';
 import DIYHairMasks from '@/pages/blog/DIYHairMasks';
+import HairGrowthGuide from '@/pages/blog/HairGrowthGuide';
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
               <Route path="/blog/hair-types-guide" element={<HairTypesGuide />} />
               <Route path="/blog/seasonal-hair-care" element={<SeasonalHairCare />} />
               <Route path="/blog/diy-hair-masks" element={<DIYHairMasks />} />
+              <Route path="/blog/hair-growth-guide" element={<HairGrowthGuide />} />
             </Routes>
           </main>
           <Footer />

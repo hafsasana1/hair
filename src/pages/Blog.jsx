@@ -71,6 +71,17 @@ const blogPosts = [
     slug: '/blog/diy-hair-masks',
     image: '/images/blog/diy_hair_mask_ingredients.webp',
     wordCount: '3,800+'
+  },
+  {
+    id: 7,
+    title: 'Complete Guide to Healthy Hair Growth: Science-Backed Tips',
+    excerpt: 'Discover proven methods to accelerate hair growth naturally. Learn about the hair growth cycle, best nutrients, scalp care, and treatments backed by science for faster, thicker, healthier hair.',
+    date: '2025-12-14',
+    readTime: '25 min read',
+    category: 'Hair Science',
+    slug: '/blog/hair-growth-guide',
+    image: '/images/blog/healthy_hair_growth_results.webp',
+    wordCount: '4,500+'
   }
 ];
 
