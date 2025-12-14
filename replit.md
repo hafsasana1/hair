@@ -85,6 +85,19 @@ The blog section contains comprehensive SEO-optimized articles located in `src/p
    - Extensive internal linking to related hair routine pages
    - External links to dermatology and scientific sources
 
+6. **DIY Hair Masks Guide** (`/blog/diy-hair-masks`) - 3,800+ words (Added Dec 14, 2025)
+   - 25+ homemade hair mask recipes for every hair type
+   - Masks for dry, oily, damaged, color-treated, curly hair
+   - Hair growth stimulating masks with scientific backing
+   - Frizz control treatments
+   - Complete ingredient guide with benefits table
+   - Step-by-step application instructions
+   - 8 FAQs with schema markup
+   - Recipe schema for rich snippets
+   - HowTo schema for search visibility
+   - Internal linking to all related hair routine pages
+   - External links to scientific studies (PubMed)
+
 ### SEO Features
 - High-CTR META titles and descriptions
 - Open Graph tags for social sharing

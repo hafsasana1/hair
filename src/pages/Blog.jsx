@@ -63,14 +63,14 @@ const blogPosts = [
   },
   {
     id: 6,
-    title: 'DIY Hair Masks: Recipes for Every Hair Type',
-    excerpt: 'Easy-to-make hair masks using ingredients from your kitchen for amazing results. Customized recipes for dry, oily, damaged, and color-treated hair.',
-    date: '2025-11-25',
-    readTime: '9 min read',
+    title: 'DIY Hair Masks: 25+ Recipes for Every Hair Type',
+    excerpt: 'Transform your hair with 25+ homemade hair mask recipes using kitchen ingredients. Customized treatments for dry, oily, damaged, color-treated, and curly hair with step-by-step instructions.',
+    date: '2025-12-14',
+    readTime: '22 min read',
     category: 'DIY Care',
-    slug: null,
-    image: '/images/blog/natural_hair_care_in_7f0796e3.webp',
-    wordCount: 'Coming Soon'
+    slug: '/blog/diy-hair-masks',
+    image: '/images/blog/diy_hair_mask_ingredients.webp',
+    wordCount: '3,800+'
   }
 ];
 
