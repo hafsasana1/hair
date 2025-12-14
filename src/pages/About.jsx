@@ -201,7 +201,7 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <img alt="Hair Routine Generator team and technology" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1684196508688-4d1408bc5126" />
+                <img alt="Hair Routine Generator team and technology" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1684196508688-4d1408bc5126" loading="lazy" />
               </motion.div>
             </div>
           </div>
@@ -235,6 +235,7 @@ const About = () => {
                     src={expert.image}
                     alt={expert.name}
                     className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-green-100"
+                    loading="lazy"
                   />
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{expert.name}</h3>
                   <p className="text-green-600 font-semibold mb-3">{expert.title}</p>

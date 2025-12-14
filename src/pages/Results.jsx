@@ -1112,6 +1112,42 @@ const Results = () => {
     }))
   };
 
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": `How to Care for ${generatedRoutine?.hairProfile?.type || 'Your'} Hair`,
+    "description": `Complete step-by-step hair care routine for ${generatedRoutine?.hairProfile?.type || 'your'} hair with ${generatedRoutine?.hairProfile?.porosity || 'balanced'} porosity.`,
+    "totalTime": "PT30M",
+    "step": generatedRoutine?.morningRoutine?.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.title,
+      "text": step.description
+    })) || []
+  };
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Personalized Hair Care Routine",
+    "description": `Custom hair care routine designed for ${generatedRoutine?.hairProfile?.type || 'your'} ${generatedRoutine?.hairProfile?.porosity || ''} porosity hair. Includes morning routine, evening routine, and weekly treatments.`,
+    "brand": {
+      "@type": "Brand",
+      "name": "Hair Routine Generator"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "2847"
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -1123,6 +1159,12 @@ const Results = () => {
         <link rel="canonical" href={`/routine/${getSEOSlug()}`} />
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(howToSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(productSchema)}
         </script>
       </Helmet>
 

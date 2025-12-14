@@ -258,7 +258,7 @@ const Home = () => {
                 className="relative"
               >
                 <div className="relative z-10">
-                  <img alt="Woman with beautiful healthy hair" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1608875848903-06eec0bd71e2" />
+                  <img alt="Woman with beautiful healthy hair" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1608875848903-06eec0bd71e2" loading="lazy" />
                 </div>
                 <div className="absolute -top-4 -right-4 w-72 h-72 bg-green-200 rounded-full blur-3xl opacity-50 -z-10"></div>
                 <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-yellow-200 rounded-full blur-3xl opacity-50 -z-10"></div>
@@ -380,7 +380,7 @@ const Home = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <img alt="Hair care products and routine" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1686121544192-6112bb5ffded" />
+                <img alt="Hair care products and routine" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1686121544192-6112bb5ffded" loading="lazy" />
               </motion.div>
 
               <motion.div
