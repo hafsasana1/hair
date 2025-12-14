@@ -202,7 +202,7 @@ const HairTypesGuide = () => {
               <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4" />
-                  <span>Updated: December 14, 2024</span>
+                  <span>Recently Updated</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-4 h-4" />

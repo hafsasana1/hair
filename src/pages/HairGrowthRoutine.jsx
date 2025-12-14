@@ -132,7 +132,7 @@ const HairGrowthRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Hair Growth Routine: Science-Backed Tips for Longer, Thicker Hair | 2024</title>
+        <title>Hair Growth Routine: Science-Backed Tips for Longer, Thicker Hair</title>
         <meta name="description" content="Discover proven hair growth techniques backed by science. Learn about the hair growth cycle, essential nutrients, scalp massage, and how to maximize your growth potential. Free personalized routine!" />
         <meta name="keywords" content="hair growth routine, how to grow hair faster, hair growth tips, scalp massage for hair growth, biotin for hair, rosemary oil hair growth, hair length retention" />
         <link rel="canonical" href="https://hairgen.com/hair-growth-routine" />

@@ -122,7 +122,7 @@ const WavyHairRoutine2B = () => {
   return (
     <>
       <Helmet>
-        <title>Wavy Hair Routine (2A-2C): Complete Care Guide for Beautiful Waves | 2024</title>
+        <title>Wavy Hair Routine (2A-2C): Complete Care Guide for Beautiful Waves</title>
         <meta name="description" content="Discover the perfect wavy hair routine for 2A, 2B, and 2C hair types. Expert tips on products, styling techniques, and daily care for frizz-free, defined waves. Free personalized routine!" />
         <meta name="keywords" content="wavy hair routine, 2A hair care, 2B hair routine, 2C wavy hair, wavy hair products, how to style wavy hair, wavy hair tips, reduce frizz wavy hair" />
         <link rel="canonical" href="https://hairgen.com/hair-routine-for-wavy-hair" />
