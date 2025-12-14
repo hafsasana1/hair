@@ -90,32 +90,32 @@ const Contact = () => {
       </Helmet>
 
       <div className="min-h-screen bg-white">
-        <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-yellow-50 to-white py-20">
-          <div className="container mx-auto px-4 max-w-6xl">
+        <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-yellow-50 to-white py-10">
+          <div className="container mx-auto px-4 max-w-5xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-center space-y-6"
+              className="text-center space-y-4"
             >
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-yellow-400 rounded-full flex items-center justify-center mx-auto">
-                <Mail className="w-8 h-8 text-white" />
+              <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-yellow-400 rounded-full flex items-center justify-center mx-auto">
+                <Mail className="w-4 h-4 text-white" />
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900">
+              <h1 className="text-xl md:text-2xl font-bold text-gray-900">
                 Get in{' '}
                 <span className="bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent">
                   Touch
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Have questions about your hair care routine? Need personalized advice? Our expert team is here to help you achieve your hair goals.
+              <p className="text-sm text-gray-600 max-w-xl mx-auto">
+                Have questions about your hair care routine? Need personalized advice? Our expert team is here to help.
               </p>
             </motion.div>
           </div>
         </section>
 
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <section className="py-10 bg-white">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="grid md:grid-cols-3 gap-5 mb-10">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
@@ -123,29 +123,29 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-green-50 to-yellow-50 rounded-2xl p-8 text-center space-y-4 hover:shadow-lg transition-shadow"
+                  className="bg-gradient-to-br from-green-50 to-yellow-50 rounded-xl p-5 text-center space-y-3 hover:shadow-lg transition-shadow"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-yellow-400 rounded-xl flex items-center justify-center mx-auto">
-                    <info.icon className="w-7 h-7 text-white" />
+                  <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-yellow-400 rounded-lg flex items-center justify-center mx-auto">
+                    <info.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">{info.title}</h3>
-                  <p className="text-green-600 font-semibold">{info.details}</p>
-                  <p className="text-gray-600 text-sm">{info.description}</p>
+                  <h3 className="text-base font-bold text-gray-900">{info.title}</h3>
+                  <p className="text-green-600 font-semibold text-sm">{info.details}</p>
+                  <p className="text-gray-600 text-xs">{info.description}</p>
                 </motion.div>
               ))}
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="space-y-8"
+                className="space-y-6"
               >
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
-                  <p className="text-gray-600">
-                    Fill out the form below and our team will get back to you within 24 hours. We're committed to providing personalized support for all your hair care needs.
+                  <h2 className="text-xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                  <p className="text-gray-600 text-sm">
+                    Fill out the form below and our team will get back to you within 24 hours.
                   </p>
                 </div>
 
@@ -153,10 +153,10 @@ const Contact = () => {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center space-y-4"
+                    className="bg-green-50 border border-green-200 rounded-xl p-5 text-center space-y-3"
                   >
-                    <CheckCircle className="w-16 h-16 text-green-500 mx-auto" />
-                    <h3 className="text-2xl font-bold text-gray-900">Message Sent!</h3>
+                    <CheckCircle className="w-12 h-12 text-green-500 mx-auto" />
+                    <h3 className="text-lg font-bold text-gray-900">Message Sent!</h3>
                     <p className="text-gray-600">
                       Thank you for reaching out. Our team will review your message and respond within 24 hours.
                     </p>
@@ -258,8 +258,8 @@ const Contact = () => {
                 viewport={{ once: true }}
                 className="space-y-8"
               >
-                <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg space-y-6">
-                  <h3 className="text-2xl font-bold text-gray-900">Frequently Asked Questions</h3>
+                <div className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-5 shadow-lg space-y-4">
+                  <h3 className="text-lg font-bold text-gray-900">Frequently Asked Questions</h3>
                   
                   <div className="space-y-4">
                     <div className="border-b border-gray-200 pb-4">
@@ -284,10 +284,10 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-500 to-yellow-400 rounded-2xl p-8 text-white">
-                  <h3 className="text-2xl font-bold mb-4">Quick Hair Assessment</h3>
-                  <p className="mb-6 opacity-90">
-                    Want instant, personalized hair care recommendations? Take our free AI-powered quiz and get your custom routine in minutes.
+                <div className="bg-gradient-to-r from-green-500 to-yellow-400 rounded-xl p-5 text-white">
+                  <h3 className="text-lg font-bold mb-3">Quick Hair Assessment</h3>
+                  <p className="mb-4 opacity-90 text-sm">
+                    Want instant, personalized hair care recommendations? Take our free quiz.
                   </p>
                   <a href="/quiz">
                     <Button className="bg-white text-green-600 hover:bg-gray-100 w-full">

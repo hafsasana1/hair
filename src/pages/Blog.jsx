@@ -130,24 +130,24 @@ const Blog = () => {
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
 
-      <div className="min-h-screen bg-white py-12">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <div className="min-h-screen bg-white py-8">
+        <div className="container mx-auto px-4 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-16 space-y-4"
+            className="text-center mb-10 space-y-3"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
               Hair Care <span className="bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent">Blog</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Science-backed tips, expert guides, and proven techniques to help you achieve your healthiest, most beautiful hair ever
+            <p className="text-sm text-gray-600 max-w-2xl mx-auto">
+              Science-backed tips, expert guides, and proven techniques for healthier hair
             </p>
-            <div className="flex flex-wrap justify-center gap-3 pt-4">
-              <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">Hair Science</span>
-              <span className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">Natural Care</span>
-              <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">DIY Recipes</span>
-              <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Expert Tips</span>
+            <div className="flex flex-wrap justify-center gap-2 pt-2">
+              <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Hair Science</span>
+              <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium">Natural Care</span>
+              <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">DIY Recipes</span>
+              <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Expert Tips</span>
             </div>
           </motion.div>
 

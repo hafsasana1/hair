@@ -216,19 +216,19 @@ const Quiz = () => {
         <meta name="description" content="Take our comprehensive 8-question quiz to get your personalized hair care routine powered by AI." />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-green-50 via-yellow-50 to-white py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-yellow-50 to-white py-8">
+        <div className="container mx-auto px-4 max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="space-y-8"
+            className="space-y-5"
           >
             {/* Header */}
-            <div className="text-center space-y-4">
-              <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
+            <div className="text-center space-y-2">
+              <h1 className="text-xl md:text-2xl font-bold text-gray-900">
                 Discover Your Perfect Hair Routine
               </h1>
-              <p className="text-lg text-gray-600">
+              <p className="text-sm text-gray-600">
                 Answer {totalSteps} questions to get your personalized recommendations
               </p>
             </div>
