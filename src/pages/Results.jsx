@@ -77,7 +77,7 @@ const profileIconMap = {
     damage: { icon: AlertTriangle, color: 'text-red-500', bg: 'bg-red-100' },
     dandruff: { icon: CircleSlash, color: 'text-slate-500', bg: 'bg-slate-100' },
     oiliness: { icon: Droplets, color: 'text-lime-600', bg: 'bg-lime-100' },
-    hairLoss: { icon: TrendingDown, color: 'text-rose-500', bg: 'bg-rose-100' },
+    hairloss: { icon: TrendingDown, color: 'text-rose-500', bg: 'bg-rose-100' },
     dullness: { icon: Sparkles, color: 'text-amber-500', bg: 'bg-amber-100' },
     none: { icon: ThumbsUp, color: 'text-green-500', bg: 'bg-green-100' }
   }
@@ -87,9 +87,9 @@ const profileIconMap = {
 const getFAQsForProfile = (hairProfile, answers) => {
   const faqs = [];
   
-  // Hair Type FAQs
-  const hairType = answers?.hairType || hairProfile?.type;
-  if (hairType === 'straight' || hairType === 'Straight') {
+  // Hair Type FAQs - normalize to lowercase
+  const hairType = (answers?.hairType || hairProfile?.type || '').toLowerCase();
+  if (hairType === 'straight') {
     faqs.push({
       question: 'How can I add volume to my straight hair?',
       answer: 'Use volumizing shampoos and conditioners, apply mousse at the roots, blow-dry upside down, and consider layered haircuts to add natural movement and body.'
@@ -127,8 +127,8 @@ const getFAQsForProfile = (hairProfile, answers) => {
     });
   }
 
-  // Porosity FAQs
-  const porosity = answers?.porosity || hairProfile?.porosity;
+  // Porosity FAQs - normalize to lowercase
+  const porosity = (answers?.porosity || hairProfile?.porosity || '').toLowerCase();
   if (porosity === 'low') {
     faqs.push({
       question: 'Why won\'t products absorb into my low porosity hair?',
@@ -141,8 +141,8 @@ const getFAQsForProfile = (hairProfile, answers) => {
     });
   }
 
-  // Concerns FAQs
-  const concerns = answers?.concerns || [];
+  // Concerns FAQs - normalize to lowercase
+  const concerns = (answers?.concerns || []).map(c => (c || '').toLowerCase());
   if (concerns.includes('frizz')) {
     faqs.push({
       question: 'What causes frizz and how can I prevent it?',
@@ -155,15 +155,15 @@ const getFAQsForProfile = (hairProfile, answers) => {
       answer: 'Use protein treatments to strengthen, deep condition weekly, trim split ends regularly, minimize heat styling, and protect hair from sun and chlorine exposure.'
     });
   }
-  if (concerns.includes('hairLoss')) {
+  if (concerns.includes('hairloss')) {
     faqs.push({
       question: 'What can I do about hair thinning?',
       answer: 'Massage your scalp to increase blood flow, use gentle hair care products, avoid tight hairstyles, ensure adequate protein and iron in your diet, and consult a dermatologist if concerned.'
     });
   }
 
-  // Climate FAQs
-  const climate = answers?.climate || hairProfile?.climate;
+  // Climate FAQs - normalize to lowercase
+  const climate = (answers?.climate || hairProfile?.climate || '').toLowerCase();
   if (climate === 'humid') {
     faqs.push({
       question: 'How do I manage my hair in humid weather?',
@@ -283,11 +283,736 @@ const Results = () => {
 
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    const hairType = answers.hairType || 'Not specified';
-    const porosity = answers.porosity || 'Not specified';
-    const density = answers.density || 'Not specified';
-    const concerns = Array.isArray(answers.concerns) ? answers.concerns : [];
-    const climate = answers.climate || 'Not specified';
+    const hairType = (answers.hairType || 'curly').toLowerCase();
+    const porosity = (answers.porosity || 'medium').toLowerCase();
+    const density = (answers.density || 'medium').toLowerCase();
+    const concerns = Array.isArray(answers.concerns) ? answers.concerns.map(c => c.toLowerCase()) : [];
+    const climate = (answers.climate || 'temperate').toLowerCase();
+
+    // Dynamic morning routine based on hair type and climate
+    const getMorningRoutine = () => {
+      const routines = {
+        straight: [
+          {
+            step: 1,
+            title: 'Gentle Brush Through',
+            description: climate === 'humid' 
+              ? 'Use a boar bristle brush to distribute natural oils and smooth the cuticle to combat humidity.'
+              : 'Gently brush hair from roots to ends to distribute natural oils evenly.',
+            icon: 'brush'
+          },
+          {
+            step: 2,
+            title: 'Volume Boost',
+            description: density === 'thin' 
+              ? 'Apply volumizing mousse at the roots and flip head upside down while blow-drying for maximum lift.'
+              : 'Apply a light texturizing spray at the roots for natural-looking volume.',
+            icon: 'sparkle'
+          },
+          {
+            step: 3,
+            title: 'Smoothing Treatment',
+            description: climate === 'humid'
+              ? 'Apply anti-humidity serum focusing on mid-lengths to ends to prevent frizz and flyaways.'
+              : climate === 'dry'
+              ? 'Use a hydrating leave-in spray to add moisture and prevent static.'
+              : 'Apply a light smoothing serum for a polished, sleek finish.',
+            icon: 'bottle'
+          },
+          {
+            step: 4,
+            title: 'Heat Protection',
+            description: 'If using heat tools, apply heat protectant spray before styling. Consider a sleek blowout or smooth iron finish.',
+            icon: 'shield'
+          }
+        ],
+        wavy: [
+          {
+            step: 1,
+            title: 'Refresh Waves',
+            description: climate === 'humid'
+              ? 'Lightly mist with water mixed with a drop of anti-frizz serum to refresh waves without adding humidity sensitivity.'
+              : 'Spritz hair with water or a wave-refreshing spray to reactivate your natural pattern.',
+            icon: 'droplet'
+          },
+          {
+            step: 2,
+            title: 'Wave Enhancer',
+            description: porosity === 'low'
+              ? 'Apply a lightweight mousse or sea salt spray - heavier products will weigh down low porosity waves.'
+              : 'Scrunch in a wave-enhancing cream or mousse to define and hold your natural waves.',
+            icon: 'waves'
+          },
+          {
+            step: 3,
+            title: 'Scrunch & Define',
+            description: density === 'thick' 
+              ? 'Section hair and scrunch each section upward to encourage wave formation without clumping.'
+              : 'Gently scrunch waves upward to encourage definition and natural bounce.',
+            icon: 'sparkle'
+          },
+          {
+            step: 4,
+            title: 'Air Dry or Diffuse',
+            description: climate === 'cold'
+              ? 'Diffuse on low heat to speed up drying and prevent going outside with wet hair.'
+              : 'Let waves air dry naturally or diffuse on low heat. Avoid touching until completely dry.',
+            icon: 'wind'
+          }
+        ],
+        curly: [
+          {
+            step: 1,
+            title: 'Hydration Mist',
+            description: climate === 'dry'
+              ? 'Generously mist curls with water mixed with leave-in conditioner to combat dry climate dehydration.'
+              : 'Lightly mist curls with water or a curl refresher spray to reactivate products.',
+            icon: 'droplet'
+          },
+          {
+            step: 2,
+            title: 'Leave-In Application',
+            description: porosity === 'high'
+              ? 'Apply a creamy leave-in conditioner, focusing on the ends where high porosity hair loses moisture fastest.'
+              : porosity === 'low'
+              ? 'Use a lightweight, water-based leave-in spray that won\'t cause buildup on low porosity curls.'
+              : 'Work leave-in conditioner through damp curls, focusing on mid-lengths to ends.',
+            icon: 'bottle'
+          },
+          {
+            step: 3,
+            title: 'Curl Definition',
+            description: climate === 'humid'
+              ? 'Apply a strong-hold gel with anti-humidity properties to lock in curl definition and fight frizz all day.'
+              : 'Apply curl cream or gel using praying hands method, then scrunch to encourage curl clumping.',
+            icon: 'sparkle'
+          },
+          {
+            step: 4,
+            title: 'Dry & Set',
+            description: density === 'thick'
+              ? 'Diffuse in sections on medium heat to ensure all curls dry evenly and reduce drying time.'
+              : 'Diffuse on low heat or air dry. Once fully dry, scrunch out any gel cast for soft, defined curls.',
+            icon: 'wind'
+          }
+        ],
+        coily: [
+          {
+            step: 1,
+            title: 'Deep Moisture Refresh',
+            description: climate === 'dry'
+              ? 'Saturate coils with a water-based moisturizing spray - dry climates require extra hydration for coily hair.'
+              : 'Dampen coils with water or a moisturizing refresher spray to prep for products.',
+            icon: 'droplet'
+          },
+          {
+            step: 2,
+            title: 'LOC/LCO Method',
+            description: porosity === 'low'
+              ? 'Apply liquid, then oil, then cream (LOC). Low porosity coils absorb better when water-based products go first.'
+              : porosity === 'high'
+              ? 'Apply liquid, cream, then oil (LCO). High porosity coils need oil last to seal in moisture.'
+              : 'Layer products: apply leave-in, then cream, then seal with oil for maximum moisture retention.',
+            icon: 'bottle'
+          },
+          {
+            step: 3,
+            title: 'Coil Definition',
+            description: density === 'thick'
+              ? 'Section hair into smaller parts and use finger coiling or twist-outs for defined coils in thick hair.'
+              : 'Define coils with a curl cream or butter, using finger coiling on individual coils for maximum definition.',
+            icon: 'sparkle'
+          },
+          {
+            step: 4,
+            title: 'Seal & Protect',
+            description: climate === 'cold'
+              ? 'Apply a heavier sealing oil and cover with a satin-lined cap when going outside to protect from cold, dry air.'
+              : 'Seal with a light oil to lock in moisture. Consider a protective style to minimize manipulation.',
+            icon: 'shield'
+          }
+        ]
+      };
+      return routines[hairType] || routines.curly;
+    };
+
+    // Dynamic evening routine based on hair type
+    const getEveningRoutine = () => {
+      const routines = {
+        straight: [
+          {
+            step: 1,
+            title: 'Gentle Detangle',
+            description: 'Brush through hair gently to remove any tangles and distribute natural oils from roots to ends.',
+            icon: 'brush'
+          },
+          {
+            step: 2,
+            title: 'Loose Styling',
+            description: density === 'thin'
+              ? 'Tie hair in a very loose, low ponytail or leave it down to avoid creasing fine hair.'
+              : 'Braid loosely or use a silk scrunchie for a low ponytail to prevent kinks and breakage.',
+            icon: 'crown'
+          },
+          {
+            step: 3,
+            title: 'Silk Protection',
+            description: 'Sleep on a silk or satin pillowcase to reduce friction and prevent hair from getting oily or tangled.',
+            icon: 'shield'
+          }
+        ],
+        wavy: [
+          {
+            step: 1,
+            title: 'Loose Pineapple',
+            description: 'Gather waves into a very loose, high ponytail using a silk scrunchie to preserve wave pattern overnight.',
+            icon: 'crown'
+          },
+          {
+            step: 2,
+            title: 'Refresh Ends',
+            description: concerns.includes('dryness')
+              ? 'Apply a small amount of hair oil to dry ends to prevent overnight moisture loss.'
+              : 'Lightly mist ends if they feel dry - waves benefit from overnight hydration.',
+            icon: 'droplets'
+          },
+          {
+            step: 3,
+            title: 'Satin Sleep',
+            description: 'Use a satin bonnet or pillowcase to reduce friction and maintain wave definition while you sleep.',
+            icon: 'shield'
+          }
+        ],
+        curly: [
+          {
+            step: 1,
+            title: 'Pineapple Method',
+            description: density === 'thick'
+              ? 'Create 2-3 pineapples (loose high ponytails) to prevent curls from flattening - single pineapple can be too heavy for thick curls.'
+              : 'Gather curls into a loose, high ponytail on top of your head to preserve curl pattern overnight.',
+            icon: 'crown'
+          },
+          {
+            step: 2,
+            title: 'Moisture Seal',
+            description: porosity === 'high'
+              ? 'Apply a sealing oil to ends to prevent overnight moisture loss common in high porosity curls.'
+              : 'Apply a light moisture spray or oil to any dry areas before bed.',
+            icon: 'droplets'
+          },
+          {
+            step: 3,
+            title: 'Satin Protection',
+            description: 'Use a satin or silk bonnet, scarf, or pillowcase to reduce friction and maintain curl definition.',
+            icon: 'shield'
+          }
+        ],
+        coily: [
+          {
+            step: 1,
+            title: 'Protective Styling',
+            description: 'Twist or braid coils into large sections to protect them overnight and make morning styling easier.',
+            icon: 'crown'
+          },
+          {
+            step: 2,
+            title: 'Heavy Moisture Seal',
+            description: climate === 'dry'
+              ? 'Apply shea butter or a heavy cream to seal in moisture - coily hair in dry climates needs extra overnight protection.'
+              : 'Apply a medium-weight oil or butter to seal ends and protect coils overnight.',
+            icon: 'droplets'
+          },
+          {
+            step: 3,
+            title: 'Full Satin Coverage',
+            description: 'Wear a satin bonnet or wrap hair in a satin scarf to fully protect coils from friction and moisture loss.',
+            icon: 'shield'
+          },
+          {
+            step: 4,
+            title: 'Scalp Treatment',
+            description: concerns.includes('hairloss') || concerns.includes('dryness')
+              ? 'Apply a few drops of scalp oil (rosemary, peppermint) and massage gently to promote circulation and growth.'
+              : 'Optional: massage scalp with a light oil to promote healthy hair growth.',
+            icon: 'target'
+          }
+        ]
+      };
+      return routines[hairType] || routines.curly;
+    };
+
+    // Dynamic weekly schedule based on hair type, porosity, and climate
+    const getWeeklySchedule = () => {
+      const washFrequency = {
+        straight: { day: 'Every 2-3 Days', title: 'Wash Day' },
+        wavy: { day: 'Every 3-4 Days', title: 'Wash Day' },
+        curly: { day: 'Day 1 (Weekly)', title: 'Wash Day' },
+        coily: { day: 'Every 7-10 Days', title: 'Wash Day' }
+      };
+
+      const getWashDayTasks = () => {
+        const tasks = [];
+        
+        // Shampoo recommendation
+        if (porosity === 'low') {
+          tasks.push('Use clarifying shampoo to remove product buildup from low porosity hair');
+        } else if (concerns.includes('oiliness')) {
+          tasks.push('Use a gentle clarifying or balancing shampoo for oily scalp');
+        } else if (hairType === 'coily' || hairType === 'curly') {
+          tasks.push('Use a sulfate-free, moisturizing shampoo or co-wash');
+        } else {
+          tasks.push('Use a gentle, sulfate-free shampoo');
+        }
+
+        // Conditioning
+        if (hairType === 'straight') {
+          tasks.push('Apply conditioner to ends only - avoid roots to prevent oiliness');
+        } else if (density === 'thin') {
+          tasks.push('Use lightweight conditioner, focusing on ends to avoid weighing down fine hair');
+        } else {
+          tasks.push('Apply conditioner generously from mid-lengths to ends, detangle with wide-tooth comb');
+        }
+
+        // Rinse technique
+        if (porosity === 'high') {
+          tasks.push('Rinse with cold water to help seal the cuticle and lock in moisture');
+        } else {
+          tasks.push('Rinse with cool water to seal cuticles and add shine');
+        }
+
+        // Styling based on hair type
+        if (hairType === 'straight') {
+          tasks.push('Apply lightweight serum or heat protectant before styling');
+        } else if (hairType === 'wavy') {
+          tasks.push('Apply wave cream or mousse to damp hair and scrunch gently');
+        } else {
+          tasks.push('Apply styling products to soaking wet hair for best curl definition');
+        }
+
+        return tasks;
+      };
+
+      const getRefreshDayTasks = () => {
+        if (hairType === 'straight') {
+          return [
+            'Use dry shampoo at roots to absorb oil and add volume',
+            'Brush through to distribute and remove excess product',
+            'Touch up any areas with a flat iron if needed',
+            'Apply a light shine spray for a polished finish'
+          ];
+        } else if (hairType === 'wavy') {
+          return [
+            'Spray waves with water or wave refresher',
+            'Scrunch gently to reactivate wave pattern',
+            'Add a small amount of mousse to flat sections',
+            'Air dry or diffuse briefly to set'
+          ];
+        } else if (hairType === 'curly') {
+          return [
+            'Mist curls with water mixed with leave-in conditioner',
+            'Scrunch upward to reactivate curl clumps',
+            'Apply a small amount of gel to frizzy areas',
+            'Diffuse briefly or air dry without touching'
+          ];
+        } else {
+          return [
+            'Spray coils with a moisturizing refresher or water mixture',
+            'Reapply a small amount of leave-in cream to dry areas',
+            'Finger coil or twist any undefined sections',
+            'Seal with a light oil to lock in the refresh'
+          ];
+        }
+      };
+
+      const getDeepConditionTasks = () => {
+        const tasks = [];
+        
+        if (porosity === 'low') {
+          tasks.push('Apply deep conditioner to clean, damp hair');
+          tasks.push('Use a heat cap, steamer, or warm towel for 20-30 minutes to open cuticles');
+          tasks.push('Choose a protein-free, humectant-rich mask for low porosity hair');
+        } else if (porosity === 'high') {
+          tasks.push('Apply protein-rich deep conditioning mask to strengthen porous hair');
+          tasks.push('Leave on for 30-45 minutes - high porosity hair can absorb more');
+          tasks.push('Follow with a moisturizing conditioner to add softness');
+        } else {
+          tasks.push('Apply deep conditioning mask to clean, damp hair');
+          tasks.push('Leave on for 20-30 minutes under a plastic cap');
+          tasks.push('Alternate between protein and moisture masks for balance');
+        }
+        
+        tasks.push('Rinse with cool water and follow with leave-in conditioner');
+        return tasks;
+      };
+
+      const schedule = [
+        {
+          day: washFrequency[hairType]?.day || 'Day 1',
+          title: washFrequency[hairType]?.title || 'Wash Day',
+          description: hairType === 'coily' 
+            ? 'Gentle cleansing routine with plenty of moisture and careful detangling.'
+            : hairType === 'curly'
+            ? 'Complete cleansing with focus on hydration and curl definition.'
+            : hairType === 'wavy'
+            ? 'Balanced cleansing to enhance natural wave pattern.'
+            : 'Cleansing routine to maintain sleek, healthy straight hair.',
+          tasks: getWashDayTasks(),
+          color: 'green'
+        },
+        {
+          day: hairType === 'straight' ? 'Day 2' : hairType === 'wavy' ? 'Day 2-3' : 'Day 3-4',
+          title: 'Refresh Day',
+          description: hairType === 'straight'
+            ? 'Maintain freshness and style without washing.'
+            : 'Revive your natural texture without a full wash.',
+          tasks: getRefreshDayTasks(),
+          color: 'blue'
+        },
+        {
+          day: hairType === 'coily' ? 'Weekly' : hairType === 'curly' ? 'Day 7' : 'Weekly',
+          title: 'Deep Conditioning',
+          description: climate === 'dry'
+            ? 'Extra intensive moisture treatment to combat dry climate effects.'
+            : 'Deep moisture treatment for healthy, nourished hair.',
+          tasks: getDeepConditionTasks(),
+          color: 'purple'
+        }
+      ];
+
+      // Add protein treatment for high porosity or damaged hair
+      if (porosity === 'high' || concerns.includes('damage')) {
+        schedule.push({
+          day: 'Bi-weekly',
+          title: 'Protein Treatment',
+          description: 'Strengthen hair and fill gaps in the cuticle with protein.',
+          tasks: [
+            'Apply protein treatment to clean, damp hair',
+            'Leave on for 10-20 minutes (follow product instructions)',
+            'Rinse thoroughly - protein overload can cause brittleness',
+            'Always follow with a moisturizing conditioner'
+          ],
+          color: 'amber'
+        });
+      }
+
+      return schedule;
+    };
+
+    // Dynamic product recommendations
+    const getProductRecommendations = () => {
+      const products = [];
+
+      // Shampoo
+      let shampooDesc = '';
+      if (hairType === 'straight' && concerns.includes('oiliness')) {
+        shampooDesc = 'Clarifying or balancing shampoo to control oil while maintaining moisture';
+      } else if (hairType === 'coily') {
+        shampooDesc = 'Ultra-moisturizing sulfate-free shampoo or cleansing conditioner (co-wash)';
+      } else if (porosity === 'low') {
+        shampooDesc = 'Clarifying shampoo (use weekly) to remove buildup, plus gentle daily cleanser';
+      } else if (porosity === 'high') {
+        shampooDesc = 'Creamy, sulfate-free moisturizing shampoo to prevent further cuticle damage';
+      } else {
+        shampooDesc = 'Gentle sulfate-free shampoo for balanced, healthy cleansing';
+      }
+      products.push({ category: 'Shampoo', description: shampooDesc, icon: 'bottle' });
+
+      // Conditioner
+      let condDesc = '';
+      if (density === 'thin') {
+        condDesc = 'Lightweight, volumizing conditioner - apply to ends only to avoid weighing down fine hair';
+      } else if (hairType === 'coily') {
+        condDesc = 'Rich, ultra-moisturizing conditioner with slip for easy detangling of coily hair';
+      } else if (porosity === 'high') {
+        condDesc = 'Protein-infused conditioner to strengthen and repair high porosity hair';
+      } else {
+        condDesc = 'Hydrating conditioner with natural oils for smooth, manageable hair';
+      }
+      products.push({ category: 'Conditioner', description: condDesc, icon: 'jar' });
+
+      // Styler based on hair type
+      let stylerDesc = '';
+      if (hairType === 'straight') {
+        stylerDesc = density === 'thin'
+          ? 'Volumizing mousse and lightweight smoothing serum for body without weight'
+          : 'Smoothing serum or cream for sleek, polished finish with heat protection';
+      } else if (hairType === 'wavy') {
+        stylerDesc = climate === 'humid'
+          ? 'Sea salt spray or wave cream with anti-humidity properties to hold waves in moisture'
+          : 'Lightweight mousse or wave-enhancing cream for natural, touchable waves';
+      } else if (hairType === 'curly') {
+        stylerDesc = climate === 'humid'
+          ? 'Strong-hold curl gel with anti-humidity technology for frizz-free, defined curls all day'
+          : 'Curl cream or gel for definition - use praying hands method then scrunch';
+      } else {
+        stylerDesc = 'Curl defining butter or cream for coily hair - provides moisture and definition without crunch';
+      }
+      products.push({ category: 'Styling Product', description: stylerDesc, icon: 'tube' });
+
+      // Oil/Serum
+      let oilDesc = '';
+      if (porosity === 'low') {
+        oilDesc = 'Lightweight oils like argan, grapeseed, or jojoba that penetrate without causing buildup';
+      } else if (porosity === 'high' || hairType === 'coily') {
+        oilDesc = 'Rich sealing oils like castor, olive, or Jamaican black castor oil to lock in moisture';
+      } else if (climate === 'humid') {
+        oilDesc = 'Anti-humidity serum that seals the cuticle and blocks moisture from entering';
+      } else {
+        oilDesc = 'Medium-weight oils like argan or sweet almond for shine and frizz control';
+      }
+      products.push({ category: 'Hair Oil', description: oilDesc, icon: 'dropper' });
+
+      // Climate-specific product
+      if (climate === 'humid') {
+        products.push({
+          category: 'Anti-Humidity Treatment',
+          description: 'Anti-humidity spray or serum with silicones to create a barrier against moisture in the air',
+          icon: 'spray'
+        });
+      } else if (climate === 'dry') {
+        products.push({
+          category: 'Hydrating Treatment',
+          description: 'Intensive moisture mask or leave-in treatment with humectants like glycerin and honey',
+          icon: 'spray'
+        });
+      } else if (climate === 'cold') {
+        products.push({
+          category: 'Protective Treatment',
+          description: 'Rich, protective hair butter or cream to shield hair from cold, dry winter air',
+          icon: 'spray'
+        });
+      }
+
+      // Concern-specific products
+      if (concerns.includes('damage')) {
+        products.push({
+          category: 'Bond Repair Treatment',
+          description: 'Bond-building treatment (like Olaplex) to repair and strengthen damaged hair bonds',
+          icon: 'shield'
+        });
+      }
+
+      if (concerns.includes('hairloss')) {
+        products.push({
+          category: 'Scalp Treatment',
+          description: 'Stimulating scalp serum with rosemary, peppermint, or caffeine to promote hair growth',
+          icon: 'target'
+        });
+      }
+
+      return products;
+    };
+
+    // Dynamic advanced tips
+    const getAdvancedTips = () => {
+      const tips = [];
+
+      // Hair type specific tip
+      const hairTypeTips = {
+        straight: {
+          title: 'Maximizing Straight Hair Potential',
+          content: density === 'thin'
+            ? 'Fine straight hair benefits from volumizing products applied at the roots. Blow dry upside down, use velcro rollers for body, and avoid heavy products that weigh hair down. Consider a layered cut for natural movement.'
+            : 'Straight hair shows damage easily, so focus on keeping it healthy and shiny. Use a boar bristle brush to distribute natural oils, apply heat protectant before any hot tools, and get regular trims to prevent split ends from traveling up the shaft.',
+          icon: 'sparkle'
+        },
+        wavy: {
+          title: 'Enhancing Your Natural Waves',
+          content: 'Wavy hair is versatile and can be styled straighter or curlier depending on technique. For more defined waves, apply products to soaking wet hair and scrunch. For looser waves, apply to damp hair and let air dry. Avoid brushing dry waves - use fingers to separate instead.',
+          icon: 'waves'
+        },
+        curly: {
+          title: 'Curl Care Essentials',
+          content: climate === 'humid'
+            ? 'In humid climates, focus on products with anti-humidity properties and strong hold. Apply gel to soaking wet hair, and don\'t touch until completely dry. The key is creating a cast that shields curls from moisture in the air.'
+            : 'The key to great curls is moisture and definition. Apply products to soaking wet hair, use the praying hands method to smooth products through, then scrunch. Never touch curls while drying - this causes frizz.',
+          icon: 'target'
+        },
+        coily: {
+          title: 'Coily Hair Wisdom',
+          content: 'Coily hair requires the most moisture of all hair types. The LOC or LCO method (Liquid, Oil, Cream or Liquid, Cream, Oil) is essential. Gentle handling is crucial - always detangle with conditioner, use fingers or wide-tooth combs only, and embrace protective styles to minimize manipulation.',
+          icon: 'crown'
+        }
+      };
+      tips.push(hairTypeTips[hairType] || hairTypeTips.curly);
+
+      // Porosity tip
+      tips.push({
+        title: 'Understanding Your Porosity',
+        content: porosity === 'low'
+          ? 'Low porosity hair has tightly sealed cuticles that resist moisture. Use heat (warm water, steamers, heat caps) when conditioning to open cuticles. Choose water-based, lightweight products. Avoid heavy butters and oils that sit on top of hair.'
+          : porosity === 'high'
+          ? 'High porosity hair absorbs moisture quickly but loses it just as fast due to gaps in the cuticle. Use the LOC/LCO method to layer products and seal moisture. Protein treatments help fill gaps. Rinse with cold water to close cuticles.'
+          : 'Medium porosity hair is well-balanced and absorbs moisture effectively. Maintain this with regular conditioning and protect from damage that could raise porosity. Most products work well for you.',
+        icon: 'droplet'
+      });
+
+      // Climate tip
+      const climateTips = {
+        humid: {
+          title: 'Humidity Defense Strategy',
+          content: `In humid climates, hair absorbs excess moisture from the air, causing frizz and loss of style. Combat this with anti-humidity products, strong-hold styling gels, and sealing oils. ${hairType === 'curly' || hairType === 'coily' ? 'Apply gel to soaking wet hair and create a strong cast to shield from humidity.' : 'Use smoothing serums with silicones to create a barrier against moisture.'}`,
+          icon: 'cloud'
+        },
+        dry: {
+          title: 'Dry Climate Hydration',
+          content: `Dry climates pull moisture from your hair, leaving it brittle and prone to breakage. Deep condition twice weekly, use humectant-rich products (glycerin, honey, aloe), and seal with oils. ${hairType === 'coily' ? 'Heavy butters like shea and mango are your friends in dry climates.' : 'Consider a humidifier in your home and protect hair when going outside.'}`,
+          icon: 'sun'
+        },
+        cold: {
+          title: 'Winter Hair Protection',
+          content: 'Cold weather brings dry indoor heat and harsh outdoor conditions. Protect hair with satin-lined hats, deep condition regularly, and seal with heavier oils. Never go outside with wet hair in winter - it can freeze and break. Focus on maintaining moisture barrier.',
+          icon: 'snowflake'
+        },
+        temperate: {
+          title: 'Seasonal Adaptation',
+          content: 'With changing seasons, your hair needs change too. Adjust your routine seasonally - lighter products in summer, richer ones in winter. Pay attention to how your hair responds to humidity and temperature changes and adapt your product lineup accordingly.',
+          icon: 'cloudsun'
+        }
+      };
+      tips.push(climateTips[climate] || climateTips.temperate);
+
+      // Concern-based tips
+      if (concerns.includes('frizz')) {
+        tips.push({
+          title: 'Frizz Control Mastery',
+          content: 'Frizz happens when hair seeks moisture from the air. Combat it by keeping hair well-moisturized, using anti-frizz products, sleeping on silk, and never touching hair while it dries. Apply products to soaking wet hair and avoid rough towel-drying - use a microfiber towel or t-shirt instead.',
+          icon: 'wind'
+        });
+      }
+
+      if (concerns.includes('damage')) {
+        tips.push({
+          title: 'Damage Recovery Plan',
+          content: 'Repair damaged hair with protein treatments every 2-4 weeks, deep conditioning weekly, and minimal heat styling. Use bond-building treatments, trim split ends regularly, and handle hair gently. Focus on preventing further damage while the healthy hair grows in.',
+          icon: 'shield'
+        });
+      }
+
+      if (concerns.includes('hairloss')) {
+        tips.push({
+          title: 'Promoting Hair Growth',
+          content: 'Stimulate hair growth by massaging your scalp daily to increase blood flow. Use gentle products, avoid tight hairstyles that pull on hair, and consider scalp serums with rosemary or peppermint oil. Ensure adequate protein, iron, and biotin in your diet. Consult a dermatologist if hair loss is significant.',
+          icon: 'target'
+        });
+      }
+
+      return tips;
+    };
+
+    // Dynamic general recommendations
+    const getRecommendations = () => {
+      const recs = [];
+
+      // Water temperature
+      if (porosity === 'low') {
+        recs.push('Use warm water when conditioning to open cuticles, then rinse with cool water');
+      } else {
+        recs.push('Use lukewarm water for washing and cool water for final rinse to seal cuticles');
+      }
+
+      // Heat styling
+      if (hairType === 'straight') {
+        recs.push('Always use heat protectant and keep flat iron temperature below 380°F for fine hair, 410°F for normal');
+      } else {
+        recs.push('Minimize heat styling - embrace your natural texture and use heatless styling methods');
+      }
+
+      // Trimming
+      if (concerns.includes('damage')) {
+        recs.push('Trim every 6-8 weeks to remove damaged ends and prevent splits from traveling');
+      } else {
+        recs.push('Trim ends every 8-12 weeks to maintain healthy hair');
+      }
+
+      // Drying
+      if (hairType === 'curly' || hairType === 'coily') {
+        recs.push('Never use a regular towel - use microfiber or a cotton t-shirt to dry hair gently');
+      } else {
+        recs.push('Pat hair dry gently with a soft towel instead of rubbing vigorously');
+      }
+
+      // Sleeping
+      recs.push('Sleep on silk or satin pillowcase to reduce friction and prevent breakage');
+
+      // Detangling
+      if (hairType === 'coily') {
+        recs.push('Only detangle when hair is saturated with conditioner - never dry detangle coily hair');
+      } else if (hairType === 'curly') {
+        recs.push('Detangle in the shower with conditioner using fingers or a wide-tooth comb');
+      } else {
+        recs.push('Brush gently starting from ends and work up to roots to prevent breakage');
+      }
+
+      // Climate specific
+      if (climate === 'humid') {
+        recs.push('Apply anti-humidity products before going outside to protect your style');
+      } else if (climate === 'dry') {
+        recs.push('Use a humidifier indoors and deep condition twice weekly in dry climates');
+      } else if (climate === 'cold') {
+        recs.push('Never go outside with wet hair in winter - always fully dry before leaving');
+      }
+
+      // Nutrition
+      recs.push('Stay hydrated and eat protein-rich foods for healthy hair growth from within');
+
+      return recs.slice(0, 8);
+    };
+
+    // Weekly treatments based on profile
+    const getWeeklyTreatments = () => {
+      const treatments = [];
+
+      treatments.push({
+        title: 'Deep Conditioning Mask',
+        description: porosity === 'low'
+          ? 'Apply a protein-free, humectant-rich mask under heat for 20-30 minutes weekly.'
+          : porosity === 'high'
+          ? 'Alternate between protein and moisture masks. Use protein bi-weekly, moisture weekly.'
+          : 'Apply a balanced hydrating mask once weekly for 20-30 minutes.',
+        frequency: 'Once per week'
+      });
+
+      if (hairType === 'coily' || concerns.includes('hairloss')) {
+        treatments.push({
+          title: 'Scalp Massage & Treatment',
+          description: 'Warm oil massage (coconut, castor, or rosemary-infused) to stimulate blood flow and promote growth.',
+          frequency: 'Twice per week'
+        });
+      } else {
+        treatments.push({
+          title: 'Scalp Care',
+          description: 'Gentle scalp massage during washing to promote circulation and healthy hair growth.',
+          frequency: 'Every wash day'
+        });
+      }
+
+      if (porosity === 'high' || concerns.includes('damage')) {
+        treatments.push({
+          title: 'Protein Treatment',
+          description: 'Protein-rich treatment to strengthen and repair damaged or high porosity hair.',
+          frequency: 'Every 2-4 weeks'
+        });
+      }
+
+      if (porosity === 'low') {
+        treatments.push({
+          title: 'Clarifying Treatment',
+          description: 'Use clarifying shampoo to remove product buildup that low porosity hair is prone to.',
+          frequency: 'Every 1-2 weeks'
+        });
+      }
+
+      if (climate === 'dry') {
+        treatments.push({
+          title: 'Intensive Moisture Treatment',
+          description: 'Hot oil treatment or overnight deep conditioning to combat dry climate effects.',
+          frequency: 'Weekly in dry weather'
+        });
+      }
+
+      return treatments;
+    };
 
     const routine = {
       hairProfile: {
@@ -297,185 +1022,13 @@ const Results = () => {
         concerns: concerns.length > 0 ? concerns.join(', ') : 'None',
         climate: climate
       },
-      morningRoutine: [
-        {
-          step: 1,
-          title: 'Refresh & Hydrate',
-          description: 'Mist hair lightly with water or a hydrating spray to reactivate products and add moisture.',
-          icon: 'droplet'
-        },
-        {
-          step: 2,
-          title: 'Apply Leave-In Conditioner',
-          description: 'Work a lightweight leave-in conditioner through damp hair, focusing on mid-lengths to ends.',
-          icon: 'bottle'
-        },
-        {
-          step: 3,
-          title: 'Style Definition',
-          description: porosity === 'low' 
-            ? 'Use water-based, lightweight curl cream. Low porosity hair absorbs better with heat, so consider diffusing.'
-            : 'Apply curl-defining cream or gel to enhance your natural texture and reduce frizz.',
-          icon: 'sparkle'
-        },
-        {
-          step: 4,
-          title: 'Air Dry or Diffuse',
-          description: 'Let hair air dry naturally or use a diffuser on low heat. Avoid touching hair while drying to prevent frizz.',
-          icon: 'wind'
-        }
-      ],
-      eveningRoutine: [
-        {
-          step: 1,
-          title: 'Pineapple Method',
-          description: 'Gather hair into a loose, high ponytail on top of your head to preserve curls and prevent flattening while sleeping.',
-          icon: 'crown'
-        },
-        {
-          step: 2,
-          title: 'Satin Protection',
-          description: 'Use a satin or silk bonnet, scarf, or pillowcase to reduce friction and prevent breakage overnight.',
-          icon: 'shield'
-        },
-        {
-          step: 3,
-          title: 'Moisture Lock',
-          description: 'Apply a light moisture spray or oil to dry ends before bed to maintain hydration.',
-          icon: 'droplets'
-        }
-      ],
-      weeklySchedule: [
-        {
-          day: 'Day 1',
-          title: 'Wash Day',
-          description: 'Complete cleansing routine with shampoo, conditioner, and detangling session.',
-          tasks: [
-            porosity === 'low' ? 'Use clarifying shampoo to remove buildup' : 'Use sulfate-free moisturizing shampoo',
-            'Apply conditioner and detangle with wide-tooth comb',
-            'Rinse with cool water to seal cuticles',
-            'Apply styling products while hair is soaking wet'
-          ],
-          color: 'green'
-        },
-        {
-          day: 'Day 3-4',
-          title: 'Refresh Day',
-          description: 'Revive your style without full wash.',
-          tasks: [
-            'Spray hair with water or refresher spray',
-            'Scrunch to reactivate curl pattern',
-            'Add light styling product if needed',
-            'Diffuse roots for volume if flat'
-          ],
-          color: 'blue'
-        },
-        {
-          day: 'Day 7',
-          title: 'Deep Conditioning',
-          description: 'Intensive moisture treatment for healthy hair.',
-          tasks: [
-            'Apply deep conditioning mask to clean, damp hair',
-            porosity === 'low' ? 'Use heat cap or steamer for 20-30 minutes' : 'Leave on for 20-30 minutes',
-            'Rinse thoroughly with cool water',
-            'Follow with leave-in conditioner'
-          ],
-          color: 'purple'
-        }
-      ],
-      productRecommendations: [
-        {
-          category: 'Shampoo',
-          description: porosity === 'low' 
-            ? 'Clarifying shampoo to remove buildup from low porosity hair'
-            : porosity === 'high'
-            ? 'Moisturizing, sulfate-free shampoo to retain moisture'
-            : 'Gentle sulfate-free shampoo for balanced cleansing',
-          icon: 'bottle'
-        },
-        {
-          category: 'Deep Conditioner',
-          description: porosity === 'low'
-            ? 'Lightweight protein-free deep conditioner with humectants'
-            : porosity === 'high'
-            ? 'Rich, protein-packed deep conditioner to strengthen hair'
-            : 'Balanced hydrating mask with natural oils',
-          icon: 'jar'
-        },
-        {
-          category: 'Curl Cream / Styler',
-          description: hairType === 'curly' || hairType === 'coily'
-            ? 'Curl-defining cream with hold for defined, bouncy curls'
-            : hairType === 'wavy'
-            ? 'Lightweight mousse or sea salt spray for enhanced waves'
-            : 'Smoothing serum for sleek, polished finish',
-          icon: 'tube'
-        },
-        {
-          category: 'Hair Oil / Serum',
-          description: porosity === 'low'
-            ? 'Lightweight oils like argan or grapeseed that won\'t weigh hair down'
-            : 'Rich oils like castor, olive, or JBCO to seal in moisture',
-          icon: 'dropper'
-        },
-        {
-          category: 'Anti-Frizz Treatment',
-          description: climate === 'humid'
-            ? 'Anti-humidity serum or gel to combat frizz in moisture-rich air'
-            : 'Hydrating anti-frizz spray for smooth, defined texture',
-          icon: 'spray'
-        }
-      ],
-      advancedTips: [
-        {
-          title: 'Understanding Your Porosity',
-          content: porosity === 'low'
-            ? 'Low porosity hair has tightly closed cuticles, making it harder for moisture to penetrate. Use heat when deep conditioning, avoid heavy products that cause buildup, and opt for water-based, lightweight formulas.'
-            : porosity === 'high'
-            ? 'High porosity hair absorbs moisture quickly but loses it just as fast. Use the LOC (Liquid-Oil-Cream) method to layer products, incorporate protein treatments, and seal with heavier oils.'
-            : 'Medium porosity hair is the most versatile. Focus on maintaining moisture balance and protect from damage to keep cuticles healthy.',
-          icon: 'droplet'
-        },
-        {
-          title: 'Scalp Health Matters',
-          content: concerns.includes('oiliness')
-            ? 'Oily scalp may require more frequent washing. Focus shampoo on roots only, use a gentle clarifying treatment weekly, and avoid heavy oils near the scalp.'
-            : concerns.includes('dandruff')
-            ? 'For dandruff-prone scalp, use anti-dandruff shampoo, massage scalp to improve circulation, and consider tea tree oil treatments.'
-            : 'Healthy hair starts with a healthy scalp. Massage your scalp during washing to stimulate blood flow and promote hair growth.',
-          icon: 'target'
-        },
-        {
-          title: 'Preventing Breakage',
-          content: 'Always detangle when hair is wet and saturated with conditioner. Start from the ends and work up to roots. Use wide-tooth combs or fingers, never brush curly/coily hair when dry. Sleep on satin to reduce friction.',
-          icon: 'shield'
-        },
-        {
-          title: 'Heat Protection Tips',
-          content: 'If using heat styling tools, always apply a heat protectant spray first. Use the lowest effective temperature setting. Limit heat styling to once or twice a week maximum, and consider heatless styling alternatives.',
-          icon: 'flame'
-        }
-      ],
-      weeklyTreatments: [
-        {
-          title: 'Deep Conditioning Mask',
-          description: 'Apply a nourishing hair mask once weekly. Leave on for 20-30 minutes before rinsing.',
-          frequency: 'Once per week'
-        },
-        {
-          title: 'Scalp Treatment',
-          description: 'Massage scalp with oil or specialized treatment to promote healthy hair growth.',
-          frequency: 'Twice per week'
-        }
-      ],
-      recommendations: [
-        'Use lukewarm water for washing to prevent damage',
-        'Minimize heat styling and always use protection',
-        'Trim ends every 8-12 weeks',
-        'Stay hydrated and maintain a balanced diet',
-        'Protect hair from sun exposure',
-        'Be gentle when detangling - start from ends'
-      ]
+      morningRoutine: getMorningRoutine(),
+      eveningRoutine: getEveningRoutine(),
+      weeklySchedule: getWeeklySchedule(),
+      productRecommendations: getProductRecommendations(),
+      advancedTips: getAdvancedTips(),
+      weeklyTreatments: getWeeklyTreatments(),
+      recommendations: getRecommendations()
     };
 
     setGeneratedRoutine(routine);
