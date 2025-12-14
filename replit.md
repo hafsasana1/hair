@@ -48,3 +48,34 @@ This is a Vite + React application with Tailwind CSS styling. It features a hair
 - Multiple hair routine pages for different hair types
 - Responsive design
 - SEO support via React Helmet
+
+## Blog Section
+
+The blog section contains comprehensive SEO-optimized articles located in `src/pages/blog/`:
+
+### Published Articles
+1. **Hair Porosity Guide** (`/blog/hair-porosity-guide`) - 2,500+ words
+   - Complete guide to understanding hair porosity
+   - Testing methods, care tips for all porosity types
+   
+2. **Natural Ingredients Guide** (`/blog/natural-ingredients-for-healthy-hair`) - 2,200+ words
+   - 10 science-backed natural ingredients for hair care
+   - DIY recipes and usage instructions
+   
+3. **Heat Damage Protection** (`/blog/heat-damage-protection`) - 2,300+ words
+   - Safe temperature guidelines by hair type
+   - Heat protectant science and recovery treatments
+
+### SEO Features
+- High-CTR META titles and descriptions
+- Open Graph tags for social sharing
+- Twitter Card meta tags
+- JSON-LD structured data (Article schema, FAQ schema)
+- Internal linking to hair routine pages
+- External links to authoritative sources
+- Images in WebP format for performance
+- Table of contents with smooth scrolling
+- Canonical URLs
+
+### Blog Images
+Images are stored in `public/images/blog/` in WebP format for optimal performance.

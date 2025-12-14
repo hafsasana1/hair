@@ -22,6 +22,10 @@ import DryScalpRoutine from '@/pages/DryScalpRoutine';
 import HighPorosityRoutine from '@/pages/HighPorosityRoutine';
 import StraightHairRoutine from '@/pages/StraightHairRoutine';
 
+import HairPorosityGuide from '@/pages/blog/HairPorosityGuide';
+import NaturalIngredientsGuide from '@/pages/blog/NaturalIngredientsGuide';
+import HeatDamageProtection from '@/pages/blog/HeatDamageProtection';
+
 function App() {
   return (
     <Router>
@@ -47,6 +51,11 @@ function App() {
               <Route path="/hair-routine-for-dry-scalp" element={<DryScalpRoutine />} />
               <Route path="/hair-routine-for-high-porosity" element={<HighPorosityRoutine />} />
               <Route path="/hair-routine-for-straight-hair" element={<StraightHairRoutine />} />
+              
+              {/* Blog Posts */}
+              <Route path="/blog/hair-porosity-guide" element={<HairPorosityGuide />} />
+              <Route path="/blog/natural-ingredients-for-healthy-hair" element={<NaturalIngredientsGuide />} />
+              <Route path="/blog/heat-damage-protection" element={<HeatDamageProtection />} />
             </Routes>
           </main>
           <Footer />

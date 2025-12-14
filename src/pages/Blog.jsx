@@ -1,80 +1,126 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Tag, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
+import { Link } from 'react-router-dom';
 
 const blogPosts = [
   {
     id: 1,
     title: 'Understanding Hair Porosity: A Complete Guide',
-    excerpt: 'Learn how to determine your hair porosity and why it matters for choosing the right products.',
+    excerpt: 'Learn how to determine your hair porosity and why it matters for choosing the right products. Discover the float test, care tips for all porosity types, and expert product recommendations.',
     date: '2025-12-10',
-    readTime: '5 min read',
-    category: 'Hair Science'
+    readTime: '15 min read',
+    category: 'Hair Science',
+    slug: '/blog/hair-porosity-guide',
+    image: '/images/blog/woman_examining_hair_0a03f537.webp',
+    wordCount: '2,500+'
   },
   {
     id: 2,
     title: '10 Natural Ingredients for Healthy Hair',
-    excerpt: 'Discover the power of natural ingredients like coconut oil, aloe vera, and argan oil for hair care.',
+    excerpt: 'Discover the power of natural ingredients like coconut oil, aloe vera, argan oil, and more. Complete with DIY recipes and science-backed benefits for every hair type.',
     date: '2025-12-08',
-    readTime: '7 min read',
-    category: 'Natural Care'
+    readTime: '12 min read',
+    category: 'Natural Care',
+    slug: '/blog/natural-ingredients-for-healthy-hair',
+    image: '/images/blog/natural_hair_care_in_fc40f08f.webp',
+    wordCount: '2,200+'
   },
   {
     id: 3,
     title: 'How to Protect Your Hair from Heat Damage',
-    excerpt: 'Essential tips and products to keep your hair healthy while using heat styling tools.',
+    excerpt: 'Essential tips and products to keep your hair healthy while using heat styling tools. Learn safe temperatures, proper techniques, and recovery treatments.',
     date: '2025-12-05',
-    readTime: '6 min read',
-    category: 'Hair Care Tips'
+    readTime: '14 min read',
+    category: 'Hair Care Tips',
+    slug: '/blog/heat-damage-protection',
+    image: '/images/blog/woman_using_hair_str_d63b3565.webp',
+    wordCount: '2,300+'
   },
   {
     id: 4,
     title: 'The Ultimate Guide to Hair Types and Textures',
-    excerpt: 'From straight to coily - understanding your hair type is the first step to great hair care.',
+    excerpt: 'From straight to coily - understanding your hair type is the first step to great hair care. Learn the Andre Walker system and find your type.',
     date: '2025-12-03',
     readTime: '8 min read',
-    category: 'Hair Science'
+    category: 'Hair Science',
+    slug: null,
+    image: '/images/blog/woman_examining_hair_5978d7d2.webp',
+    wordCount: 'Coming Soon'
   },
   {
     id: 5,
     title: 'Seasonal Hair Care: Adapting Your Routine',
-    excerpt: 'Learn how to adjust your hair care routine for different seasons and climates.',
+    excerpt: 'Learn how to adjust your hair care routine for different seasons and climates. Protect your hair from humidity, cold, and sun damage.',
     date: '2025-11-28',
     readTime: '6 min read',
-    category: 'Seasonal Tips'
+    category: 'Seasonal Tips',
+    slug: null,
+    image: '/images/blog/natural_hair_care_in_8611ea51.webp',
+    wordCount: 'Coming Soon'
   },
   {
     id: 6,
     title: 'DIY Hair Masks: Recipes for Every Hair Type',
-    excerpt: 'Easy-to-make hair masks using ingredients from your kitchen for amazing results.',
+    excerpt: 'Easy-to-make hair masks using ingredients from your kitchen for amazing results. Customized recipes for dry, oily, damaged, and color-treated hair.',
     date: '2025-11-25',
     readTime: '9 min read',
-    category: 'DIY Care'
+    category: 'DIY Care',
+    slug: null,
+    image: '/images/blog/natural_hair_care_in_7f0796e3.webp',
+    wordCount: 'Coming Soon'
   }
 ];
 
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "HairGen Hair Care Blog",
+  "description": "Expert hair care tips, guides, and advice to help you achieve healthy, beautiful hair. Science-backed articles on porosity, natural ingredients, heat protection, and more.",
+  "url": "https://hairgen.com/blog",
+  "publisher": {
+    "@type": "Organization",
+    "name": "HairGen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/logo.png"
+    }
+  },
+  "blogPost": blogPosts.filter(p => p.slug).map(post => ({
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.excerpt,
+    "datePublished": post.date,
+    "url": `https://hairgen.com${post.slug}`
+  }))
+};
+
 const Blog = () => {
-  const { toast } = useToast();
-
-  const handleReadMore = (postTitle) => {
-    toast({
-      title: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀"
-    });
-  };
-
   return (
     <>
       <Helmet>
-        <title>Hair Care Blog - Tips, Guides & Expert Advice | HairGen</title>
-        <meta name="description" content="Explore our collection of hair care articles, tips, and expert guides to help you achieve healthy, beautiful hair." />
+        <title>Hair Care Blog: Expert Tips, Guides & Science-Backed Advice | HairGen</title>
+        <meta name="description" content="Explore expert hair care articles covering porosity, natural ingredients, heat protection, and personalized routines. Science-backed tips for all hair types. Start your hair transformation today!" />
+        <meta name="keywords" content="hair care blog, hair tips, hair porosity guide, natural hair care, heat damage protection, hair routine, healthy hair tips" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+        <link rel="canonical" href="https://hairgen.com/blog" />
+        
+        <meta property="og:title" content="Hair Care Blog: Expert Tips & Science-Backed Advice | HairGen" />
+        <meta property="og:description" content="Explore expert hair care articles covering porosity, natural ingredients, heat protection, and personalized routines for all hair types." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hairgen.com/blog" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hair Care Blog | HairGen" />
+        <meta name="twitter:description" content="Expert hair care tips, guides, and advice for all hair types." />
+        
+        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
 
       <div className="min-h-screen bg-white py-12">
         <div className="container mx-auto px-4 max-w-6xl">
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -83,12 +129,17 @@ const Blog = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900">
               Hair Care <span className="bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent">Blog</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Expert tips, guides, and insights to help you achieve your best hair ever
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Science-backed tips, expert guides, and proven techniques to help you achieve your healthiest, most beautiful hair ever
             </p>
+            <div className="flex flex-wrap justify-center gap-3 pt-4">
+              <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">Hair Science</span>
+              <span className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">Natural Care</span>
+              <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">DIY Recipes</span>
+              <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Expert Tips</span>
+            </div>
           </motion.div>
 
-          {/* Featured Post */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -97,17 +148,28 @@ const Blog = () => {
           >
             <div className="bg-gradient-to-br from-green-50 to-yellow-50 rounded-2xl overflow-hidden shadow-xl">
               <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative h-64 md:h-auto">
-                  <img alt="Featured blog post about hair care" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1587225438173-701d7edc94f9" />
+                <div className="relative h-64 md:h-auto min-h-[300px]">
+                  <img 
+                    src={blogPosts[0].image}
+                    alt="Understanding hair porosity - featured article about hair care science"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
                 </div>
                 <div className="p-8 md:p-12 flex flex-col justify-center">
-                  <span className="px-4 py-2 bg-green-500 text-white rounded-full text-sm font-semibold inline-block w-fit mb-4">
-                    Featured
-                  </span>
+                  <div className="flex gap-2 mb-4">
+                    <span className="px-4 py-2 bg-green-500 text-white rounded-full text-sm font-semibold">
+                      Featured
+                    </span>
+                    <span className="px-4 py-2 bg-yellow-400 text-gray-800 rounded-full text-sm font-semibold flex items-center gap-1">
+                      <BookOpen className="w-3 h-3" />
+                      {blogPosts[0].wordCount} words
+                    </span>
+                  </div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">
                     {blogPosts[0].title}
                   </h2>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-600 mb-6 leading-relaxed">
                     {blogPosts[0].excerpt}
                   </p>
                   <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
@@ -120,19 +182,17 @@ const Blog = () => {
                       {blogPosts[0].readTime}
                     </span>
                   </div>
-                  <Button
-                    onClick={() => handleReadMore(blogPosts[0].title)}
-                    className="bg-gradient-to-r from-green-500 to-yellow-400 hover:from-green-600 hover:to-yellow-500 text-white font-semibold w-fit"
-                  >
-                    Read More
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
+                  <Link to={blogPosts[0].slug}>
+                    <Button className="bg-gradient-to-r from-green-500 to-yellow-400 hover:from-green-600 hover:to-yellow-500 text-white font-semibold w-fit">
+                      Read Complete Guide
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Blog Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.slice(1).map((post, index) => (
               <motion.article
@@ -143,12 +203,32 @@ const Blog = () => {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="https://images.unsplash.com/photo-1599447069021-11fa1b497b10" />
+                  <img 
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  {!post.slug && (
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                      <span className="px-4 py-2 bg-white/90 text-gray-800 rounded-full text-sm font-semibold">
+                        Coming Soon
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div className="p-6 space-y-4">
-                  <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">
-                    {post.category}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold flex items-center gap-1">
+                      <Tag className="w-3 h-3" />
+                      {post.category}
+                    </span>
+                    {post.slug && (
+                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">
+                        {post.wordCount} words
+                      </span>
+                    )}
+                  </div>
                   <h3 className="text-xl font-bold text-gray-900 line-clamp-2">
                     {post.title}
                   </h3>
@@ -165,42 +245,75 @@ const Blog = () => {
                       {post.readTime}
                     </span>
                   </div>
-                  <Button
-                    onClick={() => handleReadMore(post.title)}
-                    variant="outline"
-                    className="w-full border-2 border-green-500 text-green-600 hover:bg-green-50 font-semibold"
-                  >
-                    Read Article
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
+                  {post.slug ? (
+                    <Link to={post.slug}>
+                      <Button
+                        variant="outline"
+                        className="w-full border-2 border-green-500 text-green-600 hover:bg-green-50 font-semibold"
+                      >
+                        Read Full Article
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button
+                      variant="outline"
+                      className="w-full border-2 border-gray-300 text-gray-400 cursor-not-allowed font-semibold"
+                      disabled
+                    >
+                      Coming Soon
+                    </Button>
+                  )}
                 </div>
               </motion.article>
             ))}
           </div>
 
-          {/* AdSense Placeholder */}
-          <div className="mt-16 bg-white border-2 border-dashed border-gray-300 rounded-lg p-12 text-center">
-            <p className="text-gray-500 font-semibold">Advertisement Space</p>
-            <p className="text-sm text-gray-400 mt-2">Google AdSense Placeholder</p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 bg-white border-2 border-gray-200 rounded-2xl p-8 text-center"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Popular Topics</h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link to="/hair-routine-for-curly-hair" className="px-4 py-2 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-700 rounded-full text-sm font-medium transition-colors">
+                Curly Hair Routine
+              </Link>
+              <Link to="/hair-routine-for-low-porosity" className="px-4 py-2 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-700 rounded-full text-sm font-medium transition-colors">
+                Low Porosity Care
+              </Link>
+              <Link to="/hair-routine-for-high-porosity" className="px-4 py-2 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-700 rounded-full text-sm font-medium transition-colors">
+                High Porosity Care
+              </Link>
+              <Link to="/hair-routine-for-damaged-hair" className="px-4 py-2 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-700 rounded-full text-sm font-medium transition-colors">
+                Damaged Hair Recovery
+              </Link>
+              <Link to="/hair-routine-for-hair-growth" className="px-4 py-2 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-700 rounded-full text-sm font-medium transition-colors">
+                Hair Growth Tips
+              </Link>
+              <Link to="/hair-routine-for-frizzy-hair" className="px-4 py-2 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-700 rounded-full text-sm font-medium transition-colors">
+                Frizz Control
+              </Link>
+            </div>
+          </motion.div>
 
-          {/* Newsletter CTA */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mt-16 bg-gradient-to-r from-green-500 to-yellow-400 rounded-2xl p-8 md:p-12 text-center text-white"
           >
-            <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
+            <h2 className="text-3xl font-bold mb-4">Get Your Personalized Hair Care Routine</h2>
             <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest hair care tips, trends, and exclusive content delivered to your inbox.
+              Skip the guesswork! Take our 2-minute quiz to discover the perfect routine and products for your unique hair type, porosity, and goals.
             </p>
-            <Button
-              onClick={() => toast({ title: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀" })}
-              className="bg-white text-green-600 hover:bg-gray-100 font-semibold"
-            >
-              Subscribe Now
-            </Button>
+            <Link to="/quiz">
+              <Button className="bg-white text-green-600 hover:bg-gray-100 font-semibold px-8 py-3">
+                Start Free Hair Quiz
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </div>
