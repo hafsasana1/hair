@@ -10,11 +10,103 @@ import {
   ArrowRight,
   Scissors,
   Apple,
-  Moon
+  Moon,
+  Clock,
+  Star,
+  Zap,
+  CheckCircle2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HairGrowthRoutine = () => {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Hair Growth Routine: Science-Backed Tips for Longer, Thicker Hair",
+        "description": "Learn the science behind hair growth and discover proven techniques to maximize your hair growth potential. Expert tips on nutrition, scalp health, and length retention.",
+        "author": {
+          "@type": "Organization",
+          "name": "Hair Routine Generator"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Hair Routine Generator",
+          "url": "https://hairgen.com"
+        },
+        "datePublished": "2024-01-10",
+        "dateModified": "2024-12-14",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://hairgen.com/hair-growth-routine"
+        }
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Maximize Hair Growth",
+        "description": "A complete guide to growing longer, healthier hair through proper nutrition, scalp care, and length retention techniques",
+        "totalTime": "PT5M",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Optimize Nutrition",
+            "text": "Ensure adequate intake of biotin, iron, zinc, vitamin D, protein, and omega-3 fatty acids for healthy hair growth."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Scalp Massage",
+            "text": "Perform a 4-minute scalp massage daily to increase blood flow and nutrient delivery to hair follicles."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Reduce Heat Damage",
+            "text": "Minimize heat styling to prevent breakage and preserve length. Air dry when possible."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Protect Your Ends",
+            "text": "Use protective styles and sleep on silk pillowcases to prevent breakage and retain length."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Regular Trims",
+            "text": "Trim split ends regularly to prevent them from traveling up the hair shaft and causing more damage."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How fast does hair grow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On average, hair grows about half an inch (1.25 cm) per month, or 6 inches per year. This rate is largely genetic but can be optimized through proper nutrition and scalp care."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does cutting hair make it grow faster?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, this is a myth. Hair grows from the follicle in your scalp, not from the ends. However, regular trims prevent split ends from causing breakage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does rosemary oil work for hair growth?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Studies suggest rosemary oil can be as effective as minoxidil for promoting hair growth. Dilute it with a carrier oil and massage into your scalp several times per week."
+            }
+          }
+        ]
+      }
+    ]
+  };
+
   const growthPhases = [
     { phase: 'Anagen (Growth)', duration: '2-7 years', color: 'bg-pink-400', desc: 'The active growth phase. Hair grows about half an inch per month. Our goal is to keep hair in this phase as long as possible through nutrition and scalp health.' },
     { phase: 'Catagen (Transition)', duration: '2-3 weeks', color: 'bg-yellow-400', desc: 'Hair stops growing and detaches from its blood supply. The follicle shrinks and the hair prepares to shed.' },
@@ -40,22 +132,70 @@ const HairGrowthRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Hair Growth Routine: Science-Backed Tips for Length | Hair Routine Generator</title>
-        <meta name="description" content="Want longer, thicker hair? Follow our science-backed hair growth routine. Learn about the growth cycle, scalp massage techniques, and essential nutrients." />
+        <title>Hair Growth Routine: Science-Backed Tips for Longer, Thicker Hair | 2024</title>
+        <meta name="description" content="Discover proven hair growth techniques backed by science. Learn about the hair growth cycle, essential nutrients, scalp massage, and how to maximize your growth potential. Free personalized routine!" />
+        <meta name="keywords" content="hair growth routine, how to grow hair faster, hair growth tips, scalp massage for hair growth, biotin for hair, rosemary oil hair growth, hair length retention" />
+        <link rel="canonical" href="https://hairgen.com/hair-growth-routine" />
+        <meta property="og:title" content="Hair Growth Routine: Science-Backed Tips | Hair Routine Generator" />
+        <meta property="og:description" content="Learn the science behind growing longer, healthier hair. Expert tips on nutrition, scalp care, and length retention." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://hairgen.com/hair-growth-routine" />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-white">
-        <section className="bg-gradient-to-r from-pink-50 to-rose-50 py-20">
-          <div className="container mx-auto px-4 text-center max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-pink-600 text-sm font-semibold mb-6">
-              <TrendingUp className="w-4 h-4" /> Growth Series
+        <section className="bg-gradient-to-br from-pink-50 via-rose-50 to-white py-20">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-pink-600 text-sm font-semibold mb-6">
+                  <TrendingUp className="w-4 h-4" /> Growth Series
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Maximize Your <span className="bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent">Hair Growth</span> Potential
+                </h1>
+                <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                  Genetics set your maximum potential, but your routine determines whether you reach it. Learn the science behind growing longer, stronger hair and discover proven techniques used by hair care professionals.
+                </p>
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <Clock className="w-5 h-5 text-pink-500" />
+                    <span className="text-sm font-medium">12 min read</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <Star className="w-5 h-5 text-yellow-400" />
+                    <span className="text-sm font-medium">Science-Backed</span>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <Link to="/quiz">
+                    <Button size="lg" className="bg-gradient-to-r from-pink-500 to-rose-500 text-white font-semibold hover:shadow-lg transition-all">
+                      Get Your Growth Plan <ArrowRight className="ml-2 w-4 h-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative"
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600" 
+                  alt="Healthy long hair showing hair growth results" 
+                  className="rounded-2xl shadow-2xl w-full object-cover"
+                  loading="eager"
+                />
+                <div className="absolute -bottom-4 -right-4 w-48 h-48 bg-pink-200 rounded-full blur-3xl opacity-50 -z-10"></div>
+              </motion.div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Maximize Your <span className="text-pink-500">Hair Growth</span> Potential
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Genetics set your maximum potential, but your routine determines whether you reach it. Learn the science behind growing longer, stronger hair.
-            </p>
           </div>
         </section>
 
@@ -242,24 +382,55 @@ const HairGrowthRoutine = () => {
           </div>
         </section>
 
+        {/* Quiz CTA Mid-Section */}
+        <section className="py-12 bg-gradient-to-r from-pink-500 to-rose-500">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-white">
+                <div className="flex items-center gap-2 mb-2">
+                  <Zap className="w-6 h-6" />
+                  <span className="font-semibold">Personalized Growth Plan</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Get a Custom Hair Growth Routine</h3>
+                <p className="text-pink-100">Our AI analyzes your hair type, goals, and lifestyle to create a tailored growth plan that works for you.</p>
+              </div>
+              <Link to="/quiz">
+                <Button size="lg" className="bg-white text-pink-600 hover:bg-gray-100 font-bold whitespace-nowrap">
+                  Start Free Analysis <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl font-bold mb-8">Related Guides</h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/hair-routine-for-damaged-hair">
-                <Button variant="outline" className="border-pink-300 text-pink-600 hover:bg-pink-50">
-                  Repair Damaged Hair
-                </Button>
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="text-2xl font-bold mb-4 text-center">Explore More Hair Care Guides</h2>
+            <p className="text-gray-600 text-center mb-8">Continue your hair care journey with these related resources:</p>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <Link to="/hair-routine-for-damaged-hair" className="bg-white p-4 rounded-xl border border-amber-100 hover:shadow-md transition-all group">
+                <h4 className="font-bold text-amber-700 group-hover:text-amber-800">Repair Damaged Hair</h4>
+                <p className="text-sm text-gray-600">Restore strength and shine</p>
               </Link>
-              <Link to="/hair-routine-for-dry-scalp">
-                <Button variant="outline" className="border-pink-300 text-pink-600 hover:bg-pink-50">
-                  Dry Scalp Solutions
-                </Button>
+              <Link to="/hair-routine-for-dry-scalp" className="bg-white p-4 rounded-xl border border-yellow-100 hover:shadow-md transition-all group">
+                <h4 className="font-bold text-yellow-700 group-hover:text-yellow-800">Dry Scalp Solutions</h4>
+                <p className="text-sm text-gray-600">Hydrate and soothe your scalp</p>
               </Link>
-              <Link to="/hair-routine-for-oily-scalp">
-                <Button variant="outline" className="border-pink-300 text-pink-600 hover:bg-pink-50">
-                  Oily Scalp Care
-                </Button>
+              <Link to="/hair-routine-for-oily-scalp" className="bg-white p-4 rounded-xl border border-lime-100 hover:shadow-md transition-all group">
+                <h4 className="font-bold text-lime-700 group-hover:text-lime-800">Oily Scalp Care</h4>
+                <p className="text-sm text-gray-600">Balance and cleanse naturally</p>
+              </Link>
+              <Link to="/hair-routine-for-wavy-hair" className="bg-white p-4 rounded-xl border border-teal-100 hover:shadow-md transition-all group">
+                <h4 className="font-bold text-teal-700 group-hover:text-teal-800">Wavy Hair Routine</h4>
+                <p className="text-sm text-gray-600">Enhance your natural waves</p>
+              </Link>
+              <Link to="/hair-routine-for-curly-hair" className="bg-white p-4 rounded-xl border border-purple-100 hover:shadow-md transition-all group">
+                <h4 className="font-bold text-purple-700 group-hover:text-purple-800">Curly Hair Care</h4>
+                <p className="text-sm text-gray-600">Define and nourish curls</p>
+              </Link>
+              <Link to="/hair-routine-for-low-porosity" className="bg-white p-4 rounded-xl border border-emerald-100 hover:shadow-md transition-all group">
+                <h4 className="font-bold text-emerald-700 group-hover:text-emerald-800">Low Porosity Tips</h4>
+                <p className="text-sm text-gray-600">Moisture for resistant hair</p>
               </Link>
             </div>
           </div>

@@ -52,10 +52,12 @@ function App() {
               <Route path="/terms" element={<Terms />} />
               <Route path="/hair-routine-for-curly-hair" element={<CurlyHairRoutine />} />
               <Route path="/hair-routine-for-2b-hair" element={<WavyHairRoutine2B />} />
+              <Route path="/hair-routine-for-wavy-hair" element={<WavyHairRoutine2B />} />
               <Route path="/hair-routine-for-low-porosity" element={<LowPorosityRoutine />} />
               <Route path="/hair-routine-for-frizzy-hair" element={<FrizzyHairRoutine />} />
               <Route path="/hair-routine-for-oily-scalp" element={<OilyScalpRoutine />} />
               <Route path="/hair-routine-for-hair-growth" element={<HairGrowthRoutine />} />
+              <Route path="/hair-growth-routine" element={<HairGrowthRoutine />} />
               <Route path="/hair-routine-for-damaged-hair" element={<DamagedHairRoutine />} />
               <Route path="/hair-routine-for-dry-scalp" element={<DryScalpRoutine />} />
               <Route path="/hair-routine-for-high-porosity" element={<HighPorosityRoutine />} />

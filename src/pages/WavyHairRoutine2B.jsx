@@ -10,7 +10,10 @@ import {
   ArrowRight,
   Sparkles,
   Sun,
-  Moon
+  Moon,
+  Clock,
+  Star,
+  Zap
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -28,25 +31,159 @@ const WavyHairRoutine2B = () => {
     'Avoid re-wetting completely as this can cause frizz'
   ];
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Complete Wavy Hair Routine Guide (2A-2C): Expert Tips for Beautiful Waves",
+        "description": "Discover the ultimate wavy hair care routine for 2A, 2B, and 2C hair types. Learn product recommendations, styling techniques, and daily care tips from hair experts.",
+        "author": {
+          "@type": "Organization",
+          "name": "Hair Routine Generator"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Hair Routine Generator",
+          "url": "https://hairgen.com"
+        },
+        "datePublished": "2024-01-15",
+        "dateModified": "2024-12-14",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://hairgen.com/hair-routine-for-wavy-hair"
+        }
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Care for Wavy Hair (2A-2C)",
+        "description": "Step-by-step guide to washing, conditioning, and styling wavy hair for maximum definition and minimal frizz",
+        "totalTime": "PT30M",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Lightweight Cleanse",
+            "text": "Use a gentle, sulfate-free shampoo that won't strip natural oils or leave heavy residue."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Condition from Ears Down",
+            "text": "Apply lightweight conditioner from ears to ends, skipping roots to maintain volume."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Squish to Condish",
+            "text": "Cup water in hands and scrunch upward to encourage wave clumping."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Apply Mousse",
+            "text": "Apply mousse to soaking wet hair and scrunch upward for hold without weight."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Diffuse or Air Dry",
+            "text": "Air dry for natural texture or diffuse for added volume using low heat."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How often should I wash wavy hair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most people with wavy hair do well washing every 2-3 days. Washing too often can dry out your hair, while waiting too long can lead to buildup that weighs down waves."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I brush wavy hair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only brush wavy hair when it's wet and coated with conditioner. Brushing dry wavy hair breaks up the wave pattern and creates instant frizz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What products are best for wavy hair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lightweight products like mousse and water-based gels work best for wavy hair. Avoid heavy butters and oils that can weigh down waves."
+            }
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <>
       <Helmet>
-        <title>2B Hair Routine: Enhance Your Natural Waves | Hair Routine Generator</title>
-        <meta name="description" content="A complete care guide for 2B wavy hair. Learn how to enhance definition, reduce frizz, and choose the right lightweight products for your waves." />
+        <title>Wavy Hair Routine (2A-2C): Complete Care Guide for Beautiful Waves | 2024</title>
+        <meta name="description" content="Discover the perfect wavy hair routine for 2A, 2B, and 2C hair types. Expert tips on products, styling techniques, and daily care for frizz-free, defined waves. Free personalized routine!" />
+        <meta name="keywords" content="wavy hair routine, 2A hair care, 2B hair routine, 2C wavy hair, wavy hair products, how to style wavy hair, wavy hair tips, reduce frizz wavy hair" />
+        <link rel="canonical" href="https://hairgen.com/hair-routine-for-wavy-hair" />
+        <meta property="og:title" content="Wavy Hair Routine (2A-2C): Complete Care Guide | Hair Routine Generator" />
+        <meta property="og:description" content="Learn how to enhance your natural waves with our expert wavy hair routine. Perfect for 2A, 2B, and 2C hair types." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://hairgen.com/hair-routine-for-wavy-hair" />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-white">
         <section className="bg-gradient-to-br from-teal-50 via-cyan-50 to-white py-20 border-b border-teal-100">
-          <div className="container mx-auto px-4 text-center max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-teal-700 text-sm font-semibold mb-6">
-              <Wind className="w-4 h-4" /> Wavy Hair Series
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm text-teal-700 text-sm font-semibold mb-6">
+                  <Wind className="w-4 h-4" /> Wavy Hair Series
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                  The Perfect <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">Wavy Hair Routine</span> (2A-2C)
+                </h1>
+                <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                  Wavy hair sits beautifully between straight and curly, with those lovely S-shaped patterns that many people desire. Whether you have loose 2A waves or defined 2C texture, this guide will help you bring out your natural waves and keep them looking their best all day.
+                </p>
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <Clock className="w-5 h-5 text-teal-500" />
+                    <span className="text-sm font-medium">10 min read</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <Star className="w-5 h-5 text-yellow-400" />
+                    <span className="text-sm font-medium">Expert Reviewed</span>
+                  </div>
+                </div>
+                <Link to="/quiz">
+                  <Button size="lg" className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-semibold hover:shadow-lg transition-all">
+                    Get Your Personalized Routine <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative"
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600" 
+                  alt="Beautiful wavy hair texture showing natural S-shaped wave pattern" 
+                  className="rounded-2xl shadow-2xl w-full object-cover"
+                  loading="eager"
+                />
+                <div className="absolute -bottom-4 -right-4 w-48 h-48 bg-teal-200 rounded-full blur-3xl opacity-50 -z-10"></div>
+              </motion.div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              The Perfect <span className="text-teal-600">Wavy Hair Routine</span> (2A-2C)
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Wavy hair sits beautifully between straight and curly, with those lovely S-shaped patterns that many people desire. Here's how to bring out your natural waves and keep them looking their best all day.
-            </p>
           </div>
         </section>
 
@@ -222,6 +359,27 @@ const WavyHairRoutine2B = () => {
           </div>
         </section>
 
+        {/* Quiz CTA Mid-Section */}
+        <section className="py-12 bg-gradient-to-r from-teal-500 to-cyan-500">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-white">
+                <div className="flex items-center gap-2 mb-2">
+                  <Zap className="w-6 h-6" />
+                  <span className="font-semibold">Get Personalized Results</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Not Sure Which Products Suit Your Waves?</h3>
+                <p className="text-teal-100">Take our 60-second quiz to get customized product recommendations for your specific wave pattern and hair porosity.</p>
+              </div>
+              <Link to="/quiz">
+                <Button size="lg" className="bg-white text-teal-600 hover:bg-gray-100 font-bold whitespace-nowrap">
+                  Start Free Quiz <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl font-bold mb-8">Wavy Hair FAQs</h2>
@@ -253,16 +411,32 @@ const WavyHairRoutine2B = () => {
             </div>
             
             <div className="mt-12 pt-8 border-t border-gray-200">
-              <p className="text-gray-600 mb-4">Explore more hair care guides:</p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/hair-routine-for-frizzy-hair" className="text-teal-600 font-medium hover:underline">
-                  Tame Frizzy Hair →
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Explore More Hair Care Guides</h3>
+              <p className="text-gray-600 mb-6">Continue your hair care journey with these related resources:</p>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <Link to="/hair-routine-for-frizzy-hair" className="bg-amber-50 p-4 rounded-xl border border-amber-100 hover:shadow-md transition-all group">
+                  <h4 className="font-bold text-amber-700 group-hover:text-amber-800">Frizzy Hair Solutions</h4>
+                  <p className="text-sm text-gray-600">Control frizz and smooth your texture</p>
                 </Link>
-                <Link to="/hair-routine-for-curly-hair" className="text-teal-600 font-medium hover:underline">
-                  Curly Hair Routines →
+                <Link to="/hair-routine-for-curly-hair" className="bg-purple-50 p-4 rounded-xl border border-purple-100 hover:shadow-md transition-all group">
+                  <h4 className="font-bold text-purple-700 group-hover:text-purple-800">Curly Hair Routine</h4>
+                  <p className="text-sm text-gray-600">Care tips for type 3 curls</p>
                 </Link>
-                <Link to="/hair-routine-for-low-porosity" className="text-teal-600 font-medium hover:underline">
-                  Low Porosity Care →
+                <Link to="/hair-routine-for-low-porosity" className="bg-emerald-50 p-4 rounded-xl border border-emerald-100 hover:shadow-md transition-all group">
+                  <h4 className="font-bold text-emerald-700 group-hover:text-emerald-800">Low Porosity Care</h4>
+                  <p className="text-sm text-gray-600">Tips for moisture-resistant hair</p>
+                </Link>
+                <Link to="/hair-growth-routine" className="bg-pink-50 p-4 rounded-xl border border-pink-100 hover:shadow-md transition-all group">
+                  <h4 className="font-bold text-pink-700 group-hover:text-pink-800">Hair Growth Tips</h4>
+                  <p className="text-sm text-gray-600">Maximize your growth potential</p>
+                </Link>
+                <Link to="/hair-routine-for-straight-hair" className="bg-blue-50 p-4 rounded-xl border border-blue-100 hover:shadow-md transition-all group">
+                  <h4 className="font-bold text-blue-700 group-hover:text-blue-800">Straight Hair Care</h4>
+                  <p className="text-sm text-gray-600">Routines for type 1 hair</p>
+                </Link>
+                <Link to="/hair-routine-for-oily-scalp" className="bg-lime-50 p-4 rounded-xl border border-lime-100 hover:shadow-md transition-all group">
+                  <h4 className="font-bold text-lime-700 group-hover:text-lime-800">Oily Scalp Solutions</h4>
+                  <p className="text-sm text-gray-600">Balance and cleanse your scalp</p>
                 </Link>
               </div>
             </div>
