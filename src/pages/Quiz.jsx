@@ -153,6 +153,12 @@ const Quiz = () => {
   const { currentStep, setCurrentStep, answers, updateAnswer, userEmail, setUserEmail } = useQuiz();
   const [showEmailCapture, setShowEmailCapture] = useState(false);
 
+  useEffect(() => {
+    if (Object.keys(answers).length === 0 && currentStep === 0) {
+      setShowEmailCapture(false);
+    }
+  }, [answers, currentStep]);
+
   const totalSteps = quizQuestions.length;
   const currentQuestion = quizQuestions[currentStep];
   const progress = ((currentStep + 1) / totalSteps) * 100;

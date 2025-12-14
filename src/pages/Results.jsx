@@ -1052,7 +1052,9 @@ const Results = () => {
 
   const handleRetake = () => {
     resetQuiz();
-    navigate('/quiz');
+    setTimeout(() => {
+      navigate('/quiz');
+    }, 0);
   };
 
   if (isGenerating || !generatedRoutine) {
