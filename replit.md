@@ -52,9 +52,20 @@ This is a Vite + React application with Tailwind CSS styling. It features a hair
 - About page with E-E-A-T credentials (expert team profiles, qualifications)
 - Blog disclaimer component on all articles for legal compliance
 - Enhanced Results page with:
+  - **Fully Dynamic Routine Generation** (Updated Dec 14, 2025):
+    - Morning routines personalized by hair type (straight, wavy, curly, coily)
+    - Evening routines adapted to hair type and density
+    - Weekly schedules with appropriate wash frequency per hair type
+    - Product recommendations based on hair type, porosity, and climate
+    - Advanced tips customized for porosity, climate, and concerns
+    - All values normalized to lowercase for consistent matching
+  - Climate-aware recommendations (humid, dry, cold, temperate)
+  - Porosity-specific guidance (low, medium, high)
+  - Density-adjusted techniques (thin, medium, thick)
+  - Concern-targeted treatments (dryness, frizz, damage, hairloss, oiliness, dandruff, dullness)
   - Dynamic SEO title based on hair type and porosity
   - Daily routine (Morning & Night) sections
-  - Weekly routine schedule (Wash Day, Refresh Day, Deep Conditioning)
+  - Weekly routine schedule (Wash Day, Refresh Day, Deep Conditioning, Protein Treatment)
   - Personalized product recommendations
   - Advanced hair care tips with NLP-rich content
   - FAQ schema for SEO
