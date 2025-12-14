@@ -347,7 +347,7 @@ const Home = () => {
                   <motion.img 
                     alt="AI hair routine generator result preview" 
                     className="w-full h-auto object-contain max-h-[500px] drop-shadow-2xl" 
-                    src="/attached_assets/generated_images/elegant_hair_types_white_bg.png" 
+                    src="/attached_assets/generated_images/hair_routine_generator_app_mockup.png" 
                     loading="lazy"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
