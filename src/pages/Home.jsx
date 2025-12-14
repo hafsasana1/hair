@@ -263,7 +263,7 @@ const Home = () => {
 
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-yellow-50 to-white py-20 md:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-yellow-50 to-white py-12 md:py-20">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -273,56 +273,56 @@ const Home = () => {
                 className="space-y-6"
               >
                 <div className="inline-block">
-                  <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
+                  <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">
                     ✨ AI-Powered Analysis
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                <h1 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight">
                   AI Hair Routine Generator{' '}
                   <span className="bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent">
                     – Personalized Hair Care by Hair Type & Porosity
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 hero-description">
+                <p className="text-base text-gray-600 hero-description">
                   Generate a personalized hair care routine in under 60 seconds. Our AI analyzes your hair type (1A–4C), porosity, scalp condition, and climate to create a custom daily and weekly hair routine designed for healthier hair.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/quiz">
-                    <Button size="lg" className="bg-gradient-to-r from-green-500 to-yellow-400 hover:from-green-600 hover:to-yellow-500 text-white font-semibold text-lg px-8 py-6 group">
+                    <Button size="default" className="bg-gradient-to-r from-green-500 to-yellow-400 hover:from-green-600 hover:to-yellow-500 text-white font-semibold text-sm px-6 py-2 group">
                       Generate My Routine
-                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
                   <Link to="/about">
-                    <Button size="lg" variant="outline" className="border-2 border-green-500 text-green-600 hover:bg-green-50 font-semibold text-lg px-8 py-6">
+                    <Button size="default" variant="outline" className="border-2 border-green-500 text-green-600 hover:bg-green-50 font-semibold text-sm px-6 py-2">
                       How It Works
                     </Button>
                   </Link>
                 </div>
-                <div className="flex items-center gap-8 pt-4">
+                <div className="flex items-center gap-6 pt-3">
                   <div className="text-center">
-                    <p className="text-3xl font-bold text-green-500">100%</p>
-                    <p className="text-sm text-gray-600">Free to Use</p>
+                    <p className="text-xl font-bold text-green-500">100%</p>
+                    <p className="text-xs text-gray-600">Free to Use</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-3xl font-bold text-yellow-400">4.9★</p>
-                    <p className="text-sm text-gray-600">User Rating</p>
+                    <p className="text-xl font-bold text-yellow-400">4.9★</p>
+                    <p className="text-xs text-gray-600">User Rating</p>
                   </div>
                 </div>
                 
                 {/* Trust Signals */}
-                <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-gray-200">
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <FlaskConical className="w-5 h-5 text-green-500" />
-                    <span className="text-sm font-medium">Science-Based Routine Logic</span>
+                <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-gray-200">
+                  <div className="flex items-center gap-1.5 text-gray-600">
+                    <FlaskConical className="w-4 h-4 text-green-500" />
+                    <span className="text-xs font-medium">Science-Based</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <UserCheck className="w-5 h-5 text-green-500" />
-                    <span className="text-sm font-medium">Hair-Care Best Practices</span>
+                  <div className="flex items-center gap-1.5 text-gray-600">
+                    <UserCheck className="w-4 h-4 text-green-500" />
+                    <span className="text-xs font-medium">Best Practices</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <Lock className="w-5 h-5 text-green-500" />
-                    <span className="text-sm font-medium">No Signup Required</span>
+                  <div className="flex items-center gap-1.5 text-gray-600">
+                    <Lock className="w-4 h-4 text-green-500" />
+                    <span className="text-xs font-medium">No Signup</span>
                   </div>
                 </div>
               </motion.div>
@@ -384,24 +384,24 @@ const Home = () => {
         </section>
 
         {/* What the Tool Does Section */}
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-16"
+              className="text-center mb-10"
             >
-              <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block px-3 py-1 bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 rounded-full text-xs font-semibold mb-3">
                 How It Works
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">
                 <span className="bg-gradient-to-r from-gray-900 via-green-800 to-gray-900 bg-clip-text text-transparent">
                   What Our Tool Does
                 </span>
               </h2>
-              <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base text-gray-500 max-w-2xl mx-auto leading-relaxed">
                 A complete hair analysis and routine builder in <span className="text-green-600 font-semibold">4 simple steps</span>
               </p>
             </motion.div>
@@ -414,13 +414,13 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border border-green-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:border-green-300 group"
+                  className="bg-white border border-green-100 p-5 rounded-xl shadow-md hover:shadow-lg transition-all hover:border-green-300 group"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-yellow-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
-                    <step.icon className="w-7 h-7 text-white" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-yellow-400 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                    <step.icon className="w-5 h-5 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                  <h3 className="text-base font-bold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-gray-600 text-xs leading-relaxed">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -441,23 +441,23 @@ const Home = () => {
         </section>
 
         {/* Who This Helps Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-green-50/30">
+        <section className="py-12 bg-gradient-to-br from-gray-50 to-green-50/30">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-10"
             >
-              <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-700 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block px-3 py-1 bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-700 rounded-full text-xs font-semibold mb-3">
                 Perfect For Everyone
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">
                 <span className="text-gray-900">Who This </span>
                 <span className="bg-gradient-to-r from-green-500 to-emerald-600 bg-clip-text text-transparent">Hair Routine Generator</span>
                 <span className="text-gray-900"> Helps</span>
               </h2>
-              <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base text-gray-500 max-w-2xl mx-auto leading-relaxed">
                 Customized solutions for <span className="text-amber-600 font-semibold">every hair type</span> and concern
               </p>
             </motion.div>
@@ -470,14 +470,14 @@ const Home = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className={`bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-gray-100 h-full hover:border-transparent hover:ring-2 hover:ring-offset-2 flex flex-col items-center text-center group`}
+                    className={`bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-100 h-full hover:border-transparent hover:ring-2 hover:ring-offset-1 flex flex-col items-center text-center group`}
                     style={{ '--ring-color': 'currentColor' }}
                   >
-                    <div className={`w-14 h-14 ${item.bgColor} rounded-2xl flex items-center justify-center mb-4 ${item.textColor} group-hover:scale-110 transition-transform`}>
-                      <item.icon className="w-7 h-7" />
+                    <div className={`w-10 h-10 ${item.bgColor} rounded-xl flex items-center justify-center mb-3 ${item.textColor} group-hover:scale-110 transition-transform`}>
+                      <item.icon className="w-5 h-5" />
                     </div>
-                    <h3 className={`font-bold mb-1 bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>{item.title}</h3>
-                    <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">{item.subtitle}</p>
+                    <h3 className={`text-sm font-bold mb-0.5 bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>{item.title}</h3>
+                    <p className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">{item.subtitle}</p>
                   </motion.div>
                 </Link>
               ))}
@@ -487,23 +487,23 @@ const Home = () => {
         </section>
 
         {/* How It Works Schema Section */}
-        <section className="py-20 bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+        <section className="py-12 bg-gradient-to-br from-emerald-50 via-white to-teal-50">
           <div className="container mx-auto px-4 max-w-5xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-14"
+              className="text-center mb-10"
             >
-              <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-teal-100 to-emerald-100 text-teal-700 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block px-3 py-1 bg-gradient-to-r from-teal-100 to-emerald-100 text-teal-700 rounded-full text-xs font-semibold mb-3">
                 Step-by-Step Process
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">
                 <span className="text-gray-900">How the </span>
                 <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">Hair Routine Generator</span>
                 <span className="text-gray-900"> Works</span>
               </h2>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              <p className="text-sm text-gray-500 max-w-2xl mx-auto">
                 Your journey to <span className="text-teal-600 font-semibold">healthier hair</span> starts here
               </p>
             </motion.div>
@@ -537,17 +537,17 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-2xl shadow-lg border border-emerald-100 hover:shadow-xl hover:border-emerald-200 transition-all group"
+                  className="bg-white p-4 rounded-xl shadow-md border border-emerald-100 hover:shadow-lg hover:border-emerald-200 transition-all group"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-400 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-110 transition-transform">
-                      <span className="text-white font-bold text-lg">{step.num}</span>
+                  <div className="flex items-start gap-3">
+                    <div className="w-9 h-9 bg-gradient-to-br from-teal-500 to-emerald-400 rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+                      <span className="text-white font-bold text-sm">{step.num}</span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-gray-900 mb-2 leading-snug">
+                      <h3 className="text-sm font-bold text-gray-900 mb-1 leading-snug">
                         {step.title}
                       </h3>
-                      <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+                      <p className="text-gray-600 text-xs leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -557,9 +557,9 @@ const Home = () => {
         </section>
 
         {/* Features Section (Existing) */}
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -576,16 +576,16 @@ const Home = () => {
                 transition={{ duration: 0.6 }}
                 className="space-y-6"
               >
-                <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full text-sm font-semibold">
+                <span className="inline-block px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full text-xs font-semibold">
                   Complete Care System
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold">
+                <h2 className="text-2xl md:text-3xl font-bold">
                   <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
                     Comprehensive
                   </span>
                   <span className="text-gray-900"> Hair Care Plans</span>
                 </h2>
-                <p className="text-xl text-gray-500 leading-relaxed">
+                <p className="text-base text-gray-500 leading-relaxed">
                   We don't just recommend products; we build a <span className="text-purple-600 font-semibold">complete lifestyle plan</span> for your hair.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -607,22 +607,22 @@ const Home = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-12 bg-gray-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-8"
             >
-              <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block px-3 py-1 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-700 rounded-full text-xs font-semibold mb-3">
                 Got Questions?
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3">
                 <span className="text-gray-900">Frequently </span>
                 <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">Asked Questions</span>
               </h2>
-              <p className="text-gray-500 text-lg">Common questions about our <span className="text-blue-600 font-medium">AI hair routine generator</span></p>
+              <p className="text-gray-500 text-sm">Common questions about our <span className="text-blue-600 font-medium">AI hair routine generator</span></p>
             </motion.div>
 
             <div className="space-y-4">
@@ -685,20 +685,20 @@ const Home = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-green-500 to-yellow-400">
+        <section className="py-12 bg-gradient-to-r from-green-500 to-yellow-400">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="max-w-3xl mx-auto space-y-6"
+              className="max-w-3xl mx-auto space-y-4"
             >
-              <Sparkles className="w-16 h-16 text-white mx-auto" />
-              <h2 className="text-3xl md:text-5xl font-bold text-white">
+              <Sparkles className="w-10 h-10 text-white mx-auto" />
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Ready to Find Your Perfect Routine?
               </h2>
-              <p className="text-xl text-white/90">
+              <p className="text-base text-white/90">
                 Join thousands of happy users who transformed their hair health for free.
               </p>
               <Link to="/quiz">
