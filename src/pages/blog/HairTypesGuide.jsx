@@ -44,12 +44,12 @@ const HairTypesGuide = () => {
     ],
     "author": {
       "@type": "Organization",
-      "name": "HairGen",
+      "name": "Hair Routine Generator",
       "url": "https://hairgen.com"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "HairGen",
+      "name": "Hair Routine Generator",
       "logo": {
         "@type": "ImageObject",
         "url": "/logo.png"

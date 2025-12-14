@@ -206,7 +206,7 @@ const Quiz = () => {
   return (
     <>
       <Helmet>
-        <title>Hair Care Quiz - HairGen</title>
+        <title>Hair Care Quiz - Hair Routine Generator</title>
         <meta name="description" content="Take our comprehensive 8-question quiz to get your personalized hair care routine powered by AI." />
       </Helmet>
 

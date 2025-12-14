@@ -35,7 +35,7 @@ const LowPorosityRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Low Porosity Hair Routine & Care Guide | HairGen</title>
+        <title>Low Porosity Hair Routine & Care Guide | Hair Routine Generator</title>
         <meta name="description" content="Struggling to get moisture into your hair? Discover the best routine for low porosity hair, including heat tips, best ingredients, and products to avoid." />
       </Helmet>
 

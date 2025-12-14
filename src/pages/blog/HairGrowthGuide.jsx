@@ -10,7 +10,7 @@ const HairGrowthGuide = () => {
   const publishDate = '2025-12-14';
   const updateDate = '2025-12-14';
   const readTime = '25 min read';
-  const author = 'HairGen Expert Team';
+  const author = 'Hair Routine Generator Expert Team';
   const wordCount = '4,500+';
 
   const tableOfContents = [
@@ -42,11 +42,11 @@ const HairGrowthGuide = () => {
     "image": "/images/blog/healthy_hair_growth_results.webp",
     "author": {
       "@type": "Organization",
-      "name": "HairGen"
+      "name": "Hair Routine Generator"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "HairGen",
+      "name": "Hair Routine Generator",
       "logo": {
         "@type": "ImageObject",
         "url": "/logo.png"

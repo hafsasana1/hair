@@ -9,7 +9,7 @@ import BlogDisclaimer from '@/components/BlogDisclaimer';
 const SeasonalHairCare = () => {
   const publishDate = '2025-12-14';
   const updateDate = '2025-12-14';
-  const author = 'HairGen Expert Team';
+  const author = 'Hair Routine Generator Expert Team';
   const readTime = '18 min read';
 
   const tableOfContents = [
@@ -47,12 +47,12 @@ const SeasonalHairCare = () => {
     ],
     "author": {
       "@type": "Organization",
-      "name": "HairGen",
+      "name": "Hair Routine Generator",
       "url": "https://hairgen.com"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "HairGen",
+      "name": "Hair Routine Generator",
       "logo": {
         "@type": "ImageObject",
         "url": "/logo.png"
@@ -197,7 +197,7 @@ const SeasonalHairCare = () => {
   return (
     <>
       <Helmet>
-        <title>Seasonal Hair Care: Complete Guide to Adapting Your Routine for Every Season | HairGen</title>
+        <title>Seasonal Hair Care: Complete Guide to Adapting Your Routine for Every Season | Hair Routine Generator</title>
         <meta name="description" content="Master seasonal hair care with our expert guide. Learn to protect your hair from summer sun, winter dryness, humidity, and cold. Science-backed tips for spring, summer, fall, and winter hair routines." />
         <meta name="keywords" content="seasonal hair care, summer hair care, winter hair care, humidity hair tips, cold weather hair, UV protection hair, seasonal hair routine, fall hair care, spring hair care, climate hair care" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
@@ -216,7 +216,7 @@ const SeasonalHairCare = () => {
         <meta property="article:tag" content="winter hair care" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Seasonal Hair Care: Complete Guide for Every Season | HairGen" />
+        <meta name="twitter:title" content="Seasonal Hair Care: Complete Guide for Every Season | Hair Routine Generator" />
         <meta name="twitter:description" content="Master seasonal hair care with expert tips for spring, summer, fall, and winter hair routines." />
         <meta name="twitter:image" content="/images/blog/autumn_fall_hair_care.webp" />
         

@@ -18,7 +18,7 @@ const BlogDisclaimer = () => {
             Always consult with a licensed dermatologist, trichologist, or hair care professional before making significant changes to your hair care routine, especially if you have underlying scalp conditions, allergies, or medical concerns.
           </p>
           <p className="text-amber-700 text-sm leading-relaxed">
-            HairGen does not guarantee specific results and is not responsible for any adverse effects resulting from the use of information or product recommendations contained in this article. Product recommendations are based on general research and may contain affiliate links.
+            Hair Routine Generator does not guarantee specific results and is not responsible for any adverse effects resulting from the use of information or product recommendations contained in this article. Product recommendations are based on general research and may contain affiliate links.
           </p>
           <p className="text-amber-600 text-xs mt-4">
             For more information, please review our{' '}

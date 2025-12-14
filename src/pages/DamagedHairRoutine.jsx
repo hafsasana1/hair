@@ -63,7 +63,7 @@ const DamagedHairRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Damaged Hair Repair Routine: Restore Health | HairGen</title>
+        <title>Damaged Hair Repair Routine: Restore Health | Hair Routine Generator</title>
         <meta name="description" content="Heat damage? Bleach damage? Don't panic. Follow our intensive repair routine to restore bonds, hydration, and elasticity to damaged hair." />
       </Helmet>
 

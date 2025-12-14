@@ -86,12 +86,12 @@ const About = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "name": "About HairGen",
-    "description": "Learn about HairGen's expert team, mission, and commitment to providing science-backed, personalized hair care solutions.",
+    "name": "About Hair Routine Generator",
+    "description": "Learn about Hair Routine Generator's expert team, mission, and commitment to providing science-backed, personalized hair care solutions.",
     "url": "https://hairgen.com/about",
     "mainEntity": {
       "@type": "Organization",
-      "name": "HairGen",
+      "name": "Hair Routine Generator",
       "description": "AI-powered personalized hair care solutions backed by expert knowledge",
       "foundingDate": "2023",
       "url": "https://hairgen.com",
@@ -146,13 +146,13 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About HairGen - Expert Hair Care Team & Our Mission | E-E-A-T Credentials</title>
-        <meta name="description" content="Meet HairGen's expert team of dermatologists, trichologists, and hair care specialists. Learn about our science-backed approach to personalized hair care solutions." />
+        <title>About Hair Routine Generator - Expert Hair Care Team & Our Mission | E-E-A-T Credentials</title>
+        <meta name="description" content="Meet Hair Routine Generator's expert team of dermatologists, trichologists, and hair care specialists. Learn about our science-backed approach to personalized hair care solutions." />
         <meta name="keywords" content="hairgen team, hair care experts, trichologist, dermatologist, hair science, personalized hair care" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hairgen.com/about" />
         
-        <meta property="og:title" content="About HairGen - Expert Hair Care Team" />
+        <meta property="og:title" content="About Hair Routine Generator - Expert Hair Care Team" />
         <meta property="og:description" content="Meet our team of dermatologists, trichologists, and hair care specialists committed to science-backed hair care." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hairgen.com/about" />
@@ -177,7 +177,7 @@ const About = () => {
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600">
-                  HairGen combines artificial intelligence with professional hair care knowledge from certified experts to deliver personalized routines that actually work.
+                  Hair Routine Generator combines artificial intelligence with professional hair care knowledge from certified experts to deliver personalized routines that actually work.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <div className="flex items-center gap-2 bg-green-100 px-4 py-2 rounded-full">
@@ -201,7 +201,7 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <img alt="HairGen team and technology" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1684196508688-4d1408bc5126" />
+                <img alt="Hair Routine Generator team and technology" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1684196508688-4d1408bc5126" />
               </motion.div>
             </div>
           </div>

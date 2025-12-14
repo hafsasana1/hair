@@ -35,7 +35,7 @@ const DryScalpRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Dry Scalp Routine: Hydration & Relief Guide | HairGen</title>
+        <title>Dry Scalp Routine: Hydration & Relief Guide | Hair Routine Generator</title>
         <meta name="description" content="Itchy, flaky scalp? Distinguish between dry scalp and dandruff. Learn the moisturizing routine to soothe irritation and restore scalp barrier health." />
       </Helmet>
 

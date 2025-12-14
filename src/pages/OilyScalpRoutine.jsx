@@ -44,7 +44,7 @@ const OilyScalpRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Oily Scalp Routine: How to Balance Sebum | HairGen</title>
+        <title>Oily Scalp Routine: How to Balance Sebum | Hair Routine Generator</title>
         <meta name="description" content="Struggling with greasy roots? Discover the ultimate routine for oily scalp care. Learn how to balance sebum production, choose the right shampoo, and extend wash days." />
       </Helmet>
 

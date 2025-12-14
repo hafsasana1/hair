@@ -7,8 +7,8 @@ const Privacy = () => {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy - HairGen</title>
-        <meta name="description" content="Read HairGen's privacy policy to understand how we collect, use, and protect your personal information." />
+        <title>Privacy Policy - Hair Routine Generator</title>
+        <meta name="description" content="Read Hair Routine Generator's privacy policy to understand how we collect, use, and protect your personal information." />
       </Helmet>
 
       <div className="min-h-screen bg-white py-12">
@@ -32,7 +32,7 @@ const Privacy = () => {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">1. Introduction</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  Welcome to HairGen. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
+                  Welcome to Hair Routine Generator. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
                 </p>
               </section>
 

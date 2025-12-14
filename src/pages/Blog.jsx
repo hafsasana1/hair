@@ -88,12 +88,12 @@ const blogPosts = [
 const schemaMarkup = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "HairGen Hair Care Blog",
+  "name": "Hair Routine Generator Hair Care Blog",
   "description": "Expert hair care tips, guides, and advice to help you achieve healthy, beautiful hair. Science-backed articles on porosity, natural ingredients, heat protection, and more.",
   "url": "https://hairgen.com/blog",
   "publisher": {
     "@type": "Organization",
-    "name": "HairGen",
+    "name": "Hair Routine Generator",
     "logo": {
       "@type": "ImageObject",
       "url": "/logo.png"
@@ -112,19 +112,19 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Hair Care Blog: Expert Tips, Guides & Science-Backed Advice | HairGen</title>
+        <title>Hair Care Blog: Expert Tips, Guides & Science-Backed Advice | Hair Routine Generator</title>
         <meta name="description" content="Explore expert hair care articles covering porosity, natural ingredients, heat protection, and personalized routines. Science-backed tips for all hair types. Start your hair transformation today!" />
         <meta name="keywords" content="hair care blog, hair tips, hair porosity guide, natural hair care, heat damage protection, hair routine, healthy hair tips" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
         <link rel="canonical" href="https://hairgen.com/blog" />
         
-        <meta property="og:title" content="Hair Care Blog: Expert Tips & Science-Backed Advice | HairGen" />
+        <meta property="og:title" content="Hair Care Blog: Expert Tips & Science-Backed Advice | Hair Routine Generator" />
         <meta property="og:description" content="Explore expert hair care articles covering porosity, natural ingredients, heat protection, and personalized routines for all hair types." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hairgen.com/blog" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hair Care Blog | HairGen" />
+        <meta name="twitter:title" content="Hair Care Blog | Hair Routine Generator" />
         <meta name="twitter:description" content="Expert hair care tips, guides, and advice for all hair types." />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>

@@ -39,7 +39,7 @@ const FrizzyHairRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Anti-Frizz Hair Routine: How to Tame Frizz | HairGen</title>
+        <title>Anti-Frizz Hair Routine: How to Tame Frizz | Hair Routine Generator</title>
         <meta name="description" content="Stop fighting the frizz. Learn the causes of frizzy hair and the step-by-step routine to smooth, hydrate, and seal your hair cuticle." />
       </Helmet>
 

@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Sparkles className="w-6 h-6 text-green-500" />
-              <span className="text-xl font-bold">HairGen</span>
+              <span className="text-xl font-bold">Hair Routine Generator</span>
             </div>
             <p className="text-gray-400 text-sm">
               AI-powered personalized hair care routines tailored to your unique needs.
@@ -71,7 +71,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} HairGen. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Hair Routine Generator. All rights reserved.</p>
         </div>
       </div>
     </footer>

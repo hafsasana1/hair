@@ -7,8 +7,8 @@ const Terms = () => {
   return (
     <>
       <Helmet>
-        <title>Terms of Service - HairGen</title>
-        <meta name="description" content="Read HairGen's terms of service to understand the rules and regulations for using our AI-powered hair care platform." />
+        <title>Terms of Service - Hair Routine Generator</title>
+        <meta name="description" content="Read Hair Routine Generator's terms of service to understand the rules and regulations for using our AI-powered hair care platform." />
       </Helmet>
 
       <div className="min-h-screen bg-white py-12">
@@ -32,14 +32,14 @@ const Terms = () => {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">1. Acceptance of Terms</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  By accessing and using HairGen's website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                  By accessing and using Hair Routine Generator's website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
                 </p>
               </section>
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">2. Use License</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  Permission is granted to temporarily access and use HairGen's services for personal, non-commercial use only. This is the grant of a license, not a transfer of title, and under this license you may not:
+                  Permission is granted to temporarily access and use Hair Routine Generator's services for personal, non-commercial use only. This is the grant of a license, not a transfer of title, and under this license you may not:
                 </p>
                 <div className="space-y-3 ml-6">
                   <p className="text-gray-700">• Modify or copy the materials</p>
@@ -53,7 +53,7 @@ const Terms = () => {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">3. Service Description</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  HairGen provides AI-powered personalized hair care routine recommendations. Our service includes:
+                  Hair Routine Generator provides AI-powered personalized hair care routine recommendations. Our service includes:
                 </p>
                 <div className="bg-green-50 p-6 rounded-xl space-y-2">
                   <p className="text-gray-700">• A comprehensive hair care quiz</p>
@@ -66,12 +66,12 @@ const Terms = () => {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">4. Disclaimer</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  The materials on HairGen's website are provided on an 'as is' basis. HairGen makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+                  The materials on Hair Routine Generator's website are provided on an 'as is' basis. Hair Routine Generator makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
                 </p>
                 <div className="bg-yellow-50 p-6 rounded-xl">
                   <p className="text-gray-700 font-semibold mb-2">Medical Disclaimer:</p>
                   <p className="text-gray-700">
-                    HairGen's recommendations are for informational purposes only and do not constitute medical advice. If you have concerns about your hair or scalp health, please consult with a qualified healthcare professional or licensed dermatologist.
+                    Hair Routine Generator's recommendations are for informational purposes only and do not constitute medical advice. If you have concerns about your hair or scalp health, please consult with a qualified healthcare professional or licensed dermatologist.
                   </p>
                 </div>
               </section>
@@ -79,35 +79,35 @@ const Terms = () => {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">5. Limitations</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  In no event shall HairGen or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use HairGen's services.
+                  In no event shall Hair Routine Generator or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use Hair Routine Generator's services.
                 </p>
               </section>
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">6. Accuracy of Materials</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  The materials appearing on HairGen's website could include technical, typographical, or photographic errors. HairGen does not warrant that any of the materials on its website are accurate, complete or current. HairGen may make changes to the materials contained on its website at any time without notice.
+                  The materials appearing on Hair Routine Generator's website could include technical, typographical, or photographic errors. Hair Routine Generator does not warrant that any of the materials on its website are accurate, complete or current. Hair Routine Generator may make changes to the materials contained on its website at any time without notice.
                 </p>
               </section>
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">7. Links</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  HairGen has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by HairGen of the site. Use of any such linked website is at the user's own risk.
+                  Hair Routine Generator has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by Hair Routine Generator of the site. Use of any such linked website is at the user's own risk.
                 </p>
               </section>
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">8. User Content</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  By submitting information through our quiz or other features, you grant HairGen a non-exclusive, royalty-free, perpetual, and worldwide license to use, modify, and distribute such information for the purpose of providing and improving our services.
+                  By submitting information through our quiz or other features, you grant Hair Routine Generator a non-exclusive, royalty-free, perpetual, and worldwide license to use, modify, and distribute such information for the purpose of providing and improving our services.
                 </p>
               </section>
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-gray-900">9. Modifications</h2>
                 <p className="text-gray-700 leading-relaxed">
-                  HairGen may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.
+                  Hair Routine Generator may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.
                 </p>
               </section>
 

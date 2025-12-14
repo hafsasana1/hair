@@ -41,7 +41,7 @@ const HighPorosityRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>High Porosity Hair Routine: Retain Moisture | HairGen</title>
+        <title>High Porosity Hair Routine: Retain Moisture | Hair Routine Generator</title>
         <meta name="description" content="Hair absorbs water instantly but dries just as fast? You have high porosity. Learn the LOC method, protein treatments, and sealing techniques to lock moisture in." />
       </Helmet>
 

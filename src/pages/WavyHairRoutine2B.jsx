@@ -31,7 +31,7 @@ const WavyHairRoutine2B = () => {
   return (
     <>
       <Helmet>
-        <title>2B Hair Routine: Enhance Your Natural Waves | HairGen</title>
+        <title>2B Hair Routine: Enhance Your Natural Waves | Hair Routine Generator</title>
         <meta name="description" content="A complete care guide for 2B wavy hair. Learn how to enhance definition, reduce frizz, and choose the right lightweight products for your waves." />
       </Helmet>
 

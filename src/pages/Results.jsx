@@ -368,7 +368,7 @@ const Results = () => {
   return (
     <>
       <Helmet>
-        <title>Your Personalized Hair Routine - HairGen</title>
+        <title>Your Personalized Hair Routine - Hair Routine Generator</title>
         <meta name="description" content="Your AI-generated personalized hair care routine tailored to your unique needs." />
       </Helmet>
 
@@ -606,7 +606,7 @@ const Results = () => {
             <div className="bg-gradient-to-r from-green-500 to-yellow-400 rounded-2xl p-8 text-center text-white space-y-4">
               <h2 className="text-2xl font-bold">Love Your Results?</h2>
               <p className="text-white/90">
-                Share HairGen with friends and help them discover their perfect hair routine too!
+                Share Hair Routine Generator with friends and help them discover their perfect hair routine too!
               </p>
               <Button
                 onClick={handleShare}

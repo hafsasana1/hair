@@ -50,12 +50,12 @@ const Contact = () => {
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact HairGen",
-    "description": "Get in touch with HairGen for hair care advice, support, or general inquiries.",
+    "name": "Contact Hair Routine Generator",
+    "description": "Get in touch with Hair Routine Generator for hair care advice, support, or general inquiries.",
     "url": "https://hairgen.com/contact",
     "mainEntity": {
       "@type": "Organization",
-      "name": "HairGen",
+      "name": "Hair Routine Generator",
       "email": "support@hairgen.com",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -75,13 +75,13 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us - HairGen | Hair Care Support & Inquiries</title>
-        <meta name="description" content="Contact HairGen for personalized hair care advice, product recommendations, or general support. Our expert team is here to help you achieve your hair goals." />
+        <title>Contact Us - Hair Routine Generator | Hair Care Support & Inquiries</title>
+        <meta name="description" content="Contact Hair Routine Generator for personalized hair care advice, product recommendations, or general support. Our expert team is here to help you achieve your hair goals." />
         <meta name="keywords" content="contact hairgen, hair care support, hair advice, customer service, hair care help" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hairgen.com/contact" />
         
-        <meta property="og:title" content="Contact Us - HairGen" />
+        <meta property="og:title" content="Contact Us - Hair Routine Generator" />
         <meta property="og:description" content="Get in touch with our hair care experts for personalized advice and support." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hairgen.com/contact" />

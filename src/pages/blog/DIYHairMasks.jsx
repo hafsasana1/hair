@@ -9,7 +9,7 @@ import BlogDisclaimer from '@/components/BlogDisclaimer';
 const DIYHairMasks = () => {
   const publishDate = '2025-12-14';
   const updateDate = '2025-12-14';
-  const author = 'HairGen Expert Team';
+  const author = 'Hair Routine Generator Expert Team';
   const readTime = '22 min read';
 
   const tableOfContents = [
@@ -48,12 +48,12 @@ const DIYHairMasks = () => {
     ],
     "author": {
       "@type": "Organization",
-      "name": "HairGen",
+      "name": "Hair Routine Generator",
       "url": "https://hairgen.com"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "HairGen",
+      "name": "Hair Routine Generator",
       "logo": {
         "@type": "ImageObject",
         "url": "/logo.png"
@@ -206,7 +206,7 @@ const DIYHairMasks = () => {
     "image": "/images/blog/avocado_hair_mask.webp",
     "author": {
       "@type": "Organization",
-      "name": "HairGen"
+      "name": "Hair Routine Generator"
     },
     "prepTime": "PT10M",
     "totalTime": "PT45M",

@@ -10,7 +10,7 @@ const HeatDamageProtection = () => {
   const publishDate = '2025-12-05';
   const updateDate = '2025-12-14';
   const readTime = '14 min read';
-  const author = 'HairGen Expert Team';
+  const author = 'Hair Routine Generator Expert Team';
 
   const tableOfContents = [
     { id: 'understanding-heat-damage', title: 'Understanding Heat Damage' },
@@ -40,11 +40,11 @@ const HeatDamageProtection = () => {
     "image": "/images/blog/woman_using_hair_str_d63b3565.webp",
     "author": {
       "@type": "Organization",
-      "name": "HairGen"
+      "name": "Hair Routine Generator"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "HairGen"
+      "name": "Hair Routine Generator"
     },
     "datePublished": publishDate,
     "dateModified": updateDate

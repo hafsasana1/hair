@@ -39,7 +39,7 @@ const CurlyHairRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Ultimate Curly Hair Routine (2A-4C) | HairGen Guide</title>
+        <title>Ultimate Curly Hair Routine (2A-4C) | Hair Routine Generator Guide</title>
         <meta name="description" content="The comprehensive guide to curly hair care. Discover the best routine for 2A to 4C hair types, product recommendations, and expert tips for defined, healthy curls." />
       </Helmet>
 

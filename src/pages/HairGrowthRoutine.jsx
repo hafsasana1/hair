@@ -40,7 +40,7 @@ const HairGrowthRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Hair Growth Routine: Science-Backed Tips for Length | HairGen</title>
+        <title>Hair Growth Routine: Science-Backed Tips for Length | Hair Routine Generator</title>
         <meta name="description" content="Want longer, thicker hair? Follow our science-backed hair growth routine. Learn about the growth cycle, scalp massage techniques, and essential nutrients." />
       </Helmet>
 

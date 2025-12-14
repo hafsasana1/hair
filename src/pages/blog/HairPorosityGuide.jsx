@@ -10,7 +10,7 @@ const HairPorosityGuide = () => {
   const publishDate = '2025-12-10';
   const updateDate = '2025-12-14';
   const readTime = '15 min read';
-  const author = 'HairGen Expert Team';
+  const author = 'Hair Routine Generator Expert Team';
 
   const tableOfContents = [
     { id: 'what-is-hair-porosity', title: 'What is Hair Porosity?' },
@@ -40,11 +40,11 @@ const HairPorosityGuide = () => {
     "image": "/images/blog/woman_examining_hair_0a03f537.webp",
     "author": {
       "@type": "Organization",
-      "name": "HairGen"
+      "name": "Hair Routine Generator"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "HairGen",
+      "name": "Hair Routine Generator",
       "logo": {
         "@type": "ImageObject",
         "url": "/logo.png"

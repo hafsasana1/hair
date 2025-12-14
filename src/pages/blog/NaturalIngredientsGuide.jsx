@@ -10,7 +10,7 @@ const NaturalIngredientsGuide = () => {
   const publishDate = '2025-12-08';
   const updateDate = '2025-12-14';
   const readTime = '12 min read';
-  const author = 'HairGen Expert Team';
+  const author = 'Hair Routine Generator Expert Team';
 
   const tableOfContents = [
     { id: 'introduction', title: 'Introduction to Natural Hair Care' },
@@ -43,11 +43,11 @@ const NaturalIngredientsGuide = () => {
     "image": "/images/blog/natural_hair_care_in_fc40f08f.webp",
     "author": {
       "@type": "Organization",
-      "name": "HairGen"
+      "name": "Hair Routine Generator"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "HairGen"
+      "name": "Hair Routine Generator"
     },
     "datePublished": publishDate,
     "dateModified": updateDate

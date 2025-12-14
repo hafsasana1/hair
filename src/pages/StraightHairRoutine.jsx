@@ -29,7 +29,7 @@ const StraightHairRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Straight Hair Routine (1A-1C): Complete Care Guide | HairGen</title>
+        <title>Straight Hair Routine (1A-1C): Complete Care Guide | Hair Routine Generator</title>
         <meta name="description" content="Master your straight hair care routine for Types 1A, 1B, and 1C. Learn how to add volume, control oil, prevent frizz, and keep your straight hair healthy and shiny." />
         <meta name="keywords" content="straight hair routine, type 1a hair, type 1b hair, type 1c hair, straight hair care, fine hair routine, limp hair solutions, oily hair tips" />
       </Helmet>
