@@ -331,13 +331,19 @@ const Home = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
+                className="relative flex items-center justify-center"
               >
-                <div className="relative z-10">
-                  <img alt="AI hair routine generator result preview" className="rounded-2xl shadow-2xl w-full object-cover" src="/images/blog/hair_types_comparison_guide.webp" loading="lazy" />
+                <div className="relative z-10 bg-white p-6 rounded-3xl shadow-2xl border border-gray-100">
+                  <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-4">
+                    <img alt="AI hair routine generator result preview" className="rounded-xl w-full h-auto max-h-[400px] object-contain" src="/images/blog/hair_types_comparison_guide.webp" loading="lazy" />
+                  </div>
+                  <div className="mt-4 text-center">
+                    <p className="text-sm font-medium text-gray-600">All Hair Types: 1A - 4C</p>
+                    <p className="text-xs text-gray-400 mt-1">Straight • Wavy • Curly • Coily</p>
+                  </div>
                 </div>
-                <div className="absolute -top-4 -right-4 w-72 h-72 bg-green-200 rounded-full blur-3xl opacity-50 -z-10"></div>
-                <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-yellow-200 rounded-full blur-3xl opacity-50 -z-10"></div>
+                <div className="absolute -top-6 -right-6 w-80 h-80 bg-green-200 rounded-full blur-3xl opacity-40 -z-10"></div>
+                <div className="absolute -bottom-6 -left-6 w-80 h-80 bg-yellow-200 rounded-full blur-3xl opacity-40 -z-10"></div>
               </motion.div>
             </div>
           </div>
