@@ -331,19 +331,18 @@ const Home = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative flex items-center justify-center"
+                className="relative"
               >
                 <div className="relative z-10">
-                  <img alt="AI hair routine generator result preview" className="w-full h-auto max-h-[450px] object-contain drop-shadow-2xl" src="/images/blog/hair_types_comparison_guide.webp" loading="lazy" />
-                  <div className="mt-6 flex justify-center gap-3">
-                    <span className="px-3 py-1.5 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-semibold rounded-full shadow-lg">Straight 1A-1C</span>
-                    <span className="px-3 py-1.5 bg-gradient-to-r from-amber-500 to-yellow-500 text-white text-xs font-semibold rounded-full shadow-lg">Wavy 2A-2C</span>
-                    <span className="px-3 py-1.5 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-semibold rounded-full shadow-lg">Curly 3A-3C</span>
-                    <span className="px-3 py-1.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-semibold rounded-full shadow-lg">Coily 4A-4C</span>
-                  </div>
+                  <img 
+                    alt="AI hair routine generator result preview" 
+                    className="rounded-3xl shadow-2xl w-full h-auto object-cover" 
+                    src="/attached_assets/stock_images/beautiful_healthy_sh_2ffeb95f.jpg" 
+                    loading="lazy" 
+                  />
                 </div>
-                <div className="absolute -top-8 -right-8 w-96 h-96 bg-gradient-to-br from-green-300 to-emerald-200 rounded-full blur-3xl opacity-30 -z-10"></div>
-                <div className="absolute -bottom-8 -left-8 w-96 h-96 bg-gradient-to-br from-yellow-300 to-amber-200 rounded-full blur-3xl opacity-30 -z-10"></div>
+                <div className="absolute -top-6 -right-6 w-72 h-72 bg-green-200 rounded-full blur-3xl opacity-50 -z-10"></div>
+                <div className="absolute -bottom-6 -left-6 w-72 h-72 bg-yellow-200 rounded-full blur-3xl opacity-50 -z-10"></div>
               </motion.div>
             </div>
           </div>
