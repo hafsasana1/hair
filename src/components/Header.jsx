@@ -1,28 +1,26 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home, ClipboardList, BookOpen, Users, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from './Logo';
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const navLinks = [{
-    path: '/',
-    label: 'Home'
-  }, {
-    path: '/quiz',
-    label: 'Take Quiz'
-  }, {
-    path: '/blog',
-    label: 'Blog'
-  }, {
-    path: '/about',
-    label: 'About'
-  }];
+  
+  const navLinks = [
+    { path: '/', label: 'Home', icon: Home, color: 'text-emerald-500' },
+    { path: '/quiz', label: 'Take Quiz', icon: ClipboardList, color: 'text-amber-500' },
+    { path: '/blog', label: 'Blog', icon: BookOpen, color: 'text-sky-500' },
+    { path: '/about', label: 'About', icon: Users, color: 'text-purple-500' }
+  ];
+  
   const isActive = path => location.pathname === path;
-  return <header className="sticky top-0 z-50 bg-white shadow-md">
-      <nav className="container mx-auto px-4 py-4">
+  
+  return (
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-100">
+      <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
             <motion.div
@@ -42,50 +40,90 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
-            {navLinks.map(link => <Link key={link.path} to={link.path} className={`font-medium transition-colors hover:text-green-500 ${isActive(link.path) ? 'text-green-500' : 'text-gray-700'}`}>
-                {link.label}
-              </Link>)}
-            <Link to="/quiz">
-              <Button className="bg-gradient-to-r from-green-500 to-yellow-400 hover:from-green-600 hover:to-yellow-500 text-white font-semibold">
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map(link => {
+              const IconComponent = link.icon;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`group flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                    isActive(link.path)
+                      ? 'bg-gradient-to-r from-green-50 to-yellow-50 text-gray-800 shadow-sm'
+                      : 'text-gray-600 hover:bg-gray-50'
+                  }`}
+                >
+                  <IconComponent className={`w-4 h-4 transition-all duration-300 ${
+                    isActive(link.path) ? link.color : 'text-gray-400 group-hover:' + link.color.replace('text-', 'text-')
+                  } group-hover:scale-110`} />
+                  <span className={`transition-colors duration-300 ${
+                    isActive(link.path) ? 'text-gray-800' : 'group-hover:text-gray-800'
+                  }`}>
+                    {link.label}
+                  </span>
+                </Link>
+              );
+            })}
+            <Link to="/quiz" className="ml-2">
+              <Button className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2">
+                <Sparkles className="w-4 h-4" />
                 Start Quiz
               </Button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-gray-700 hover:text-green-500 transition-colors" aria-label="Toggle menu">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-300"
+            aria-label="Toggle menu"
+          >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         <AnimatePresence>
-          {isMenuOpen && <motion.div initial={{
-          opacity: 0,
-          height: 0
-        }} animate={{
-          opacity: 1,
-          height: 'auto'
-        }} exit={{
-          opacity: 0,
-          height: 0
-        }} transition={{
-          duration: 0.3
-        }} className="md:hidden overflow-hidden">
-              <div className="flex flex-col gap-4 pt-4 pb-2">
-                {navLinks.map(link => <Link key={link.path} to={link.path} onClick={() => setIsMenuOpen(false)} className={`font-medium transition-colors hover:text-green-500 ${isActive(link.path) ? 'text-green-500' : 'text-gray-700'}`}>
-                    {link.label}
-                  </Link>)}
-                <Link to="/quiz" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="w-full bg-gradient-to-r from-green-500 to-yellow-400 hover:from-green-600 hover:to-yellow-500 text-white font-semibold">
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="flex flex-col gap-2 pt-4 pb-2">
+                {navLinks.map(link => {
+                  const IconComponent = link.icon;
+                  return (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
+                        isActive(link.path)
+                          ? 'bg-gradient-to-r from-green-50 to-yellow-50 text-gray-800 shadow-sm'
+                          : 'text-gray-600 hover:bg-gray-50'
+                      }`}
+                    >
+                      <IconComponent className={`w-5 h-5 ${link.color}`} />
+                      <span>{link.label}</span>
+                    </Link>
+                  );
+                })}
+                <Link to="/quiz" onClick={() => setIsMenuOpen(false)} className="mt-2">
+                  <Button className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white font-semibold shadow-lg flex items-center justify-center gap-2">
+                    <Sparkles className="w-4 h-4" />
                     Start Quiz
                   </Button>
                 </Link>
               </div>
-            </motion.div>}
+            </motion.div>
+          )}
         </AnimatePresence>
       </nav>
-    </header>;
+    </header>
+  );
 };
+
 export default Header;
