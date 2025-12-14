@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Calendar, BookOpen, CheckCircle, AlertCircle, Star, Sparkles, ExternalLink } from 'lucide-react';
+import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const HairTypesGuide = () => {
   const publishDate = '2025-12-14';
@@ -970,6 +971,8 @@ const HairTypesGuide = () => {
                     </Link>
                   </div>
                 </section>
+
+                <BlogDisclaimer />
 
                 {/* Related Articles */}
                 <section className="border-t border-gray-200 pt-12">

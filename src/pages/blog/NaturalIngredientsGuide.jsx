@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Calendar, Clock, ArrowLeft, User, Share2, BookOpen, Leaf } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const NaturalIngredientsGuide = () => {
   const publishDate = '2025-12-08';
@@ -612,6 +613,8 @@ const NaturalIngredientsGuide = () => {
                     </Button>
                   </Link>
                 </div>
+
+                <BlogDisclaimer />
 
                 <div className="border-t border-gray-200 mt-12 pt-8">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Related Articles</h3>

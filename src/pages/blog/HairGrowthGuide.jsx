@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Calendar, Clock, ArrowLeft, User, Share2, BookOpen, CheckCircle, AlertTriangle, Sparkles, Heart, Zap, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const HairGrowthGuide = () => {
   const publishDate = '2025-12-14';
@@ -1022,6 +1023,8 @@ const HairGrowthGuide = () => {
                     </Button>
                   </Link>
                 </div>
+
+                <BlogDisclaimer />
 
                 <div className="mt-12 pt-8 border-t border-gray-200">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Continue Your Hair Care Journey</h3>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Calendar, BookOpen, CheckCircle, AlertCircle, Star, Sparkles, ExternalLink, Sun, CloudSnow, Leaf, Flower2, Droplets, Thermometer, Shield, User, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const SeasonalHairCare = () => {
   const publishDate = '2025-12-14';
@@ -1081,6 +1082,8 @@ const SeasonalHairCare = () => {
                     </Button>
                   </Link>
                 </div>
+
+                <BlogDisclaimer />
 
                 <div className="mt-12 pt-8 border-t border-gray-200">
                   <h3 className="text-xl font-bold text-gray-900 mb-6">Related Articles</h3>
