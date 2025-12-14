@@ -333,16 +333,51 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <div className="relative z-10">
-                  <img 
+                <motion.div 
+                  className="relative z-10"
+                  animate={{ 
+                    y: [0, -10, 0],
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <motion.img 
                     alt="AI hair routine generator result preview" 
-                    className="rounded-3xl shadow-2xl w-full h-auto object-cover" 
-                    src="/attached_assets/generated_images/hair_types_illustration_comparison.png" 
-                    loading="lazy" 
+                    className="w-full h-auto object-contain max-h-[500px] drop-shadow-2xl" 
+                    src="/attached_assets/generated_images/elegant_hair_types_white_bg.png" 
+                    loading="lazy"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
                   />
-                </div>
-                <div className="absolute -top-6 -right-6 w-72 h-72 bg-green-200 rounded-full blur-3xl opacity-50 -z-10"></div>
-                <div className="absolute -bottom-6 -left-6 w-72 h-72 bg-yellow-200 rounded-full blur-3xl opacity-50 -z-10"></div>
+                </motion.div>
+                <motion.div 
+                  className="absolute -top-6 -right-6 w-72 h-72 bg-green-200 rounded-full blur-3xl opacity-50 -z-10"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    opacity: [0.5, 0.3, 0.5]
+                  }}
+                  transition={{ 
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <motion.div 
+                  className="absolute -bottom-6 -left-6 w-72 h-72 bg-yellow-200 rounded-full blur-3xl opacity-50 -z-10"
+                  animate={{ 
+                    scale: [1, 1.15, 1],
+                    opacity: [0.5, 0.35, 0.5]
+                  }}
+                  transition={{ 
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                />
               </motion.div>
             </div>
           </div>
