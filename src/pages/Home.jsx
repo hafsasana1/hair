@@ -443,23 +443,6 @@ const Home = () => {
               ))}
             </div>
 
-            {/* Internal Link Guide Section */}
-            <div className="mt-12 text-center">
-              <p className="text-gray-600 mb-4">Looking for something specific?</p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm font-medium">
-                <Link to="/hair-routine-for-curly-hair" className="text-green-600 hover:underline">Curly Hair Guide</Link>
-                <span className="text-gray-300">•</span>
-                <Link to="/hair-routine-for-wavy-hair" className="text-green-600 hover:underline">Wavy Hair Routine</Link>
-                <span className="text-gray-300">•</span>
-                <Link to="/hair-routine-for-straight-hair" className="text-green-600 hover:underline">Straight Hair Care</Link>
-                <span className="text-gray-300">•</span>
-                <Link to="/hair-growth-routine" className="text-green-600 hover:underline">Hair Growth Routine</Link>
-                <span className="text-gray-300">•</span>
-                <Link to="/hair-routine-for-low-porosity" className="text-green-600 hover:underline">Low Porosity Care</Link>
-                <span className="text-gray-300">•</span>
-                <Link to="/hair-routine-for-frizzy-hair" className="text-green-600 hover:underline">Anti-Frizz Solutions</Link>
-              </div>
-            </div>
           </div>
         </section>
 
