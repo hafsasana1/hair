@@ -36,6 +36,8 @@ export const QuizProvider = ({ children }) => {
     setAnswers({});
     setUserEmail('');
     setGeneratedRoutine(null);
+    localStorage.removeItem('hairgen_routine');
+    localStorage.removeItem('hairgen_answers');
   };
 
   const value = {
