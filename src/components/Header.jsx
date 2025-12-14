@@ -73,13 +73,21 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-300"
+            className="md:hidden p-2.5 rounded-xl bg-gradient-to-br from-green-50 to-yellow-50 border border-green-100 shadow-sm hover:shadow-md transition-all duration-300"
             aria-label="Toggle menu"
+            whileTap={{ scale: 0.95 }}
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-rose-500" />
+            ) : (
+              <div className="relative">
+                <Menu className="w-6 h-6 text-emerald-600" />
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+              </div>
+            )}
+          </motion.button>
         </div>
 
         {/* Mobile Navigation */}
