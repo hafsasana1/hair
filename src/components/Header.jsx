@@ -35,7 +35,7 @@ const Header = () => {
               <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-green-500 via-lime-500 to-yellow-400 bg-clip-text text-transparent leading-tight">
                 Hair Routine
               </span>
-              <span className="text-[10px] md:text-xs text-gray-500 font-medium tracking-wider uppercase -mt-1">
+              <span className="text-[10px] md:text-xs font-semibold tracking-wider uppercase -mt-1 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent">
                 Generator
               </span>
             </div>
