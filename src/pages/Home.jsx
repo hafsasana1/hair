@@ -68,30 +68,43 @@ const Home = () => {
         "@type": "HowTo",
         "name": "How the Hair Routine Generator Works",
         "description": "Generate a personalized hair care routine in 4 simple steps",
+        "totalTime": "PT1M",
         "step": [
           {
             "@type": "HowToStep",
-            "position": 1,
+            "url": "https://hairgen.com/#step1",
             "name": "Analyze Your Hair",
-            "text": "Analyze your hair type, porosity, and scalp condition through our smart quiz"
+            "itemListElement": {
+              "@type": "HowToDirection",
+              "text": "Analyze your hair type, porosity, and scalp condition through our smart quiz that gathers details about your unique hair characteristics."
+            }
           },
           {
             "@type": "HowToStep",
-            "position": 2,
+            "url": "https://hairgen.com/#step2",
             "name": "Identify Goals",
-            "text": "Identify your hair care goals and lifestyle preferences"
+            "itemListElement": {
+              "@type": "HowToDirection",
+              "text": "Identify your hair care goals and lifestyle preferences to ensure your routine fits seamlessly into your daily life."
+            }
           },
           {
             "@type": "HowToStep",
-            "position": 3,
+            "url": "https://hairgen.com/#step3",
             "name": "Generate Routine",
-            "text": "Generate a personalized daily and weekly hair routine using AI"
+            "itemListElement": {
+              "@type": "HowToDirection",
+              "text": "Generate a personalized daily and weekly hair routine using our AI that combines expert knowledge with your specific needs."
+            }
           },
           {
             "@type": "HowToStep",
-            "position": 4,
+            "url": "https://hairgen.com/#step4",
             "name": "Follow and Adjust",
-            "text": "Follow your routine and adjust based on results for optimal hair health"
+            "itemListElement": {
+              "@type": "HowToDirection",
+              "text": "Follow your routine and adjust based on results to achieve optimal hair health over time."
+            }
           }
         ]
       },
