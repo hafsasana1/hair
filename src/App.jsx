@@ -42,6 +42,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/quiz" element={<Quiz />} />
               <Route path="/results" element={<Results />} />
+              <Route path="/routine/:slug" element={<Results />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />

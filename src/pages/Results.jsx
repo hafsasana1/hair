@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Helmet } from 'react-helmet';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Download, 
@@ -30,7 +30,17 @@ import {
   Snowflake,
   HelpCircle,
   ChevronDown,
-  MessageCircleQuestion
+  MessageCircleQuestion,
+  Calendar,
+  Scissors,
+  Flame,
+  ShoppingBag,
+  Lightbulb,
+  ArrowRight,
+  Check,
+  Star,
+  Target,
+  Shield
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useQuiz } from '@/context/QuizContext';
@@ -219,10 +229,12 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => (
 
 const Results = () => {
   const navigate = useNavigate();
+  const { slug } = useParams();
   const { toast } = useToast();
-  const { answers, userEmail, generatedRoutine, setGeneratedRoutine, resetQuiz } = useQuiz();
+  const { answers, userEmail, generatedRoutine, setGeneratedRoutine, resetQuiz, setAnswers } = useQuiz();
   const [isGenerating, setIsGenerating] = useState(false);
   const [openFAQ, setOpenFAQ] = useState(null);
+  const [localAnswers, setLocalAnswers] = useState(null);
 
   // Get profile icon helper
   const getProfileIcon = (key, value) => {
@@ -231,65 +243,217 @@ const Results = () => {
     if (mapping) {
       return mapping;
     }
-    // Default icon
     return { icon: Sparkles, color: 'text-green-500', bg: 'bg-green-100' };
   };
 
   useEffect(() => {
-    if (!answers || Object.keys(answers).length === 0) {
-      navigate('/quiz');
-      return;
+    const hasContextAnswers = answers && Object.keys(answers).length > 0;
+    
+    if (!hasContextAnswers) {
+      const savedRoutine = localStorage.getItem('hairgen_routine');
+      const savedAnswers = localStorage.getItem('hairgen_answers');
+      
+      if (savedRoutine && savedAnswers) {
+        try {
+          const parsedRoutine = JSON.parse(savedRoutine);
+          const parsedAnswers = JSON.parse(savedAnswers);
+          setLocalAnswers(parsedAnswers);
+          setGeneratedRoutine(parsedRoutine);
+          if (setAnswers) {
+            setAnswers(parsedAnswers);
+          }
+        } catch (e) {
+          if (!slug) {
+            navigate('/quiz');
+          }
+        }
+      } else if (!slug) {
+        navigate('/quiz');
+        return;
+      }
     }
 
-    if (!generatedRoutine) {
+    if (hasContextAnswers && !generatedRoutine) {
       generateRoutine();
     }
-  }, []);
+  }, [answers, generatedRoutine]);
 
   const generateRoutine = async () => {
     setIsGenerating(true);
 
-    // Simulate AI generation (In production, this would call OpenAI API)
     await new Promise(resolve => setTimeout(resolve, 2000));
+
+    const hairType = answers.hairType || 'Not specified';
+    const porosity = answers.porosity || 'Not specified';
+    const density = answers.density || 'Not specified';
+    const concerns = Array.isArray(answers.concerns) ? answers.concerns : [];
+    const climate = answers.climate || 'Not specified';
 
     const routine = {
       hairProfile: {
-        type: answers.hairType || 'Not specified',
-        porosity: answers.porosity || 'Not specified',
-        density: answers.density || 'Not specified',
-        concerns: Array.isArray(answers.concerns) ? answers.concerns.join(', ') : 'None',
-        climate: answers.climate || 'Not specified'
+        type: hairType,
+        porosity: porosity,
+        density: density,
+        concerns: concerns.length > 0 ? concerns.join(', ') : 'None',
+        climate: climate
       },
       morningRoutine: [
         {
           step: 1,
-          title: 'Gentle Cleanse',
-          description: 'Use a sulfate-free shampoo suitable for your hair type. Focus on the scalp and massage gently.',
-          products: ['Moisturizing Shampoo', 'Clarifying Shampoo (weekly)'],
-          frequency: 'As needed based on your wash schedule'
+          title: 'Refresh & Hydrate',
+          description: 'Mist hair lightly with water or a hydrating spray to reactivate products and add moisture.',
+          icon: 'droplet'
         },
         {
           step: 2,
-          title: 'Deep Conditioning',
-          description: 'Apply conditioner from mid-length to ends. Leave for 3-5 minutes before rinsing with cool water.',
-          products: ['Hydrating Conditioner', 'Leave-in Conditioner'],
-          frequency: 'Every wash'
+          title: 'Apply Leave-In Conditioner',
+          description: 'Work a lightweight leave-in conditioner through damp hair, focusing on mid-lengths to ends.',
+          icon: 'bottle'
         },
         {
           step: 3,
-          title: 'Styling & Protection',
-          description: 'Apply heat protectant if using styling tools. Use curl cream or styling mousse for definition.',
-          products: ['Heat Protectant Spray', 'Styling Cream', 'Hair Oil'],
-          frequency: 'Daily'
+          title: 'Style Definition',
+          description: porosity === 'low' 
+            ? 'Use water-based, lightweight curl cream. Low porosity hair absorbs better with heat, so consider diffusing.'
+            : 'Apply curl-defining cream or gel to enhance your natural texture and reduce frizz.',
+          icon: 'sparkle'
+        },
+        {
+          step: 4,
+          title: 'Air Dry or Diffuse',
+          description: 'Let hair air dry naturally or use a diffuser on low heat. Avoid touching hair while drying to prevent frizz.',
+          icon: 'wind'
         }
       ],
       eveningRoutine: [
         {
           step: 1,
-          title: 'Protective Styling',
-          description: 'Gently brush hair and apply a small amount of hair oil. Use silk pillowcase or bonnet.',
-          products: ['Silk Pillowcase', 'Overnight Hair Oil', 'Hair Bonnet'],
-          frequency: 'Every night'
+          title: 'Pineapple Method',
+          description: 'Gather hair into a loose, high ponytail on top of your head to preserve curls and prevent flattening while sleeping.',
+          icon: 'crown'
+        },
+        {
+          step: 2,
+          title: 'Satin Protection',
+          description: 'Use a satin or silk bonnet, scarf, or pillowcase to reduce friction and prevent breakage overnight.',
+          icon: 'shield'
+        },
+        {
+          step: 3,
+          title: 'Moisture Lock',
+          description: 'Apply a light moisture spray or oil to dry ends before bed to maintain hydration.',
+          icon: 'droplets'
+        }
+      ],
+      weeklySchedule: [
+        {
+          day: 'Day 1',
+          title: 'Wash Day',
+          description: 'Complete cleansing routine with shampoo, conditioner, and detangling session.',
+          tasks: [
+            porosity === 'low' ? 'Use clarifying shampoo to remove buildup' : 'Use sulfate-free moisturizing shampoo',
+            'Apply conditioner and detangle with wide-tooth comb',
+            'Rinse with cool water to seal cuticles',
+            'Apply styling products while hair is soaking wet'
+          ],
+          color: 'green'
+        },
+        {
+          day: 'Day 3-4',
+          title: 'Refresh Day',
+          description: 'Revive your style without full wash.',
+          tasks: [
+            'Spray hair with water or refresher spray',
+            'Scrunch to reactivate curl pattern',
+            'Add light styling product if needed',
+            'Diffuse roots for volume if flat'
+          ],
+          color: 'blue'
+        },
+        {
+          day: 'Day 7',
+          title: 'Deep Conditioning',
+          description: 'Intensive moisture treatment for healthy hair.',
+          tasks: [
+            'Apply deep conditioning mask to clean, damp hair',
+            porosity === 'low' ? 'Use heat cap or steamer for 20-30 minutes' : 'Leave on for 20-30 minutes',
+            'Rinse thoroughly with cool water',
+            'Follow with leave-in conditioner'
+          ],
+          color: 'purple'
+        }
+      ],
+      productRecommendations: [
+        {
+          category: 'Shampoo',
+          description: porosity === 'low' 
+            ? 'Clarifying shampoo to remove buildup from low porosity hair'
+            : porosity === 'high'
+            ? 'Moisturizing, sulfate-free shampoo to retain moisture'
+            : 'Gentle sulfate-free shampoo for balanced cleansing',
+          icon: 'bottle'
+        },
+        {
+          category: 'Deep Conditioner',
+          description: porosity === 'low'
+            ? 'Lightweight protein-free deep conditioner with humectants'
+            : porosity === 'high'
+            ? 'Rich, protein-packed deep conditioner to strengthen hair'
+            : 'Balanced hydrating mask with natural oils',
+          icon: 'jar'
+        },
+        {
+          category: 'Curl Cream / Styler',
+          description: hairType === 'curly' || hairType === 'coily'
+            ? 'Curl-defining cream with hold for defined, bouncy curls'
+            : hairType === 'wavy'
+            ? 'Lightweight mousse or sea salt spray for enhanced waves'
+            : 'Smoothing serum for sleek, polished finish',
+          icon: 'tube'
+        },
+        {
+          category: 'Hair Oil / Serum',
+          description: porosity === 'low'
+            ? 'Lightweight oils like argan or grapeseed that won\'t weigh hair down'
+            : 'Rich oils like castor, olive, or JBCO to seal in moisture',
+          icon: 'dropper'
+        },
+        {
+          category: 'Anti-Frizz Treatment',
+          description: climate === 'humid'
+            ? 'Anti-humidity serum or gel to combat frizz in moisture-rich air'
+            : 'Hydrating anti-frizz spray for smooth, defined texture',
+          icon: 'spray'
+        }
+      ],
+      advancedTips: [
+        {
+          title: 'Understanding Your Porosity',
+          content: porosity === 'low'
+            ? 'Low porosity hair has tightly closed cuticles, making it harder for moisture to penetrate. Use heat when deep conditioning, avoid heavy products that cause buildup, and opt for water-based, lightweight formulas.'
+            : porosity === 'high'
+            ? 'High porosity hair absorbs moisture quickly but loses it just as fast. Use the LOC (Liquid-Oil-Cream) method to layer products, incorporate protein treatments, and seal with heavier oils.'
+            : 'Medium porosity hair is the most versatile. Focus on maintaining moisture balance and protect from damage to keep cuticles healthy.',
+          icon: 'droplet'
+        },
+        {
+          title: 'Scalp Health Matters',
+          content: concerns.includes('oiliness')
+            ? 'Oily scalp may require more frequent washing. Focus shampoo on roots only, use a gentle clarifying treatment weekly, and avoid heavy oils near the scalp.'
+            : concerns.includes('dandruff')
+            ? 'For dandruff-prone scalp, use anti-dandruff shampoo, massage scalp to improve circulation, and consider tea tree oil treatments.'
+            : 'Healthy hair starts with a healthy scalp. Massage your scalp during washing to stimulate blood flow and promote hair growth.',
+          icon: 'target'
+        },
+        {
+          title: 'Preventing Breakage',
+          content: 'Always detangle when hair is wet and saturated with conditioner. Start from the ends and work up to roots. Use wide-tooth combs or fingers, never brush curly/coily hair when dry. Sleep on satin to reduce friction.',
+          icon: 'shield'
+        },
+        {
+          title: 'Heat Protection Tips',
+          content: 'If using heat styling tools, always apply a heat protectant spray first. Use the lowest effective temperature setting. Limit heat styling to once or twice a week maximum, and consider heatless styling alternatives.',
+          icon: 'flame'
         }
       ],
       weeklyTreatments: [
@@ -317,8 +481,8 @@ const Results = () => {
     setGeneratedRoutine(routine);
     setIsGenerating(false);
 
-    // Save to localStorage
     localStorage.setItem('hairgen_routine', JSON.stringify(routine));
+    localStorage.setItem('hairgen_answers', JSON.stringify(answers));
   };
 
   const handleDownloadPDF = () => {
@@ -365,11 +529,48 @@ const Results = () => {
     );
   }
 
+  const getSEOTitle = () => {
+    const type = generatedRoutine?.hairProfile?.type || 'Your';
+    const porosity = generatedRoutine?.hairProfile?.porosity || '';
+    const typeStr = type.charAt(0).toUpperCase() + type.slice(1);
+    const porosityStr = porosity ? `, ${porosity.charAt(0).toUpperCase() + porosity.slice(1)} Porosity` : '';
+    return `Your Personalized Hair Routine for ${typeStr}${porosityStr} Hair`;
+  };
+
+  const getSEOSlug = () => {
+    const type = (generatedRoutine?.hairProfile?.type || 'custom').toLowerCase();
+    const porosity = (generatedRoutine?.hairProfile?.porosity || '').toLowerCase();
+    const density = (generatedRoutine?.hairProfile?.density || '').toLowerCase();
+    return `${type}-${porosity}-${density}-hair`.replace(/\s+/g, '-').replace(/-+/g, '-');
+  };
+
+  const effectiveAnswers = answers && Object.keys(answers).length > 0 ? answers : localAnswers || {};
+  const faqs = getFAQsForProfile(generatedRoutine?.hairProfile, effectiveAnswers);
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <>
       <Helmet>
-        <title>Your Personalized Hair Routine - Hair Routine Generator</title>
-        <meta name="description" content="Your AI-generated personalized hair care routine tailored to your unique needs." />
+        <title>{getSEOTitle()} - Hair Routine Generator</title>
+        <meta name="description" content={`Complete daily and weekly hair routine customized for ${generatedRoutine?.hairProfile?.type || 'your'} hair with ${generatedRoutine?.hairProfile?.porosity || 'balanced'} porosity. Get personalized product recommendations and expert tips.`} />
+        <meta property="og:title" content={getSEOTitle()} />
+        <meta property="og:description" content="AI-generated personalized hair care routine based on your unique hair type, porosity, and goals." />
+        <meta property="og:type" content="article" />
+        <link rel="canonical" href={`/routine/${getSEOSlug()}`} />
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-yellow-50 to-white py-12">
@@ -390,9 +591,12 @@ const Results = () => {
                 <Sparkles className="w-10 h-10 text-white" />
               </motion.div>
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
-                Your Personalized Hair Routine
+                {getSEOTitle()}
               </h1>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg font-semibold text-gray-700 max-w-3xl mx-auto">
+                Here is your complete daily + weekly hair routine based on your hair type, porosity, scalp condition, and goals.
+              </p>
+              <p className="text-gray-600">
                 Created exclusively for {userEmail || 'you'}
               </p>
             </div>
@@ -456,117 +660,196 @@ const Results = () => {
               </div>
             </div>
 
-            {/* Morning Routine */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <Sun className="w-6 h-6 text-yellow-400" />
-                Morning Routine
-              </h2>
+            {/* Daily Hair Routine Section */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 space-y-8">
+              <div className="text-center">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Your Daily Hair Routine</h2>
+                <p className="text-gray-600">Follow these morning and night routines for healthy, beautiful hair</p>
+              </div>
+
+              {/* Morning Routine */}
               <div className="space-y-6">
-                {generatedRoutine.morningRoutine.map((item) => (
-                  <div key={item.step} className="border-l-4 border-green-500 pl-6 space-y-3">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-yellow-400 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
-                        {item.step}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                        <p className="text-gray-600 mb-3">{item.description}</p>
-                        <div className="space-y-2">
-                          <p className="text-sm font-semibold text-gray-700">Recommended Products:</p>
-                          <div className="flex flex-wrap gap-2">
-                            {item.products.map((product, idx) => (
-                              <span
-                                key={idx}
-                                className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
-                              >
-                                {product}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                        <p className="text-sm text-gray-500 mt-2">
-                          <Clock className="w-4 h-4 inline mr-1" />
-                          {item.frequency}
-                        </p>
-                      </div>
-                    </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-xl flex items-center justify-center">
+                    <Sun className="w-6 h-6 text-white" />
                   </div>
+                  <h3 className="text-xl font-bold text-gray-900">Morning Routine</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {generatedRoutine.morningRoutine.map((item) => (
+                    <motion.div 
+                      key={item.step} 
+                      className="bg-gradient-to-br from-yellow-50 to-orange-50 p-5 rounded-xl"
+                      whileHover={{ scale: 1.02 }}
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                          {item.step}
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
+                          <p className="text-gray-600 text-sm">{item.description}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Night Routine */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center">
+                    <Moon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">Night Routine</h3>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {generatedRoutine.eveningRoutine.map((item) => (
+                    <motion.div 
+                      key={item.step} 
+                      className="bg-gradient-to-br from-indigo-50 to-purple-50 p-5 rounded-xl"
+                      whileHover={{ scale: 1.02 }}
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                          {item.step}
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
+                          <p className="text-gray-600 text-sm">{item.description}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Weekly Routine Schedule */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                  <Calendar className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Weekly Routine Schedule</h2>
+                  <p className="text-gray-600">Your weekly hair care calendar</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {generatedRoutine.weeklySchedule?.map((schedule, idx) => {
+                  const colorMap = {
+                    green: { bg: 'from-green-50 to-emerald-50', badge: 'bg-green-500', text: 'text-green-700' },
+                    blue: { bg: 'from-blue-50 to-cyan-50', badge: 'bg-blue-500', text: 'text-blue-700' },
+                    purple: { bg: 'from-purple-50 to-pink-50', badge: 'bg-purple-500', text: 'text-purple-700' }
+                  };
+                  const colors = colorMap[schedule.color] || colorMap.green;
+                  return (
+                    <motion.div 
+                      key={idx} 
+                      className={`bg-gradient-to-br ${colors.bg} p-6 rounded-xl space-y-4`}
+                      whileHover={{ y: -5 }}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className={`${colors.badge} text-white text-xs font-bold px-3 py-1 rounded-full`}>
+                          {schedule.day}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900">{schedule.title}</h3>
+                      <p className="text-gray-600 text-sm">{schedule.description}</p>
+                      <ul className="space-y-2">
+                        {schedule.tasks.map((task, taskIdx) => (
+                          <li key={taskIdx} className="flex items-start gap-2 text-sm">
+                            <Check className={`w-4 h-4 ${colors.text} flex-shrink-0 mt-0.5`} />
+                            <span className="text-gray-700">{task}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Product Recommendations */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl flex items-center justify-center">
+                  <ShoppingBag className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Product Recommendations</h2>
+                  <p className="text-gray-600">Products tailored for your {generatedRoutine.hairProfile?.porosity} porosity, {generatedRoutine.hairProfile?.type} hair</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {generatedRoutine.productRecommendations?.map((product, idx) => (
+                  <motion.div 
+                    key={idx} 
+                    className="bg-gradient-to-br from-pink-50 to-rose-50 p-5 rounded-xl border border-pink-100"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <Star className="w-5 h-5 text-pink-500" />
+                      <h4 className="font-bold text-gray-900">{product.category}</h4>
+                    </div>
+                    <p className="text-gray-600 text-sm">{product.description}</p>
+                  </motion.div>
                 ))}
               </div>
             </div>
 
-            {/* Evening Routine */}
+            {/* Advanced Tips Box */}
             <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <Moon className="w-6 h-6 text-indigo-500" />
-                Evening Routine
-              </h2>
-              <div className="space-y-6">
-                {generatedRoutine.eveningRoutine.map((item, idx) => (
-                  <div key={idx} className="border-l-4 border-indigo-500 pl-6 space-y-3">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
-                        {item.step}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                        <p className="text-gray-600 mb-3">{item.description}</p>
-                        <div className="space-y-2">
-                          <p className="text-sm font-semibold text-gray-700">Recommended Products:</p>
-                          <div className="flex flex-wrap gap-2">
-                            {item.products.map((product, idx) => (
-                              <span
-                                key={idx}
-                                className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium"
-                              >
-                                {product}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                        <p className="text-sm text-gray-500 mt-2">
-                          <Clock className="w-4 h-4 inline mr-1" />
-                          {item.frequency}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-xl flex items-center justify-center">
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Advanced Hair Care Tips</h2>
+                  <p className="text-gray-600">Expert insights for your specific hair needs</p>
+                </div>
               </div>
-            </div>
-
-            {/* Weekly Treatments */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
-              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <Droplets className="w-6 h-6 text-blue-500" />
-                Weekly Treatments
-              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {generatedRoutine.weeklyTreatments.map((treatment, idx) => (
-                  <div key={idx} className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl space-y-3">
-                    <h3 className="text-lg font-bold text-gray-900">{treatment.title}</h3>
-                    <p className="text-gray-600">{treatment.description}</p>
-                    <p className="text-sm text-blue-600 font-semibold">
-                      <Clock className="w-4 h-4 inline mr-1" />
-                      {treatment.frequency}
-                    </p>
-                  </div>
-                ))}
+                {generatedRoutine.advancedTips?.map((tip, idx) => {
+                  const iconMap = {
+                    droplet: Droplet,
+                    target: Target,
+                    shield: Shield,
+                    flame: Flame
+                  };
+                  const TipIcon = iconMap[tip.icon] || Lightbulb;
+                  return (
+                    <motion.div 
+                      key={idx} 
+                      className="bg-gradient-to-br from-amber-50 to-yellow-50 p-6 rounded-xl border border-amber-100"
+                      whileHover={{ scale: 1.01 }}
+                    >
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
+                          <TipIcon className="w-5 h-5 text-amber-600" />
+                        </div>
+                        <h4 className="font-bold text-gray-900">{tip.title}</h4>
+                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed">{tip.content}</p>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Expert Recommendations */}
+            {/* Quick Tips */}
             <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
               <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-yellow-400" />
-                Expert Tips & Recommendations
+                Quick Tips & Reminders
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {generatedRoutine.recommendations.map((tip, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-4 bg-yellow-50 rounded-xl">
-                    <div className="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-0.5">
-                      ✓
+                  <div key={idx} className="flex items-start gap-3 p-4 bg-gradient-to-br from-green-50 to-yellow-50 rounded-xl">
+                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-0.5">
+                      <Check className="w-4 h-4" />
                     </div>
                     <p className="text-gray-700">{tip}</p>
                   </div>
@@ -593,6 +876,87 @@ const Results = () => {
                     onClick={() => setOpenFAQ(openFAQ === idx ? null : idx)}
                   />
                 ))}
+              </div>
+            </div>
+
+            {/* Pinterest-Style Shareable Routine Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                  <Share2 className="w-6 h-6 text-pink-500" />
+                  Save & Share Your Routine
+                </h2>
+              </div>
+              <p className="text-gray-600 mb-6">Pin this beautiful routine card to save for later or share with friends!</p>
+              
+              {/* Pinterest Card Preview */}
+              <div className="flex justify-center">
+                <div className="w-full max-w-sm bg-gradient-to-br from-green-400 via-emerald-400 to-teal-500 rounded-3xl p-6 text-white shadow-2xl relative overflow-hidden">
+                  {/* Decorative circles */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                  
+                  {/* Card Header */}
+                  <div className="text-center mb-6 relative z-10">
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Sparkles className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold">My Hair Routine</h3>
+                    <p className="text-white/80 text-sm mt-1">
+                      {generatedRoutine.hairProfile?.type} | {generatedRoutine.hairProfile?.porosity} Porosity
+                    </p>
+                  </div>
+                  
+                  {/* Quick Routine Summary */}
+                  <div className="space-y-3 relative z-10">
+                    <div className="bg-white/20 rounded-xl p-3">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Sun className="w-4 h-4" />
+                        <span className="font-semibold text-sm">Morning</span>
+                      </div>
+                      <p className="text-xs text-white/90">Mist, Leave-in, Style, Air Dry</p>
+                    </div>
+                    <div className="bg-white/20 rounded-xl p-3">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Moon className="w-4 h-4" />
+                        <span className="font-semibold text-sm">Night</span>
+                      </div>
+                      <p className="text-xs text-white/90">Pineapple, Satin Bonnet, Moisture</p>
+                    </div>
+                    <div className="bg-white/20 rounded-xl p-3">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Calendar className="w-4 h-4" />
+                        <span className="font-semibold text-sm">Weekly</span>
+                      </div>
+                      <p className="text-xs text-white/90">Wash Day, Refresh, Deep Condition</p>
+                    </div>
+                  </div>
+                  
+                  {/* Card Footer */}
+                  <div className="text-center mt-6 relative z-10">
+                    <p className="text-xs text-white/70">Get your routine at</p>
+                    <p className="font-bold text-sm">HairRoutineGenerator.com</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Share Buttons */}
+              <div className="flex flex-wrap justify-center gap-3 mt-6">
+                <Button
+                  onClick={handleShare}
+                  className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold"
+                >
+                  <Share2 className="w-4 h-4 mr-2" />
+                  Share on Pinterest
+                </Button>
+                <Button
+                  onClick={handleDownloadPDF}
+                  variant="outline"
+                  className="border-2 border-green-500 text-green-600 hover:bg-green-50"
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download Card
+                </Button>
               </div>
             </div>
 

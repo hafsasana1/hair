@@ -42,6 +42,7 @@ export const QuizProvider = ({ children }) => {
     currentStep,
     setCurrentStep,
     answers,
+    setAnswers,
     updateAnswer,
     userEmail,
     setUserEmail,
