@@ -25,6 +25,7 @@ import StraightHairRoutine from '@/pages/StraightHairRoutine';
 import HairPorosityGuide from '@/pages/blog/HairPorosityGuide';
 import NaturalIngredientsGuide from '@/pages/blog/NaturalIngredientsGuide';
 import HeatDamageProtection from '@/pages/blog/HeatDamageProtection';
+import HairTypesGuide from '@/pages/blog/HairTypesGuide';
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
               <Route path="/blog/hair-porosity-guide" element={<HairPorosityGuide />} />
               <Route path="/blog/natural-ingredients-for-healthy-hair" element={<NaturalIngredientsGuide />} />
               <Route path="/blog/heat-damage-protection" element={<HeatDamageProtection />} />
+              <Route path="/blog/hair-types-guide" element={<HairTypesGuide />} />
             </Routes>
           </main>
           <Footer />

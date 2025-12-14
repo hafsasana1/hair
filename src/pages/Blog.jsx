@@ -42,13 +42,13 @@ const blogPosts = [
   {
     id: 4,
     title: 'The Ultimate Guide to Hair Types and Textures',
-    excerpt: 'From straight to coily - understanding your hair type is the first step to great hair care. Learn the Andre Walker system and find your type.',
-    date: '2025-12-03',
-    readTime: '8 min read',
+    excerpt: 'Master the Andre Walker hair typing system with our comprehensive guide. Learn to identify your hair type (1-4), understand texture and density, plus get expert care tips for every hair pattern.',
+    date: '2025-12-14',
+    readTime: '18 min read',
     category: 'Hair Science',
-    slug: null,
-    image: '/images/blog/woman_examining_hair_5978d7d2.webp',
-    wordCount: 'Coming Soon'
+    slug: '/blog/hair-types-guide',
+    image: '/images/blog/hair_types_comparison_guide.webp',
+    wordCount: '3,500+'
   },
   {
     id: 5,
