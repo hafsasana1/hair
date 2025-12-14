@@ -22,7 +22,10 @@ import {
   Droplet,
   Sun,
   ChevronDown,
-  HelpCircle
+  HelpCircle,
+  FlaskConical,
+  UserCheck,
+  Lock
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -220,11 +223,11 @@ const Home = () => {
                 <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
                   AI Hair Routine Generator{' '}
                   <span className="bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent">
-                    by Hair Type & Climate
+                    – Personalized Hair Care by Hair Type & Porosity
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 hero-description">
-                  Get your personalized hair care routine in 60 seconds. Our AI analyzes your hair type (1a-4c), porosity, and local climate to create a custom day-by-day plan tailored just for you.
+                  Generate a personalized hair care routine in under 60 seconds. Our AI analyzes your hair type (1A–4C), porosity, scalp condition, and climate to create a custom daily and weekly hair routine designed for healthier hair.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link to="/quiz">
@@ -249,6 +252,22 @@ const Home = () => {
                     <p className="text-sm text-gray-600">User Rating</p>
                   </div>
                 </div>
+                
+                {/* Trust Signals */}
+                <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-gray-200">
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <FlaskConical className="w-5 h-5 text-green-500" />
+                    <span className="text-sm font-medium">Science-Based Routine Logic</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <UserCheck className="w-5 h-5 text-green-500" />
+                    <span className="text-sm font-medium">Hair-Care Best Practices</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-600">
+                    <Lock className="w-5 h-5 text-green-500" />
+                    <span className="text-sm font-medium">No Signup Required</span>
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div
@@ -258,7 +277,7 @@ const Home = () => {
                 className="relative"
               >
                 <div className="relative z-10">
-                  <img alt="Woman with beautiful healthy hair" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1608875848903-06eec0bd71e2" loading="lazy" />
+                  <img alt="AI hair routine generator result preview showing personalized hair care routine" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1608875848903-06eec0bd71e2" loading="lazy" />
                 </div>
                 <div className="absolute -top-4 -right-4 w-72 h-72 bg-green-200 rounded-full blur-3xl opacity-50 -z-10"></div>
                 <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-yellow-200 rounded-full blur-3xl opacity-50 -z-10"></div>
@@ -308,6 +327,19 @@ const Home = () => {
                 </motion.div>
               ))}
             </div>
+            
+            {/* SEO Content Paragraph */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-12 max-w-4xl mx-auto"
+            >
+              <p className="text-gray-600 text-center leading-relaxed">
+                HairRoutineGen is an advanced hair routine generator designed to create personalized hair care plans based on your unique hair type, porosity, scalp condition, and hair goals. Unlike generic hair tips, our tool provides step-by-step daily and weekly routines tailored specifically for your hair.
+              </p>
+            </motion.div>
           </div>
         </section>
 
