@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Logo from './Logo';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -24,8 +25,20 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <Sparkles className="w-8 h-8 text-green-500 transition-transform group-hover:scale-110" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-green-500 to-yellow-400 bg-clip-text text-transparent">Hair Routine</span>
+            <motion.div
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <Logo className="w-10 h-10 drop-shadow-md" />
+            </motion.div>
+            <div className="flex flex-col">
+              <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-green-500 via-lime-500 to-yellow-400 bg-clip-text text-transparent leading-tight">
+                Hair Routine
+              </span>
+              <span className="text-[10px] md:text-xs text-gray-500 font-medium tracking-wider uppercase -mt-1">
+                Generator
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
