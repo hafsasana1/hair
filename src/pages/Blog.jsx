@@ -52,14 +52,14 @@ const blogPosts = [
   },
   {
     id: 5,
-    title: 'Seasonal Hair Care: Adapting Your Routine',
-    excerpt: 'Learn how to adjust your hair care routine for different seasons and climates. Protect your hair from humidity, cold, and sun damage.',
-    date: '2025-11-28',
-    readTime: '6 min read',
+    title: 'Seasonal Hair Care: Complete Guide to Adapting Your Routine',
+    excerpt: 'Master seasonal hair care with our expert guide. Learn to protect your hair from summer sun, winter dryness, humidity, and cold. Science-backed tips for spring, summer, fall, and winter hair routines.',
+    date: '2025-12-14',
+    readTime: '18 min read',
     category: 'Seasonal Tips',
-    slug: null,
-    image: '/images/blog/natural_hair_care_in_8611ea51.webp',
-    wordCount: 'Coming Soon'
+    slug: '/blog/seasonal-hair-care',
+    image: '/images/blog/autumn_fall_hair_care.webp',
+    wordCount: '3,200+'
   },
   {
     id: 6,

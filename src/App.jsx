@@ -26,6 +26,7 @@ import HairPorosityGuide from '@/pages/blog/HairPorosityGuide';
 import NaturalIngredientsGuide from '@/pages/blog/NaturalIngredientsGuide';
 import HeatDamageProtection from '@/pages/blog/HeatDamageProtection';
 import HairTypesGuide from '@/pages/blog/HairTypesGuide';
+import SeasonalHairCare from '@/pages/blog/SeasonalHairCare';
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
               <Route path="/blog/natural-ingredients-for-healthy-hair" element={<NaturalIngredientsGuide />} />
               <Route path="/blog/heat-damage-protection" element={<HeatDamageProtection />} />
               <Route path="/blog/hair-types-guide" element={<HairTypesGuide />} />
+              <Route path="/blog/seasonal-hair-care" element={<SeasonalHairCare />} />
             </Routes>
           </main>
           <Footer />

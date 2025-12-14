@@ -64,7 +64,7 @@ const SeasonalHairCare = () => {
       "@id": "https://hairgen.com/blog/seasonal-hair-care"
     },
     "articleSection": "Seasonal Tips",
-    "wordCount": "3800"
+    "wordCount": "3200"
   };
 
   const faqSchema = {
@@ -144,31 +144,51 @@ const SeasonalHairCare = () => {
     "name": "How to Adapt Your Hair Care Routine for Seasonal Changes",
     "description": "A step-by-step guide to adjusting your hair care routine as seasons change for healthier, more manageable hair year-round.",
     "totalTime": "PT30M",
+    "image": "/images/blog/autumn_fall_hair_care.webp",
+    "supply": [
+      { "@type": "HowToSupply", "name": "Clarifying shampoo (for summer/spring)" },
+      { "@type": "HowToSupply", "name": "Moisturizing sulfate-free shampoo (for winter)" },
+      { "@type": "HowToSupply", "name": "Deep conditioning mask" },
+      { "@type": "HowToSupply", "name": "Leave-in conditioner" },
+      { "@type": "HowToSupply", "name": "UV-protective hair spray" },
+      { "@type": "HowToSupply", "name": "Anti-humidity serum" },
+      { "@type": "HowToSupply", "name": "Hair oil (argan, coconut, or jojoba)" },
+      { "@type": "HowToSupply", "name": "Heat protectant spray" }
+    ],
+    "tool": [
+      { "@type": "HowToTool", "name": "Wide-tooth comb" },
+      { "@type": "HowToTool", "name": "Boar bristle brush" },
+      { "@type": "HowToTool", "name": "Microfiber towel or t-shirt" },
+      { "@type": "HowToTool", "name": "Satin or silk pillowcase" },
+      { "@type": "HowToTool", "name": "Humidifier (for winter)" }
+    ],
     "step": [
       {
         "@type": "HowToStep",
         "name": "Assess Your Current Hair Condition",
-        "text": "Evaluate your hair's moisture levels, elasticity, and any damage from the previous season."
+        "text": "Examine your hair for dryness, split ends, elasticity loss, and frizz. Note whether your scalp feels oily, dry, or balanced. This assessment determines which seasonal adjustments you need.",
+        "image": "/images/blog/woman_examining_hair_0a03f537.webp"
       },
       {
         "@type": "HowToStep",
         "name": "Adjust Your Cleansing Routine",
-        "text": "Switch to season-appropriate shampoos - clarifying in summer, moisturizing in winter."
+        "text": "Switch to clarifying shampoo in summer to remove chlorine, sunscreen, and sweat buildup. Transition to moisturizing, sulfate-free formulas in winter to preserve natural oils. Reduce wash frequency as humidity drops.",
+        "image": "/images/blog/natural_hair_care_in_fc40f08f.webp"
       },
       {
         "@type": "HowToStep",
         "name": "Modify Your Conditioning Strategy",
-        "text": "Increase deep conditioning in winter, use lighter conditioners in humid summer months."
+        "text": "Increase deep conditioning frequency in winter (weekly) and use lighter conditioners in humid summer months. Apply pre-wash oil treatments in cold weather. Use leave-in conditioner year-round, adjusting weight based on humidity."
       },
       {
         "@type": "HowToStep",
         "name": "Update Your Styling Products",
-        "text": "Choose anti-humidity products for summer, hydrating serums for winter."
+        "text": "Choose anti-humidity serums containing silicones for summer frizz control. Switch to hydrating creams and oils in winter. Use UV-protective products from spring through fall. Avoid heavy products in humid weather."
       },
       {
         "@type": "HowToStep",
         "name": "Protect Against Seasonal Elements",
-        "text": "Use UV protection in summer, shield from cold winds in winter with protective styles."
+        "text": "Apply UV protection daily from March through October. Wear silk-lined hats in winter to prevent friction damage. Never go outside with wet hair in freezing temperatures. Use humidifiers indoors during heating season."
       }
     ]
   };
@@ -835,22 +855,22 @@ const SeasonalHairCare = () => {
                   <div className="space-y-4 mb-6">
                     <div className="border border-gray-200 rounded-lg p-5">
                       <h4 className="font-semibold text-gray-900 mb-2">Tropical/Humid Climates</h4>
-                      <p className="text-gray-700 text-sm">Focus year-round on anti-humidity products, lightweight formulas, and regular clarifying. Embrace air drying and natural textures. Pay special attention to scalp health and fungal prevention.</p>
+                      <p className="text-gray-700 text-sm">Focus year-round on anti-humidity products, lightweight formulas, and regular clarifying. Embrace air drying and natural textures. Those with <Link to="/hair-routine-for-curly-hair" className="text-green-600 hover:text-green-700 underline">curly hair</Link> thrive with humidity-fighting techniques. Pay special attention to scalp health and fungal prevention.</p>
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-5">
                       <h4 className="font-semibold text-gray-900 mb-2">Arid/Desert Climates</h4>
-                      <p className="text-gray-700 text-sm">Prioritize moisture year-round. Use heavier oils and creams, humectant-rich products, and deep condition frequently. Protect from intense sun exposure and dust.</p>
+                      <p className="text-gray-700 text-sm">Prioritize moisture year-round using techniques from our <Link to="/hair-routine-for-high-porosity" className="text-green-600 hover:text-green-700 underline">high porosity hair guide</Link>. Use heavier oils and creams, humectant-rich products, and deep condition frequently. Protect from intense sun exposure and dust.</p>
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-5">
                       <h4 className="font-semibold text-gray-900 mb-2">Coastal Climates</h4>
-                      <p className="text-gray-700 text-sm">Balance moisture and anti-humidity care. Protect from salt air with leave-in treatments. Use chelating products monthly to remove mineral buildup from sea air.</p>
+                      <p className="text-gray-700 text-sm">Balance moisture and anti-humidity care. Protect from salt air with leave-in treatments. If you have <Link to="/hair-routine-for-2b-hair" className="text-green-600 hover:text-green-700 underline">wavy hair</Link>, embrace your natural texture with salt-protecting products. Use chelating products monthly to remove mineral buildup from sea air.</p>
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-5">
                       <h4 className="font-semibold text-gray-900 mb-2">High Altitude Climates</h4>
-                      <p className="text-gray-700 text-sm">Combat increased UV exposure with sun protection. Address dry air with intensive moisture treatments. The thinner atmosphere provides less UV protection, so double down on sun care.</p>
+                      <p className="text-gray-700 text-sm">Combat increased UV exposure with sun protection. Address dry air with intensive moisture treatments similar to our <Link to="/hair-routine-for-damaged-hair" className="text-green-600 hover:text-green-700 underline">damaged hair recovery routine</Link>. The thinner atmosphere provides less UV protection, so double down on sun care.</p>
                     </div>
                   </div>
                 </section>
