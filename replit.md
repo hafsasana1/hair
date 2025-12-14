@@ -98,6 +98,22 @@ The blog section contains comprehensive SEO-optimized articles located in `src/p
    - Internal linking to all related hair routine pages
    - External links to scientific studies (PubMed)
 
+7. **Hair Growth Guide** (`/blog/hair-growth-guide`) - 4,500+ words (Added Dec 14, 2025)
+   - Complete science of the hair growth cycle (Anagen, Catagen, Telogen, Exogen phases)
+   - Factors affecting hair growth (genetics, age, hormones, nutrition, stress)
+   - Essential nutrients for hair growth (protein, biotin, iron, vitamin D, zinc, omega-3s)
+   - Scalp health fundamentals and massage techniques
+   - Scientifically proven treatments (Minoxidil, Finasteride, LLLT, PRP)
+   - Natural remedies with research backing (rosemary oil, peppermint oil, castor oil)
+   - Lifestyle changes for optimal growth
+   - Common hair growth mistakes to avoid
+   - Realistic growth timeline expectations
+   - 8 FAQs with schema markup
+   - Article, FAQ, and HowTo schemas for rich snippets
+   - 4 custom WebP images (growth results, ingredients, follicle diagram, scalp massage)
+   - Extensive internal linking to all related blog posts
+   - External links to PubMed research and scientific journals
+
 ### SEO Features
 - High-CTR META titles and descriptions
 - Open Graph tags for social sharing
