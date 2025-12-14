@@ -66,6 +66,13 @@ The blog section contains comprehensive SEO-optimized articles located in `src/p
    - Safe temperature guidelines by hair type
    - Heat protectant science and recovery treatments
 
+4. **Hair Types Guide** (`/blog/hair-types-guide`) - 3,500+ words (Added Dec 14, 2025)
+   - Complete Andre Walker hair typing system explained (Types 1-4)
+   - Hair texture and density understanding
+   - Care tips and product recommendations for each type
+   - 8 FAQs with schema markup
+   - Internal linking to related articles
+
 ### SEO Features
 - High-CTR META titles and descriptions
 - Open Graph tags for social sharing
