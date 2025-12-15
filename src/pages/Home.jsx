@@ -237,23 +237,22 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>AI Hair Routine Generator by Hair Type & Climate</title>
-        <meta name="title" content="AI Hair Routine Generator by Hair Type & Climate" />
-        <meta name="description" content="Get your FREE personalized hair care routine in 60 seconds! Our AI analyzes your hair type (1a-4c), porosity & local climate to create a custom daily plan. Trusted by 50,000+ users. Start now!" />
-        <meta name="keywords" content="AI hair routine generator, personalized hair care, hair type routine, climate-based hair care, curly hair routine, wavy hair care, hair porosity, free hair routine generator, custom hair care plan, 2a 2b 2c 3a 3b 3c 4a 4b 4c hair" />
+        <title>Hair Routine Generator – Personalized Care by Hair Type</title>
+        <meta name="title" content="Hair Routine Generator – Personalized Care by Hair Type" />
+        <meta name="description" content="Generate a personalized hair routine based on your hair type, porosity, and local climate. Get daily and weekly hair care steps in minutes." />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href="https://hairroutinegen.com/" />
         
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hairroutinegen.com/" />
-        <meta property="og:title" content="AI Hair Routine Generator by Hair Type & Climate" />
-        <meta property="og:description" content="Get your FREE personalized hair care routine in 60 seconds! AI-powered analysis for curly, wavy, straight & coily hair. Trusted by 50,000+ users." />
+        <meta property="og:title" content="Hair Routine Generator – Personalized Care by Hair Type" />
+        <meta property="og:description" content="Generate a personalized hair routine based on your hair type, porosity, and local climate. Get daily and weekly hair care steps in minutes." />
         <meta property="og:image" content="https://hairroutinegen.com/og-image.jpg" />
         <meta property="og:site_name" content="Hair Routine Generator" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Hair Routine Generator by Hair Type & Climate" />
-        <meta name="twitter:description" content="Get your FREE personalized hair care routine in 60 seconds! AI-powered analysis for all hair types. Start now!" />
+        <meta name="twitter:title" content="Hair Routine Generator – Personalized Care by Hair Type" />
+        <meta name="twitter:description" content="Generate a personalized hair routine based on your hair type, porosity, and local climate. Get daily and weekly hair care steps in minutes." />
         <meta name="twitter:image" content="https://hairroutinegen.com/twitter-image.jpg" />
         
         <script type="application/ld+json">

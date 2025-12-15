@@ -1,0 +1,141 @@
+PROJECT: HairRoutineGen.com
+STACK: React (Vite) + SSR meta rendering
+
+OBJECTIVE:
+Fix over-optimization issues, align homepage SEO with Google best practices,
+and ensure full Adsense approval readiness while preserving strong rankings.
+
+-------------------------------------
+PART 1: META TAG FIXES (HOMEPAGE)
+
+CURRENT ISSUES:
+- Meta title is generic and not keyword-optimal
+- Meta description is overly promotional
+- Deprecated / unnecessary meta tags are present
+
+-------------------------------------
+REQUIRED CHANGES:
+
+1. UPDATE META TITLE (Homepage ONLY)
+
+REPLACE:
+"AI Hair Routine Generator by Hair Type & Climate"
+
+WITH:
+"Hair Routine Generator – Personalized Care by Hair Type"
+
+RULES:
+- Max 60 characters
+- Keyword-first
+- Informational tone
+- No hype words
+
+-------------------------------------
+2. UPDATE META DESCRIPTION
+
+REPLACE existing meta description with:
+
+"Generate a personalized hair routine based on your hair type, porosity, and local climate. Get daily and weekly hair care steps in minutes."
+
+RULES:
+- 145–155 characters
+- Informational
+- Adsense-safe
+- No claims like “trusted by”, numbers, or hype
+
+-------------------------------------
+3. REMOVE OUTDATED META TAGS
+
+REMOVE COMPLETELY:
+- <meta name="keywords">
+- <meta name="geo.region">
+- <meta name="geo.placename">
+
+REASON:
+- Deprecated
+- No SEO benefit
+- Can trigger Adsense quality review flags
+
+-------------------------------------
+PART 2: ROBOTS & INDEXING (KEEP)
+
+KEEP the following as-is:
+- robots index, follow
+- googlebot / bingbot directives
+- canonical URL
+
+-------------------------------------
+PART 3: SCHEMA CLEANUP (CRITICAL)
+
+CURRENT STATE:
+Multiple application schemas are causing redundancy.
+
+-------------------------------------
+REQUIRED SCHEMA ACTIONS:
+
+1. KEEP:
+✔ WebSite
+✔ Organization
+✔ SoftwareApplication
+✔ BreadcrumbList
+✔ ItemList
+
+2. REMOVE:
+✖ WebApplication schema
+
+REASON:
+- This is a web tool, not a downloadable or installable app
+- Avoid schema conflicts
+
+-------------------------------------
+PART 4: FAQ SCHEMA RULE
+
+FAQ schema should exist ONLY if FAQ content is visible in HTML.
+
+IMPLEMENT LOGIC:
+- If homepage displays visible FAQ section → keep FAQPage schema
+- If FAQs are NOT visible → remove FAQPage schema from homepage
+- FAQ schema will be re-added on:
+  ✔ Result pages
+  ✔ Dedicated FAQ page
+
+-------------------------------------
+PART 5: SPEAKABLE SCHEMA (OPTIONAL)
+
+Speakable schema may remain, but:
+- Do NOT rely on it for ranking
+- Keep only if referenced content exists in HTML
+
+-------------------------------------
+PART 6: SSR REQUIREMENT (VERY IMPORTANT)
+
+Ensure the following are SERVER-SIDE RENDERED or injected before hydration:
+
+✔ <title>
+✔ meta description
+✔ canonical
+✔ H1 heading
+✔ short intro paragraph (above the fold)
+
+REASON:
+- Prevent empty HTML during Google crawl
+- Improve indexing speed
+- Improve ranking stability
+
+-------------------------------------
+PART 7: FINAL QUALITY CHECK
+
+AFTER IMPLEMENTATION:
+- No meta title > 60 characters
+- No meta description > 160 characters
+- No duplicate schema types
+- Homepage remains globally targeted (not US-only)
+- Page remains Adsense-compliant and informational
+
+-------------------------------------
+END GOAL:
+A clean, authoritative, SEO-safe homepage that:
+✔ Ranks easily
+✔ Passes Adsense review
+✔ Supports programmatic SEO growth
+✔ Is future-proof for Google updates
