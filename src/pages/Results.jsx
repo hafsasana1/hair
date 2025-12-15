@@ -85,112 +85,63 @@ const profileIconMap = {
 
 // Dynamic FAQs based on hair profile
 const getFAQsForProfile = (hairProfile, answers) => {
-  const faqs = [];
-  
-  // Hair Type FAQs - normalize to lowercase
   const hairType = (answers?.hairType || hairProfile?.type || '').toLowerCase();
-  if (hairType === 'straight') {
-    faqs.push({
-      question: 'How can I add volume to my straight hair?',
-      answer: 'Use volumizing shampoos and conditioners, apply mousse at the roots, blow-dry upside down, and consider layered haircuts to add natural movement and body.'
-    });
-    faqs.push({
-      question: 'Why does my straight hair get oily quickly?',
-      answer: 'Straight hair allows oils to travel down the shaft easily. Use dry shampoo between washes, avoid over-conditioning at roots, and wash with a clarifying shampoo weekly.'
-    });
-  } else if (hairType === 'wavy') {
-    faqs.push({
-      question: 'How do I enhance my natural waves?',
-      answer: 'Apply a sea salt spray or wave-enhancing cream to damp hair, scrunch gently, and let air dry. Avoid brushing dry waves to prevent frizz.'
-    });
-    faqs.push({
-      question: 'Why do my waves fall flat by the end of the day?',
-      answer: 'Try using lighter products, apply styling products to damp hair, and refresh with water or a wave spray. Sleeping with a loose bun can help maintain waves.'
-    });
-  } else if (hairType === 'curly') {
-    faqs.push({
-      question: 'How do I define my curls without crunch?',
-      answer: 'Apply curl cream or gel to soaking wet hair, scrunch out excess water, and let air dry or diffuse. Once fully dry, "scrunch out the crunch" to soften the cast.'
-    });
-    faqs.push({
-      question: 'Why are my curls so frizzy?',
-      answer: 'Frizz often means your curls need more moisture. Use a deep conditioner weekly, apply leave-in conditioner, and avoid touching your hair while it dries.'
-    });
-  } else if (hairType === 'coily') {
-    faqs.push({
-      question: 'How often should I wash my coily hair?',
-      answer: 'Coily hair typically benefits from washing once a week or every two weeks. Co-washing between washes can help maintain moisture without stripping natural oils.'
-    });
-    faqs.push({
-      question: 'What\'s the best way to detangle coily hair?',
-      answer: 'Always detangle when hair is wet and saturated with conditioner. Use a wide-tooth comb or your fingers, starting from the ends and working up to the roots.'
-    });
-  }
-
-  // Porosity FAQs - normalize to lowercase
   const porosity = (answers?.porosity || hairProfile?.porosity || '').toLowerCase();
-  if (porosity === 'low') {
-    faqs.push({
-      question: 'Why won\'t products absorb into my low porosity hair?',
-      answer: 'Low porosity hair has tightly closed cuticles. Use heat (warm water, steamer, or heat cap) when deep conditioning, and opt for lightweight, water-based products.'
-    });
-  } else if (porosity === 'high') {
-    faqs.push({
-      question: 'How do I retain moisture in high porosity hair?',
-      answer: 'Layer products using the LOC method (Liquid, Oil, Cream), use protein treatments to fill gaps in the cuticle, and seal with heavier oils like castor or olive oil.'
-    });
-  }
+  
+  const hairTypeDisplay = hairType.charAt(0).toUpperCase() + hairType.slice(1);
+  const porosityDisplay = porosity.charAt(0).toUpperCase() + porosity.slice(1);
+  
+  const washFrequency = {
+    straight: { low: '2-3 times per week', medium: '2-3 times per week', high: 'every 2-3 days' },
+    wavy: { low: 'every 3-4 days', medium: '2-3 times per week', high: 'every 2-3 days' },
+    curly: { low: 'once a week', medium: 'every 4-5 days', high: 'every 3-4 days' },
+    coily: { low: 'once a week or less', medium: 'once a week', high: 'every 5-7 days' }
+  };
 
-  // Concerns FAQs - normalize to lowercase
-  const concerns = (answers?.concerns || []).map(c => (c || '').toLowerCase());
-  if (concerns.includes('frizz')) {
-    faqs.push({
-      question: 'What causes frizz and how can I prevent it?',
-      answer: 'Frizz is caused by humidity and lack of moisture. Use anti-humidity products, sleep on silk pillowcases, avoid touching your hair, and ensure deep conditioning regularly.'
-    });
-  }
-  if (concerns.includes('damage')) {
-    faqs.push({
-      question: 'How can I repair damaged hair?',
-      answer: 'Use protein treatments to strengthen, deep condition weekly, trim split ends regularly, minimize heat styling, and protect hair from sun and chlorine exposure.'
-    });
-  }
-  if (concerns.includes('hairloss')) {
-    faqs.push({
-      question: 'What can I do about hair thinning?',
-      answer: 'Massage your scalp to increase blood flow, use gentle hair care products, avoid tight hairstyles, ensure adequate protein and iron in your diet, and consult a dermatologist if concerned.'
-    });
-  }
+  const routineDescriptions = {
+    straight: 'Focus on lightweight products that add volume without weighing hair down. Use a gentle sulfate-free shampoo, apply conditioner mainly to ends, and finish with a light serum for shine.',
+    wavy: 'Enhance natural texture with wave-defining products. Use a moisturizing shampoo, apply conditioner from mid-lengths to ends, scrunch with a lightweight mousse, and air dry for best results.',
+    curly: 'Prioritize hydration and curl definition. Use a sulfate-free shampoo, deep condition regularly, apply curl cream to wet hair, and scrunch with gel for hold. Diffuse or air dry.',
+    coily: 'Maximum moisture retention is key. Pre-poo with oil, use a gentle cleansing conditioner, deep condition weekly, apply leave-in and butter-based products, and protective style regularly.'
+  };
 
-  // Climate FAQs - normalize to lowercase
-  const climate = (answers?.climate || hairProfile?.climate || '').toLowerCase();
-  if (climate === 'humid') {
-    faqs.push({
-      question: 'How do I manage my hair in humid weather?',
-      answer: 'Use anti-humidity serums, apply light oils to seal the cuticle, opt for protective styles, and embrace your natural texture rather than fighting it.'
-    });
-  } else if (climate === 'dry') {
-    faqs.push({
-      question: 'How do I keep my hair hydrated in a dry climate?',
-      answer: 'Use humectant-rich products, deep condition twice weekly, apply leave-in conditioners, and consider using a humidifier at home.'
-    });
-  }
+  const productsByPorosity = {
+    low: 'Water-based, lightweight products work best. Look for humectants like glycerin and honey. Avoid heavy butters and oils. Use heat when deep conditioning to open cuticles.',
+    medium: 'Most products work well with balanced porosity. Focus on maintaining moisture with regular conditioning. Use a mix of protein and moisture treatments as needed.',
+    high: 'Rich, creamy products seal moisture in. Use the LOC method (Liquid, Oil, Cream). Protein treatments help fill gaps in the cuticle. Heavier oils like castor oil work well.'
+  };
 
-  // Default FAQs if not enough specific ones
-  if (faqs.length < 4) {
-    faqs.push({
-      question: 'How often should I trim my hair?',
-      answer: 'Trim every 8-12 weeks to prevent split ends from traveling up the hair shaft. Regular trims keep hair healthy and can actually help it grow longer.'
-    });
-  }
-  if (faqs.length < 5) {
-    faqs.push({
-      question: 'Is it bad to wash my hair every day?',
-      answer: 'Daily washing can strip natural oils, leading to dryness or overproduction of oil. Most hair types benefit from washing 2-3 times per week or less.'
-    });
-  }
+  const dailyMaintenance = {
+    straight: 'Brush gently from ends to roots, use dry shampoo between washes to absorb oil, protect from heat before styling, and sleep on a silk pillowcase to reduce friction.',
+    wavy: 'Refresh waves with water or leave-in spray, scrunch to revive texture, avoid brushing dry hair, and use a satin pillowcase to maintain waves overnight.',
+    curly: 'Refresh curls with water and leave-in conditioner, scrunch to reactivate product, pineapple hair at night, and avoid touching curls during the day to prevent frizz.',
+    coily: 'Moisturize daily with water and leave-in conditioner, seal with oil, protect hair at night with a satin bonnet or pillowcase, and re-twist or refresh protective styles as needed.'
+  };
 
-  return faqs.slice(0, 6); // Return max 6 FAQs
+  const faqs = [
+    {
+      question: `What is the best routine for ${hairTypeDisplay} hair?`,
+      answer: routineDescriptions[hairType] || 'Start with a gentle shampoo, follow with conditioner, and use products suited to your hair texture. Deep condition weekly and minimize heat styling for healthiest results.'
+    },
+    {
+      question: `How often should I wash ${hairTypeDisplay} hair with ${porosityDisplay} porosity?`,
+      answer: `For ${hairTypeDisplay.toLowerCase()} hair with ${porosityDisplay.toLowerCase()} porosity, washing ${washFrequency[hairType]?.[porosity] || '2-3 times per week'} is recommended. Adjust based on your scalp condition and lifestyle. Co-washing between shampoos can help maintain moisture.`
+    },
+    {
+      question: `Which products work best for ${porosityDisplay} porosity hair?`,
+      answer: productsByPorosity[porosity] || 'Choose products based on your porosity level. Low porosity needs lightweight formulas, medium porosity is versatile, and high porosity benefits from rich, sealing products.'
+    },
+    {
+      question: `How can I maintain healthy ${hairTypeDisplay} hair daily?`,
+      answer: dailyMaintenance[hairType] || 'Protect hair while sleeping, minimize heat styling, keep hair moisturized, and handle gently to prevent breakage. Regular trims every 8-12 weeks help maintain healthy ends.'
+    },
+    {
+      question: 'Does hair porosity affect product absorption?',
+      answer: 'Yes, porosity determines how well hair absorbs and retains moisture. Low porosity hair has tight cuticles that resist moisture, requiring heat for deep conditioning. High porosity hair absorbs quickly but loses moisture fast, needing sealing products. Medium porosity absorbs and retains moisture well with minimal effort.'
+    }
+  ];
+
+  return faqs;
 };
 
 // FAQ Accordion Component
