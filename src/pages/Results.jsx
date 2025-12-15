@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Helmet } from 'react-helmet';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Download, 
@@ -1534,6 +1534,70 @@ const Results = () => {
                     onClick={() => setOpenFAQ(openFAQ === idx ? null : idx)}
                   />
                 ))}
+              </div>
+            </div>
+
+            {/* Contextual Internal Links */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
+              <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                <ArrowRight className="w-6 h-6 text-green-500" />
+                Explore More Hair Care Resources
+              </h2>
+              <div className="prose prose-green max-w-none">
+                <p className="text-gray-700 leading-relaxed">
+                  Now that you have your personalized routine, dive deeper into caring for your {generatedRoutine?.hairProfile?.type || 'unique'} hair. 
+                  Learn more about {generatedRoutine?.hairProfile?.type ? (
+                    <Link to={`/hair-routine-for-${generatedRoutine.hairProfile.type.toLowerCase()}-hair`} className="text-green-600 hover:text-green-700 font-medium underline decoration-green-300 hover:decoration-green-500">
+                      {generatedRoutine.hairProfile.type.toLowerCase()} hair care tips
+                    </Link>
+                  ) : 'hair care tips'} and discover techniques that work best for your texture.
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-4">
+                  Understanding your {generatedRoutine?.hairProfile?.porosity || 'hair'} porosity is key to choosing the right products. Check out our {generatedRoutine?.hairProfile?.porosity?.toLowerCase() === 'low' ? (
+                    <Link to="/hair-routine-for-low-porosity" className="text-green-600 hover:text-green-700 font-medium underline decoration-green-300 hover:decoration-green-500">
+                      low porosity hair care guide
+                    </Link>
+                  ) : generatedRoutine?.hairProfile?.porosity?.toLowerCase() === 'high' ? (
+                    <Link to="/hair-routine-for-high-porosity" className="text-green-600 hover:text-green-700 font-medium underline decoration-green-300 hover:decoration-green-500">
+                      high porosity hair care guide
+                    </Link>
+                  ) : (
+                    <Link to="/blog/hair-porosity-guide" className="text-green-600 hover:text-green-700 font-medium underline decoration-green-300 hover:decoration-green-500">
+                      complete hair porosity guide
+                    </Link>
+                  )} to learn more about product absorption and moisture retention.
+                </p>
+                <p className="text-gray-700 leading-relaxed mt-4">
+                  Want to try a different approach? Take our <Link to="/quiz" className="text-green-600 hover:text-green-700 font-medium underline decoration-green-300 hover:decoration-green-500">hair routine generator quiz</Link> again 
+                  to explore routines for different goals, or browse our <Link to="/blog/hair-types-guide" className="text-green-600 hover:text-green-700 font-medium underline decoration-green-300 hover:decoration-green-500">hair types guide</Link> for 
+                  in-depth information about all hair textures.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-6">
+                <Link to="/quiz" className="flex items-center gap-2 p-3 bg-gradient-to-br from-green-50 to-yellow-50 rounded-xl hover:shadow-md transition-shadow text-sm font-medium text-gray-700 hover:text-green-600">
+                  <RefreshCw className="w-4 h-4 text-green-500" />
+                  Retake Quiz
+                </Link>
+                <Link to="/blog/hair-porosity-guide" className="flex items-center gap-2 p-3 bg-gradient-to-br from-green-50 to-yellow-50 rounded-xl hover:shadow-md transition-shadow text-sm font-medium text-gray-700 hover:text-green-600">
+                  <Droplets className="w-4 h-4 text-blue-500" />
+                  Porosity Guide
+                </Link>
+                <Link to="/blog/hair-types-guide" className="flex items-center gap-2 p-3 bg-gradient-to-br from-green-50 to-yellow-50 rounded-xl hover:shadow-md transition-shadow text-sm font-medium text-gray-700 hover:text-green-600">
+                  <Layers className="w-4 h-4 text-purple-500" />
+                  Hair Types Guide
+                </Link>
+                <Link to="/hair-routine-for-curly-hair" className="flex items-center gap-2 p-3 bg-gradient-to-br from-green-50 to-yellow-50 rounded-xl hover:shadow-md transition-shadow text-sm font-medium text-gray-700 hover:text-green-600">
+                  <CircleDot className="w-4 h-4 text-purple-500" />
+                  Curly Hair Routine
+                </Link>
+                <Link to="/hair-routine-for-wavy-hair" className="flex items-center gap-2 p-3 bg-gradient-to-br from-green-50 to-yellow-50 rounded-xl hover:shadow-md transition-shadow text-sm font-medium text-gray-700 hover:text-green-600">
+                  <Waves className="w-4 h-4 text-sky-500" />
+                  Wavy Hair Routine
+                </Link>
+                <Link to="/hair-routine-for-straight-hair" className="flex items-center gap-2 p-3 bg-gradient-to-br from-green-50 to-yellow-50 rounded-xl hover:shadow-md transition-shadow text-sm font-medium text-gray-700 hover:text-green-600">
+                  <Minus className="w-4 h-4 text-slate-500" />
+                  Straight Hair Routine
+                </Link>
               </div>
             </div>
 
