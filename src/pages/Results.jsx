@@ -1085,11 +1085,31 @@ const Results = () => {
   }
 
   const getSEOTitle = () => {
-    const type = generatedRoutine?.hairProfile?.type || 'Your';
-    const porosity = generatedRoutine?.hairProfile?.porosity || '';
+    const type = generatedRoutine?.hairProfile?.type;
+    const porosity = generatedRoutine?.hairProfile?.porosity;
+    
+    if (!type || !porosity) {
+      return "Hair Routine Generator – Personalized Care Plan";
+    }
+    
     const typeStr = type.charAt(0).toUpperCase() + type.slice(1);
-    const porosityStr = porosity ? `, ${porosity.charAt(0).toUpperCase() + porosity.slice(1)} Porosity` : '';
-    return `Your Personalized Hair Routine for ${typeStr}${porosityStr} Hair`;
+    const porosityStr = porosity.charAt(0).toUpperCase() + porosity.slice(1);
+    
+    return `${typeStr} Hair Routine – ${porosityStr} Porosity Care Plan`;
+  };
+
+  const getSEODescription = () => {
+    const type = generatedRoutine?.hairProfile?.type;
+    const porosity = generatedRoutine?.hairProfile?.porosity;
+    
+    if (!type || !porosity) {
+      return "Generate a personalized hair routine based on your hair type, porosity, and care goals in seconds.";
+    }
+    
+    const typeStr = type.charAt(0).toUpperCase() + type.slice(1);
+    const porosityStr = porosity.toLowerCase();
+    
+    return `Get a personalized daily and weekly hair routine for ${typeStr} hair with ${porosityStr} porosity. Includes step-by-step care and product tips.`;
   };
 
   const getSEOSlug = () => {
@@ -1153,10 +1173,10 @@ const Results = () => {
   return (
     <>
       <Helmet>
-        <title>{getSEOTitle()} - Hair Routine Generator</title>
-        <meta name="description" content={`Complete daily and weekly hair routine customized for ${generatedRoutine?.hairProfile?.type || 'your'} hair with ${generatedRoutine?.hairProfile?.porosity || 'balanced'} porosity. Get personalized product recommendations and expert tips.`} />
+        <title>{getSEOTitle()}</title>
+        <meta name="description" content={getSEODescription()} />
         <meta property="og:title" content={getSEOTitle()} />
-        <meta property="og:description" content="AI-generated personalized hair care routine based on your unique hair type, porosity, and goals." />
+        <meta property="og:description" content={getSEODescription()} />
         <meta property="og:type" content="article" />
         <link rel="canonical" href={`/routine/${getSEOSlug()}`} />
         <script type="application/ld+json">
