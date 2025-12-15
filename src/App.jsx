@@ -23,6 +23,10 @@ import DamagedHairRoutine from '@/pages/DamagedHairRoutine';
 import DryScalpRoutine from '@/pages/DryScalpRoutine';
 import HighPorosityRoutine from '@/pages/HighPorosityRoutine';
 import StraightHairRoutine from '@/pages/StraightHairRoutine';
+import CoilyMediumPorosityRoutine from '@/pages/CoilyMediumPorosityRoutine';
+import CurlyHighPorosityRoutine from '@/pages/CurlyHighPorosityRoutine';
+import WavyMediumPorosityRoutine from '@/pages/WavyMediumPorosityRoutine';
+import StraightLowPorosityRoutine from '@/pages/StraightLowPorosityRoutine';
 
 import HairPorosityGuide from '@/pages/blog/HairPorosityGuide';
 import NaturalIngredientsGuide from '@/pages/blog/NaturalIngredientsGuide';
@@ -62,6 +66,12 @@ function App() {
               <Route path="/hair-routine-for-dry-scalp" element={<DryScalpRoutine />} />
               <Route path="/hair-routine-for-high-porosity" element={<HighPorosityRoutine />} />
               <Route path="/hair-routine-for-straight-hair" element={<StraightHairRoutine />} />
+              
+              {/* Hair Type + Porosity Combination Pages */}
+              <Route path="/coily-hair-routine-medium-porosity" element={<CoilyMediumPorosityRoutine />} />
+              <Route path="/curly-hair-routine-high-porosity" element={<CurlyHighPorosityRoutine />} />
+              <Route path="/wavy-hair-routine-medium-porosity" element={<WavyMediumPorosityRoutine />} />
+              <Route path="/straight-hair-routine-low-porosity" element={<StraightLowPorosityRoutine />} />
               
               {/* Blog Posts */}
               <Route path="/blog/hair-porosity-guide" element={<HairPorosityGuide />} />
