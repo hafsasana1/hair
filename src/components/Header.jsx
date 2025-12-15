@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Home, ClipboardList, BookOpen, Users, Sparkles } from 'lucide-react';
+import { Menu, X, Home, HelpCircle, BookOpen, Users, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Logo from './Logo';
 
@@ -11,12 +11,30 @@ const Header = () => {
   
   const navLinks = [
     { path: '/', label: 'Home', icon: Home, color: 'text-emerald-500' },
-    { path: '/quiz', label: 'Take Quiz', icon: ClipboardList, color: 'text-amber-500' },
+    { path: '/#faq', label: 'FAQ', icon: HelpCircle, color: 'text-amber-500' },
     { path: '/blog', label: 'Blog', icon: BookOpen, color: 'text-sky-500' },
     { path: '/about', label: 'About', icon: Users, color: 'text-purple-500' }
   ];
   
-  const isActive = path => location.pathname === path;
+  const isActive = path => {
+    if (path.includes('#')) {
+      return location.pathname === '/' && location.hash === path.replace('/', '');
+    }
+    return location.pathname === path;
+  };
+
+  const handleNavClick = (path) => {
+    if (path.includes('#')) {
+      const hash = path.split('#')[1];
+      if (location.pathname === '/') {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    setIsMenuOpen(false);
+  };
   
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
@@ -47,6 +65,7 @@ const Header = () => {
                 <Link
                   key={link.path}
                   to={link.path}
+                  onClick={() => handleNavClick(link.path)}
                   className={`group flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
                     isActive(link.path)
                       ? 'bg-gradient-to-r from-green-50 to-yellow-50 text-gray-800 shadow-sm'
@@ -107,7 +126,7 @@ const Header = () => {
                     <Link
                       key={link.path}
                       to={link.path}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={() => handleNavClick(link.path)}
                       className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                         isActive(link.path)
                           ? 'bg-gradient-to-r from-green-50 to-yellow-50 text-gray-800 shadow-sm'

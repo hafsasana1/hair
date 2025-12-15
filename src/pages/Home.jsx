@@ -606,7 +606,7 @@ const Home = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-12 bg-gray-50">
+        <section id="faq" className="py-12 bg-gray-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
