@@ -54,7 +54,7 @@ const HairPorosityGuide = () => {
     "dateModified": updateDate,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://hairgen.com/blog/hair-porosity-guide"
+      "@id": "https://hairroutinegen.com/blog/hair-porosity-guide"
     }
   };
 
@@ -96,12 +96,12 @@ const HairPorosityGuide = () => {
         <meta name="description" content="Master hair porosity with our comprehensive guide. Learn the float test, care tips for low, medium & high porosity hair, plus expert product recommendations. Science-backed advice for healthier hair." />
         <meta name="keywords" content="hair porosity, hair porosity test, low porosity hair, high porosity hair, medium porosity hair, hair care guide, hair moisture, hair cuticle" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://hairgen.com/blog/hair-porosity-guide" />
+        <link rel="canonical" href="https://hairroutinegen.com/blog/hair-porosity-guide" />
         
         <meta property="og:title" content="Understanding Hair Porosity: Complete Guide to Testing & Care" />
         <meta property="og:description" content="Master hair porosity with our comprehensive guide. Learn the float test, care tips for low, medium & high porosity hair, plus expert product recommendations." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://hairgen.com/blog/hair-porosity-guide" />
+        <meta property="og:url" content="https://hairroutinegen.com/blog/hair-porosity-guide" />
         <meta property="og:image" content="/images/blog/woman_examining_hair_0a03f537.webp" />
         <meta property="article:published_time" content={publishDate} />
         <meta property="article:modified_time" content={updateDate} />

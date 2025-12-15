@@ -1,11 +1,11 @@
 # Robots.txt for AI Hair Routine Generator
-# https://hairgen.com
+# https://hairroutinegen.com
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://hairgen.com/sitemap.xml
+Sitemap: https://hairroutinegen.com/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

@@ -88,13 +88,13 @@ const About = () => {
     "@type": "AboutPage",
     "name": "About Hair Routine Generator",
     "description": "Learn about Hair Routine Generator's expert team, mission, and commitment to providing science-backed, personalized hair care solutions.",
-    "url": "https://hairgen.com/about",
+    "url": "https://hairroutinegen.com/about",
     "mainEntity": {
       "@type": "Organization",
       "name": "Hair Routine Generator",
       "description": "AI-powered personalized hair care solutions backed by expert knowledge",
       "foundingDate": "2023",
-      "url": "https://hairgen.com",
+      "url": "https://hairroutinegen.com",
       "sameAs": [
         "https://facebook.com/hairgen",
         "https://instagram.com/hairgen",
@@ -150,12 +150,12 @@ const About = () => {
         <meta name="description" content="Meet Hair Routine Generator's expert team of dermatologists, trichologists, and hair care specialists. Learn about our science-backed approach to personalized hair care solutions." />
         <meta name="keywords" content="hairgen team, hair care experts, trichologist, dermatologist, hair science, personalized hair care" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hairgen.com/about" />
+        <link rel="canonical" href="https://hairroutinegen.com/about" />
         
         <meta property="og:title" content="About Hair Routine Generator - Expert Hair Care Team" />
         <meta property="og:description" content="Meet our team of dermatologists, trichologists, and hair care specialists committed to science-backed hair care." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hairgen.com/about" />
+        <meta property="og:url" content="https://hairroutinegen.com/about" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>

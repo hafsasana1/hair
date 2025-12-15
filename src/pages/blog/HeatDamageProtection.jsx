@@ -57,7 +57,7 @@ const HeatDamageProtection = () => {
         <meta name="description" content="Protect your hair from heat damage with our expert guide. Learn safe temperatures for all hair types, choose the right heat protectant, and discover repair treatments. Science-backed tips inside!" />
         <meta name="keywords" content="heat damage hair, heat protectant, safe heat styling, protect hair flat iron, curling iron damage, heat styling tips, repair heat damaged hair" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <link rel="canonical" href="https://hairgen.com/blog/heat-damage-protection" />
+        <link rel="canonical" href="https://hairroutinegen.com/blog/heat-damage-protection" />
         
         <meta property="og:title" content="How to Protect Hair from Heat Damage: Complete Guide " />
         <meta property="og:description" content="Master heat styling without damaging your hair. Expert tips on temperatures, protectants, and repair treatments." />
@@ -69,7 +69,7 @@ const HeatDamageProtection = () => {
         <meta name="twitter:description" content="Master heat styling without damaging your hair. Expert tips on temperatures, protectants, and repair treatments." />
         <meta name="twitter:image" content="/images/blog/woman_using_hair_str_d63b3565.webp" />
         
-        <meta property="og:url" content="https://hairgen.com/blog/heat-damage-protection" />
+        <meta property="og:url" content="https://hairroutinegen.com/blog/heat-damage-protection" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>

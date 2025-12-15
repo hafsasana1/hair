@@ -33,13 +33,13 @@ const HairGrowthRoutine = () => {
         "publisher": {
           "@type": "Organization",
           "name": "Hair Routine Generator",
-          "url": "https://hairgen.com"
+          "url": "https://hairroutinegen.com"
         },
         "datePublished": "2024-01-10",
         "dateModified": "2024-12-14",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://hairgen.com/hair-growth-routine"
+          "@id": "https://hairroutinegen.com/hair-growth-routine"
         }
       },
       {
@@ -135,11 +135,11 @@ const HairGrowthRoutine = () => {
         <title>Hair Growth Routine: Science-Backed Tips for Longer, Thicker Hair</title>
         <meta name="description" content="Discover proven hair growth techniques backed by science. Learn about the hair growth cycle, essential nutrients, scalp massage, and how to maximize your growth potential. Free personalized routine!" />
         <meta name="keywords" content="hair growth routine, how to grow hair faster, hair growth tips, scalp massage for hair growth, biotin for hair, rosemary oil hair growth, hair length retention" />
-        <link rel="canonical" href="https://hairgen.com/hair-growth-routine" />
+        <link rel="canonical" href="https://hairroutinegen.com/hair-growth-routine" />
         <meta property="og:title" content="Hair Growth Routine: Science-Backed Tips | Hair Routine Generator" />
         <meta property="og:description" content="Learn the science behind growing longer, healthier hair. Expert tips on nutrition, scalp care, and length retention." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://hairgen.com/hair-growth-routine" />
+        <meta property="og:url" content="https://hairroutinegen.com/hair-growth-routine" />
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
         </script>

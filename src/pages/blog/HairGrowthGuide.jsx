@@ -56,7 +56,7 @@ const HairGrowthGuide = () => {
     "dateModified": updateDate,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://hairgen.com/blog/hair-growth-guide"
+      "@id": "https://hairroutinegen.com/blog/hair-growth-guide"
     }
   };
 
@@ -157,12 +157,12 @@ const HairGrowthGuide = () => {
         <meta name="description" content="Discover proven methods to accelerate hair growth naturally. Learn about the hair growth cycle, best nutrients, scalp care, and treatments backed by science. Expert tips for faster, thicker, healthier hair." />
         <meta name="keywords" content="hair growth, how to grow hair faster, hair growth tips, hair loss prevention, scalp health, biotin for hair, hair growth cycle, natural hair growth, hair vitamins, thicker hair, healthy hair growth" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://hairgen.com/blog/hair-growth-guide" />
+        <link rel="canonical" href="https://hairroutinegen.com/blog/hair-growth-guide" />
         
         <meta property="og:title" content="Complete Guide to Healthy Hair Growth: Science-Backed Tips" />
         <meta property="og:description" content="Discover proven methods to accelerate hair growth naturally. Learn about the hair growth cycle, best nutrients, scalp care, and treatments backed by science." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://hairgen.com/blog/hair-growth-guide" />
+        <meta property="og:url" content="https://hairroutinegen.com/blog/hair-growth-guide" />
         <meta property="og:image" content="/images/blog/healthy_hair_growth_results.webp" />
         <meta property="article:published_time" content={publishDate} />
         <meta property="article:modified_time" content={updateDate} />

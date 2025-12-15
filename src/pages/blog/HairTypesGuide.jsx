@@ -45,7 +45,7 @@ const HairTypesGuide = () => {
     "author": {
       "@type": "Organization",
       "name": "Hair Routine Generator",
-      "url": "https://hairgen.com"
+      "url": "https://hairroutinegen.com"
     },
     "publisher": {
       "@type": "Organization",
@@ -59,7 +59,7 @@ const HairTypesGuide = () => {
     "dateModified": updateDate,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://hairgen.com/blog/hair-types-guide"
+      "@id": "https://hairroutinegen.com/blog/hair-types-guide"
     },
     "articleSection": "Hair Science",
     "wordCount": "3500"
@@ -143,12 +143,12 @@ const HairTypesGuide = () => {
         <meta name="description" content="Master the Andre Walker hair typing system with our 3500+ word guide. Learn Types 1-4 (straight to coily), identify your pattern, plus get expert care tips and product recommendations for every hair type." />
         <meta name="keywords" content="hair types, hair type chart, Andre Walker hair system, Type 1 hair, Type 2 hair, Type 3 hair, Type 4 hair, straight hair, wavy hair, curly hair, coily hair, hair texture, hair density, curl pattern, hair classification, hair care by type" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://hairgen.com/blog/hair-types-guide" />
+        <link rel="canonical" href="https://hairroutinegen.com/blog/hair-types-guide" />
         
         <meta property="og:title" content="The Ultimate Guide to Hair Types: Andre Walker System Explained (Types 1-4)" />
         <meta property="og:description" content="Learn to identify your hair type with our comprehensive guide. From straight Type 1 to coily Type 4, discover your pattern and get personalized care tips." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://hairgen.com/blog/hair-types-guide" />
+        <meta property="og:url" content="https://hairroutinegen.com/blog/hair-types-guide" />
         <meta property="og:image" content="/images/blog/hair_types_comparison_guide.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />

@@ -45,13 +45,13 @@ const WavyHairRoutine2B = () => {
         "publisher": {
           "@type": "Organization",
           "name": "Hair Routine Generator",
-          "url": "https://hairgen.com"
+          "url": "https://hairroutinegen.com"
         },
         "datePublished": "2024-01-15",
         "dateModified": "2024-12-14",
         "mainEntityOfPage": {
           "@type": "WebPage",
-          "@id": "https://hairgen.com/hair-routine-for-wavy-hair"
+          "@id": "https://hairroutinegen.com/hair-routine-for-wavy-hair"
         }
       },
       {
@@ -125,11 +125,11 @@ const WavyHairRoutine2B = () => {
         <title>Wavy Hair Routine (2A-2C): Complete Care Guide for Beautiful Waves</title>
         <meta name="description" content="Discover the perfect wavy hair routine for 2A, 2B, and 2C hair types. Expert tips on products, styling techniques, and daily care for frizz-free, defined waves. Free personalized routine!" />
         <meta name="keywords" content="wavy hair routine, 2A hair care, 2B hair routine, 2C wavy hair, wavy hair products, how to style wavy hair, wavy hair tips, reduce frizz wavy hair" />
-        <link rel="canonical" href="https://hairgen.com/hair-routine-for-wavy-hair" />
+        <link rel="canonical" href="https://hairroutinegen.com/hair-routine-for-wavy-hair" />
         <meta property="og:title" content="Wavy Hair Routine (2A-2C): Complete Care Guide | Hair Routine Generator" />
         <meta property="og:description" content="Learn how to enhance your natural waves with our expert wavy hair routine. Perfect for 2A, 2B, and 2C hair types." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://hairgen.com/hair-routine-for-wavy-hair" />
+        <meta property="og:url" content="https://hairroutinegen.com/hair-routine-for-wavy-hair" />
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
         </script>

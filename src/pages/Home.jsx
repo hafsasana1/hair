@@ -61,7 +61,7 @@ const Home = () => {
         "author": {
           "@type": "Organization",
           "name": "Hair Routine Generator",
-          "url": "https://hairgen.com"
+          "url": "https://hairroutinegen.com"
         }
       },
       {
@@ -72,7 +72,7 @@ const Home = () => {
         "step": [
           {
             "@type": "HowToStep",
-            "url": "https://hairgen.com/#step1",
+            "url": "https://hairroutinegen.com/#step1",
             "name": "Analyze Your Hair",
             "itemListElement": {
               "@type": "HowToDirection",
@@ -81,7 +81,7 @@ const Home = () => {
           },
           {
             "@type": "HowToStep",
-            "url": "https://hairgen.com/#step2",
+            "url": "https://hairroutinegen.com/#step2",
             "name": "Identify Goals",
             "itemListElement": {
               "@type": "HowToDirection",
@@ -90,7 +90,7 @@ const Home = () => {
           },
           {
             "@type": "HowToStep",
-            "url": "https://hairgen.com/#step3",
+            "url": "https://hairroutinegen.com/#step3",
             "name": "Generate Routine",
             "itemListElement": {
               "@type": "HowToDirection",
@@ -99,7 +99,7 @@ const Home = () => {
           },
           {
             "@type": "HowToStep",
-            "url": "https://hairgen.com/#step4",
+            "url": "https://hairroutinegen.com/#step4",
             "name": "Follow and Adjust",
             "itemListElement": {
               "@type": "HowToDirection",
@@ -242,19 +242,19 @@ const Home = () => {
         <meta name="description" content="Get your FREE personalized hair care routine in 60 seconds! Our AI analyzes your hair type (1a-4c), porosity & local climate to create a custom daily plan. Trusted by 50,000+ users. Start now!" />
         <meta name="keywords" content="AI hair routine generator, personalized hair care, hair type routine, climate-based hair care, curly hair routine, wavy hair care, hair porosity, free hair routine generator, custom hair care plan, 2a 2b 2c 3a 3b 3c 4a 4b 4c hair" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://hairgen.com/" />
+        <link rel="canonical" href="https://hairroutinegen.com/" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hairgen.com/" />
+        <meta property="og:url" content="https://hairroutinegen.com/" />
         <meta property="og:title" content="AI Hair Routine Generator by Hair Type & Climate" />
         <meta property="og:description" content="Get your FREE personalized hair care routine in 60 seconds! AI-powered analysis for curly, wavy, straight & coily hair. Trusted by 50,000+ users." />
-        <meta property="og:image" content="https://hairgen.com/og-image.jpg" />
+        <meta property="og:image" content="https://hairroutinegen.com/og-image.jpg" />
         <meta property="og:site_name" content="Hair Routine Generator" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Hair Routine Generator by Hair Type & Climate" />
         <meta name="twitter:description" content="Get your FREE personalized hair care routine in 60 seconds! AI-powered analysis for all hair types. Start now!" />
-        <meta name="twitter:image" content="https://hairgen.com/twitter-image.jpg" />
+        <meta name="twitter:image" content="https://hairroutinegen.com/twitter-image.jpg" />
         
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}

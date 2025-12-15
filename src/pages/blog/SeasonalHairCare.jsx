@@ -48,7 +48,7 @@ const SeasonalHairCare = () => {
     "author": {
       "@type": "Organization",
       "name": "Hair Routine Generator",
-      "url": "https://hairgen.com"
+      "url": "https://hairroutinegen.com"
     },
     "publisher": {
       "@type": "Organization",
@@ -62,7 +62,7 @@ const SeasonalHairCare = () => {
     "dateModified": updateDate,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://hairgen.com/blog/seasonal-hair-care"
+      "@id": "https://hairroutinegen.com/blog/seasonal-hair-care"
     },
     "articleSection": "Seasonal Tips",
     "wordCount": "3200"
@@ -201,12 +201,12 @@ const SeasonalHairCare = () => {
         <meta name="description" content="Master seasonal hair care with our expert guide. Learn to protect your hair from summer sun, winter dryness, humidity, and cold. Science-backed tips for spring, summer, fall, and winter hair routines." />
         <meta name="keywords" content="seasonal hair care, summer hair care, winter hair care, humidity hair tips, cold weather hair, UV protection hair, seasonal hair routine, fall hair care, spring hair care, climate hair care" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <link rel="canonical" href="https://hairgen.com/blog/seasonal-hair-care" />
+        <link rel="canonical" href="https://hairroutinegen.com/blog/seasonal-hair-care" />
         
         <meta property="og:title" content="Seasonal Hair Care: Complete Guide to Adapting Your Routine for Every Season" />
         <meta property="og:description" content="Learn how to adapt your hair care routine for spring, summer, fall, and winter. Expert tips for protecting your hair from humidity, cold, and sun damage." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://hairgen.com/blog/seasonal-hair-care" />
+        <meta property="og:url" content="https://hairroutinegen.com/blog/seasonal-hair-care" />
         <meta property="og:image" content="/images/blog/autumn_fall_hair_care.webp" />
         <meta property="article:published_time" content={publishDate} />
         <meta property="article:modified_time" content={updateDate} />

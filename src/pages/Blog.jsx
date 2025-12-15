@@ -90,7 +90,7 @@ const schemaMarkup = {
   "@type": "Blog",
   "name": "Hair Routine Generator Hair Care Blog",
   "description": "Expert hair care tips, guides, and advice to help you achieve healthy, beautiful hair. Science-backed articles on porosity, natural ingredients, heat protection, and more.",
-  "url": "https://hairgen.com/blog",
+  "url": "https://hairroutinegen.com/blog",
   "publisher": {
     "@type": "Organization",
     "name": "Hair Routine Generator",
@@ -104,7 +104,7 @@ const schemaMarkup = {
     "headline": post.title,
     "description": post.excerpt,
     "datePublished": post.date,
-    "url": `https://hairgen.com${post.slug}`
+    "url": `https://hairroutinegen.com${post.slug}`
   }))
 };
 
@@ -116,12 +116,12 @@ const Blog = () => {
         <meta name="description" content="Explore expert hair care articles covering porosity, natural ingredients, heat protection, and personalized routines. Science-backed tips for all hair types. Start your hair transformation today!" />
         <meta name="keywords" content="hair care blog, hair tips, hair porosity guide, natural hair care, heat damage protection, hair routine, healthy hair tips" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-        <link rel="canonical" href="https://hairgen.com/blog" />
+        <link rel="canonical" href="https://hairroutinegen.com/blog" />
         
         <meta property="og:title" content="Hair Care Blog: Expert Tips & Science-Backed Advice | Hair Routine Generator" />
         <meta property="og:description" content="Explore expert hair care articles covering porosity, natural ingredients, heat protection, and personalized routines for all hair types." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hairgen.com/blog" />
+        <meta property="og:url" content="https://hairroutinegen.com/blog" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hair Care Blog | Hair Routine Generator" />

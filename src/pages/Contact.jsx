@@ -52,7 +52,7 @@ const Contact = () => {
     "@type": "ContactPage",
     "name": "Contact Hair Routine Generator",
     "description": "Get in touch with Hair Routine Generator for hair care advice, support, or general inquiries.",
-    "url": "https://hairgen.com/contact",
+    "url": "https://hairroutinegen.com/contact",
     "mainEntity": {
       "@type": "Organization",
       "name": "Hair Routine Generator",
@@ -79,12 +79,12 @@ const Contact = () => {
         <meta name="description" content="Contact Hair Routine Generator for personalized hair care advice, product recommendations, or general support. Our expert team is here to help you achieve your hair goals." />
         <meta name="keywords" content="contact hairgen, hair care support, hair advice, customer service, hair care help" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://hairgen.com/contact" />
+        <link rel="canonical" href="https://hairroutinegen.com/contact" />
         
         <meta property="og:title" content="Contact Us - Hair Routine Generator" />
         <meta property="og:description" content="Get in touch with our hair care experts for personalized advice and support." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hairgen.com/contact" />
+        <meta property="og:url" content="https://hairroutinegen.com/contact" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
       </Helmet>
