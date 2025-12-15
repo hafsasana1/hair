@@ -1,0 +1,76 @@
+PROJECT: HairRoutineGen.com (Hair Routine Generator Tool)
+
+TASK:
+Standardize and permanently fix the META TITLE and META DESCRIPTION
+for ALL hair routine RESULT PAGES generated after the quiz.
+
+CURRENT CORRECT FORMAT (DO NOT CHANGE):
+Example:
+"Coily Hair Routine – Medium Porosity Care Plan"
+
+----------------------------------------
+META TITLE RULE (STRICT):
+
+Use this EXACT format for all result pages:
+
+"{Hair Type} Hair Routine – {Porosity} Care Plan"
+
+Examples:
+- Coily Hair Routine – Medium Porosity Care Plan
+- Straight Hair Routine – Low Porosity Care Plan
+- Curly Hair Routine – High Porosity Care Plan
+- Wavy Hair Routine – Medium Porosity Care Plan
+
+Rules:
+- Keyword-first (Hair Type must be first)
+- Use an EN DASH (–), not a hyphen
+- Title case capitalization
+- Max length: 60 characters
+- No extra words (no "Your", "Best", "Personalized", emojis, or pipes)
+- One unique title per result page
+
+----------------------------------------
+META DESCRIPTION RULE:
+
+Generate a dynamic meta description using this template:
+
+"Get a personalized daily and weekly hair routine for {Hair Type} hair with {Porosity} porosity. Includes step-by-step care and product tips."
+
+Rules:
+- Length: 145–155 characters
+- Must include hair type + porosity naturally
+- Clear, informational, Adsense-safe
+- No keyword stuffing
+
+----------------------------------------
+IMPLEMENTATION DETAILS:
+
+- Hair Type and Porosity values are sourced from quiz results
+- Meta tags must be dynamically rendered per result page
+- Each combination (hair type + porosity) must output UNIQUE meta tags
+- Render meta tags server-side or on initial page load for SEO visibility
+
+----------------------------------------
+FALLBACK (If quiz data is missing):
+
+Meta Title:
+"Hair Routine Generator – Personalized Care Plan"
+
+Meta Description:
+"Generate a personalized hair routine based on your hair type, porosity, and care goals in seconds."
+
+----------------------------------------
+DO NOT:
+- Do not auto-generate conversational titles
+- Do not reuse homepage meta tags
+- Do not exceed character limits
+- Do not index pages with missing data
+
+----------------------------------------
+SEO PURPOSE:
+This fix is critical for:
+- Programmatic SEO
+- Google indexing
+- High CTR
+- Adsense approval
+- Long-term scaling of result pages
