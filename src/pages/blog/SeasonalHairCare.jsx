@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const SeasonalHairCare = () => {
-  const publishDate = '2024-12-14';
-  const updateDate = '2024-12-14';
+  const publishDate = '2025-12-15';
+  const updateDate = '2025-12-15';
   const author = 'Hair Routine Generator Expert Team';
   const readTime = '18 min read';
 

@@ -6,8 +6,8 @@ import { ArrowLeft, Clock, Calendar, BookOpen, CheckCircle, AlertCircle, Star, S
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const HairTypesGuide = () => {
-  const publishDate = '2024-12-14';
-  const updateDate = '2024-12-14';
+  const publishDate = '2025-12-15';
+  const updateDate = '2025-12-15';
 
   const tableOfContents = [
     { id: 'introduction', title: 'Introduction to Hair Types' },

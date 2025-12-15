@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const NaturalIngredientsGuide = () => {
-  const publishDate = '2024-12-08';
-  const updateDate = '2024-12-14';
+  const publishDate = '2025-12-15';
+  const updateDate = '2025-12-15';
   const readTime = '12 min read';
   const author = 'Hair Routine Generator Expert Team';
 

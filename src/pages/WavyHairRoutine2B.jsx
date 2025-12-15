@@ -47,8 +47,8 @@ const WavyHairRoutine2B = () => {
           "name": "Hair Routine Generator",
           "url": "https://hairroutinegen.com"
         },
-        "datePublished": "2024-01-15",
-        "dateModified": "2024-12-14",
+        "datePublished": "2025-12-15",
+        "dateModified": "2025-12-15",
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://hairroutinegen.com/hair-routine-for-wavy-hair"

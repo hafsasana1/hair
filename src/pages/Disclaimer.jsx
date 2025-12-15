@@ -25,7 +25,7 @@ const Disclaimer = () => {
                 <AlertTriangle className="w-8 h-8 text-white" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Disclaimer</h1>
-              <p className="text-gray-600">Last Updated: December 2024</p>
+              <p className="text-gray-600">Last Updated: December 2025</p>
             </div>
 
             <div className="bg-white rounded-2xl shadow-lg p-8 space-y-8">

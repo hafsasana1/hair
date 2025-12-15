@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 import BlogDisclaimer from '@/components/BlogDisclaimer';
 
 const HairGrowthGuide = () => {
-  const publishDate = '2024-12-14';
-  const updateDate = '2024-12-14';
+  const publishDate = '2025-12-15';
+  const updateDate = '2025-12-15';
   const readTime = '25 min read';
   const author = 'Hair Routine Generator Expert Team';
   const wordCount = '4,500+';
