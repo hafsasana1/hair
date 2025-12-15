@@ -201,7 +201,7 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <img alt="Hair Routine Generator team and technology" className="rounded-2xl shadow-2xl w-full" src="https://images.unsplash.com/photo-1684196508688-4d1408bc5126" loading="lazy" />
+                <img alt="Woman with beautiful healthy hair following personalized hair care routine" className="rounded-2xl shadow-2xl w-full" src="/images/about-hero.jpg" loading="lazy" />
               </motion.div>
             </div>
           </div>
