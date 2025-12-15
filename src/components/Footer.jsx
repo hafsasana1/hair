@@ -28,7 +28,8 @@ const Footer = () => {
 
   const legalLinks = [
     { path: '/privacy', label: 'Privacy Policy', icon: Shield, color: 'text-teal-400' },
-    { path: '/terms', label: 'Terms of Service', icon: FileText, color: 'text-orange-400' }
+    { path: '/terms', label: 'Terms of Service', icon: FileText, color: 'text-orange-400' },
+    { path: '/disclaimer', label: 'Disclaimer', icon: FileText, color: 'text-amber-400' }
   ];
 
   const socialLinks = [

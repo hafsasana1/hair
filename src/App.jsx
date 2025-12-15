@@ -13,6 +13,7 @@ import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Privacy from '@/pages/Privacy';
 import Terms from '@/pages/Terms';
+import Disclaimer from '@/pages/Disclaimer';
 import CurlyHairRoutine from '@/pages/CurlyHairRoutine';
 import WavyHairRoutine2B from '@/pages/WavyHairRoutine2B';
 import LowPorosityRoutine from '@/pages/LowPorosityRoutine';
@@ -54,6 +55,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/disclaimer" element={<Disclaimer />} />
               <Route path="/hair-routine-for-curly-hair" element={<CurlyHairRoutine />} />
               <Route path="/hair-routine-for-2b-hair" element={<WavyHairRoutine2B />} />
               <Route path="/hair-routine-for-wavy-hair" element={<WavyHairRoutine2B />} />
