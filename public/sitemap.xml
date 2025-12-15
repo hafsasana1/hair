@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <!-- Homepage -->
   <url>
     <loc>https://hairroutinegen.com/</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,174 +12,196 @@
   <!-- Quiz Page -->
   <url>
     <loc>https://hairroutinegen.com/quiz</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Results Page -->
-  <url>
-    <loc>https://hairroutinegen.com/results</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Hair Type Routine Pages -->
+  <!-- Static Hair Routine Pages -->
   <url>
     <loc>https://hairroutinegen.com/hair-routine-for-curly-hair</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://hairroutinegen.com/hair-routine-for-2b-hair</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://hairroutinegen.com/hair-routine-for-low-porosity</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://hairroutinegen.com/hair-routine-for-frizzy-hair</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://hairroutinegen.com/hair-routine-for-oily-scalp</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://hairroutinegen.com/hair-routine-for-hair-growth</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://hairroutinegen.com/hair-routine-for-damaged-hair</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://hairroutinegen.com/hair-routine-for-dry-scalp</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://hairroutinegen.com/hair-routine-for-high-porosity</loc>
-    <lastmod>2024-12-14</lastmod>
+    <loc>https://hairroutinegen.com/hair-routine-for-wavy-hair</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://hairroutinegen.com/hair-routine-for-straight-hair</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://hairroutinegen.com/hair-routine-for-low-porosity</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://hairroutinegen.com/hair-routine-for-high-porosity</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://hairroutinegen.com/hair-routine-for-frizzy-hair</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://hairroutinegen.com/hair-routine-for-oily-scalp</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://hairroutinegen.com/hair-routine-for-dry-scalp</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://hairroutinegen.com/hair-routine-for-damaged-hair</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://hairroutinegen.com/hair-growth-routine</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Programmatic SEO Pages: Hair Type + Porosity Combinations -->
+  <url>
+    <loc>https://hairroutinegen.com/coily-hair-routine-medium-porosity</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hairroutinegen.com/curly-hair-routine-high-porosity</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hairroutinegen.com/wavy-hair-routine-medium-porosity</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://hairroutinegen.com/straight-hair-routine-low-porosity</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   
   <!-- Blog Pages -->
   <url>
     <loc>https://hairroutinegen.com/blog</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hairroutinegen.com/blog/hair-porosity-guide</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hairroutinegen.com/blog/natural-ingredients-for-healthy-hair</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hairroutinegen.com/blog/heat-damage-protection</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hairroutinegen.com/blog/hair-types-guide</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hairroutinegen.com/blog/seasonal-hair-care</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hairroutinegen.com/blog/diy-hair-masks</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hairroutinegen.com/blog/hair-growth-guide</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   
-  <!-- Static Pages -->
+  <!-- About / Contact Pages -->
   <url>
     <loc>https://hairroutinegen.com/about</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hairroutinegen.com/contact</loc>
-    <lastmod>2024-12-14</lastmod>
-    <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   
   <url>
-    <loc>https://hairroutinegen.com/privacy</loc>
-    <lastmod>2024-12-14</lastmod>
+    <loc>https://hairroutinegen.com/contact</loc>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.4</priority>
+  </url>
+  
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://hairroutinegen.com/privacy</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://hairroutinegen.com/terms</loc>
-    <lastmod>2024-12-14</lastmod>
+    <lastmod>2024-12-15</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.2</priority>
   </url>
   
 </urlset>
