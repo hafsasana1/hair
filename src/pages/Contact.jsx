@@ -30,7 +30,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'support@hairgen.com',
+      details: 'support@hairroutinegen.com',
       description: 'We respond within 24 hours'
     },
     {
@@ -56,11 +56,11 @@ const Contact = () => {
     "mainEntity": {
       "@type": "Organization",
       "name": "Hair Routine Generator",
-      "email": "support@hairgen.com",
+      "email": "support@hairroutinegen.com",
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",
-        "email": "support@hairgen.com",
+        "email": "support@hairroutinegen.com",
         "availableLanguage": "English",
         "hoursAvailable": {
           "@type": "OpeningHoursSpecification",
@@ -77,8 +77,7 @@ const Contact = () => {
       <Helmet>
         <title>Contact Us - Hair Routine Generator | Hair Care Support & Inquiries</title>
         <meta name="description" content="Contact Hair Routine Generator for personalized hair care advice, product recommendations, or general support. Our expert team is here to help you achieve your hair goals." />
-        <meta name="keywords" content="contact hairgen, hair care support, hair advice, customer service, hair care help" />
-        <meta name="robots" content="index, follow" />
+                <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hairroutinegen.com/contact" />
         
         <meta property="og:title" content="Contact Us - Hair Routine Generator" />

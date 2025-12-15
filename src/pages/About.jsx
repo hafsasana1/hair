@@ -148,8 +148,7 @@ const About = () => {
       <Helmet>
         <title>About Hair Routine Generator - Expert Hair Care Team & Our Mission | E-E-A-T Credentials</title>
         <meta name="description" content="Meet Hair Routine Generator's expert team of dermatologists, trichologists, and hair care specialists. Learn about our science-backed approach to personalized hair care solutions." />
-        <meta name="keywords" content="hairgen team, hair care experts, trichologist, dermatologist, hair science, personalized hair care" />
-        <meta name="robots" content="index, follow" />
+                <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://hairroutinegen.com/about" />
         
         <meta property="og:title" content="About Hair Routine Generator - Expert Hair Care Team" />

@@ -9,6 +9,8 @@ const Privacy = () => {
       <Helmet>
         <title>Privacy Policy - Hair Routine Generator</title>
         <meta name="description" content="Read Hair Routine Generator's privacy policy to understand how we collect, use, and protect your personal information." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://hairroutinegen.com/privacy" />
       </Helmet>
 
       <div className="min-h-screen bg-white py-12">
@@ -113,7 +115,7 @@ const Privacy = () => {
                   If you have any questions about this privacy policy or our privacy practices, please contact us at:
                 </p>
                 <div className="bg-yellow-50 p-6 rounded-xl">
-                  <p className="text-gray-700 font-semibold">Email: privacy@hairgen.com</p>
+                  <p className="text-gray-700 font-semibold">Email: privacy@hairroutinegen.com</p>
                   <p className="text-gray-700">We aim to respond to all legitimate requests within one month.</p>
                 </div>
               </section>

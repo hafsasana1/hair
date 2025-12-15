@@ -9,6 +9,8 @@ const Terms = () => {
       <Helmet>
         <title>Terms of Service - Hair Routine Generator</title>
         <meta name="description" content="Read Hair Routine Generator's terms of service to understand the rules and regulations for using our AI-powered hair care platform." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://hairroutinegen.com/terms" />
       </Helmet>
 
       <div className="min-h-screen bg-white py-12">
@@ -124,7 +126,7 @@ const Terms = () => {
                   If you have any questions about these Terms of Service, please contact us at:
                 </p>
                 <div className="bg-yellow-50 p-6 rounded-xl">
-                  <p className="text-gray-700 font-semibold">Email: legal@hairgen.com</p>
+                  <p className="text-gray-700 font-semibold">Email: legal@hairroutinegen.com</p>
                   <p className="text-gray-700 mt-2">We aim to respond to all inquiries within 48 hours.</p>
                 </div>
               </section>
