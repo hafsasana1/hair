@@ -1112,6 +1112,24 @@ const Results = () => {
     return `Get a personalized daily and weekly hair routine for ${typeStr} hair with ${porosityStr} porosity. Includes step-by-step care and product tips.`;
   };
 
+  const shouldIndexPage = () => {
+    const hairType = generatedRoutine?.hairProfile?.type;
+    const porosity = generatedRoutine?.hairProfile?.porosity;
+    const dailyRoutine = generatedRoutine?.morningRoutine || generatedRoutine?.dailyRoutine;
+    const weeklyRoutine = generatedRoutine?.weeklyRoutine || generatedRoutine?.weeklyTreatments;
+    const products = generatedRoutine?.productRecommendations || generatedRoutine?.products;
+    const tips = generatedRoutine?.careTips || generatedRoutine?.tips || generatedRoutine?.eveningRoutine;
+    
+    const hasHairType = hairType && ['straight', 'wavy', 'curly', 'coily'].includes(hairType.toLowerCase());
+    const hasPorosity = porosity && ['low', 'medium', 'high'].includes(porosity.toLowerCase());
+    const hasDailyRoutine = dailyRoutine && dailyRoutine.length > 0;
+    const hasWeeklyRoutine = weeklyRoutine && weeklyRoutine.length > 0;
+    const hasProducts = products && products.length > 0;
+    const hasTips = tips && tips.length > 0;
+    
+    return hasHairType && hasPorosity && hasDailyRoutine && hasWeeklyRoutine && hasProducts && hasTips;
+  };
+
   const getSEOSlug = () => {
     const type = (generatedRoutine?.hairProfile?.type || 'custom').toLowerCase();
     const porosity = (generatedRoutine?.hairProfile?.porosity || '').toLowerCase();
@@ -1175,6 +1193,7 @@ const Results = () => {
       <Helmet>
         <title>{getSEOTitle()}</title>
         <meta name="description" content={getSEODescription()} />
+        <meta name="robots" content={shouldIndexPage() ? "index, follow" : "noindex, follow"} />
         <meta property="og:title" content={getSEOTitle()} />
         <meta property="og:description" content={getSEODescription()} />
         <meta property="og:type" content="article" />
