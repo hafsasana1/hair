@@ -1103,18 +1103,89 @@ const Results = () => {
     }))
   };
 
+  const getHowToSteps = () => {
+    const hairType = (generatedRoutine?.hairProfile?.type || '').toLowerCase();
+    const porosity = (generatedRoutine?.hairProfile?.porosity || '').toLowerCase();
+    const hairTypeDisplay = hairType.charAt(0).toUpperCase() + hairType.slice(1);
+    
+    const cleansingDescriptions = {
+      straight: 'Use a gentle sulfate-free shampoo to cleanse the scalp. Focus on the roots where oil accumulates while letting suds run through lengths.',
+      wavy: 'Apply a moisturizing shampoo to the scalp. Massage gently and let the lather cleanse the lengths without stripping natural oils.',
+      curly: 'Use a sulfate-free or co-wash cleanser. Apply to scalp only and gently massage. Rinse thoroughly with lukewarm water.',
+      coily: 'Pre-poo with oil before cleansing. Use a gentle sulfate-free shampoo or cleansing conditioner on the scalp. Rinse with warm water.'
+    };
+    
+    const conditioningDescriptions = {
+      straight: 'Apply conditioner from mid-lengths to ends, avoiding the roots. Leave for 2-3 minutes and rinse with cool water for added shine.',
+      wavy: 'Distribute conditioner through mid-lengths and ends. Detangle gently with fingers or wide-tooth comb. Rinse with cool water.',
+      curly: 'Apply generous conditioner and detangle with fingers or wide-tooth comb while hair is saturated. Leave for 3-5 minutes before rinsing.',
+      coily: 'Section hair and apply deep conditioner generously. Detangle each section from ends to roots. Use a heat cap for deeper penetration.'
+    };
+    
+    const moisturizingDescriptions = {
+      low: 'Apply lightweight, water-based leave-in conditioner to damp hair. Use heat to help products penetrate the cuticle.',
+      medium: 'Apply leave-in conditioner and a light moisturizing cream. Distribute evenly through hair for balanced hydration.',
+      high: 'Use the LOC method: apply liquid leave-in, seal with oil, then layer with cream to lock in moisture effectively.'
+    };
+    
+    const stylingDescriptions = {
+      straight: 'Apply a light serum or heat protectant. Style as desired with minimal heat. Finish with a light-hold hairspray if needed.',
+      wavy: 'Scrunch a lightweight mousse or wave cream into damp hair. Air dry or diffuse on low heat. Avoid touching while drying.',
+      curly: 'Apply curl cream and gel to soaking wet hair. Scrunch gently and diffuse or air dry. Scrunch out the crunch once fully dry.',
+      coily: 'Apply styling butter or cream in sections. Twist, braid, or use your preferred protective style. Seal edges with edge control.'
+    };
+    
+    const weeklyDescriptions = {
+      straight: 'Deep condition once weekly. Clarify monthly to remove buildup. Trim every 8-12 weeks to maintain healthy ends.',
+      wavy: 'Deep condition weekly. Use a protein treatment monthly if needed. Clarify every 2-3 weeks. Trim regularly.',
+      curly: 'Deep condition weekly for 20-30 minutes. Alternate protein and moisture treatments. Clarify monthly. Trim as needed.',
+      coily: 'Deep condition weekly with heat. Do protein treatments every 4-6 weeks. Clarify monthly. Protective style regularly.'
+    };
+
+    return [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Cleansing",
+        "text": cleansingDescriptions[hairType] || 'Cleanse scalp with a gentle shampoo. Massage to remove buildup and rinse thoroughly.'
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Conditioning",
+        "text": conditioningDescriptions[hairType] || 'Apply conditioner to lengths and ends. Detangle gently and rinse with cool water.'
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Moisturizing",
+        "text": moisturizingDescriptions[porosity] || 'Apply leave-in conditioner to damp hair for added moisture and protection.'
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Styling",
+        "text": stylingDescriptions[hairType] || 'Apply styling products suited to your hair type. Allow to air dry or use low heat.'
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Weekly and Monthly Care",
+        "text": weeklyDescriptions[hairType] || 'Deep condition weekly. Use clarifying treatment monthly. Trim every 8-12 weeks.'
+      }
+    ];
+  };
+
+  const hairTypeDisplay = (generatedRoutine?.hairProfile?.type || '').charAt(0).toUpperCase() + (generatedRoutine?.hairProfile?.type || '').slice(1);
+  const porosityDisplay = (generatedRoutine?.hairProfile?.porosity || '').charAt(0).toUpperCase() + (generatedRoutine?.hairProfile?.porosity || '').slice(1);
+
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": `How to Care for ${generatedRoutine?.hairProfile?.type || 'Your'} Hair`,
-    "description": `Complete step-by-step hair care routine for ${generatedRoutine?.hairProfile?.type || 'your'} hair with ${generatedRoutine?.hairProfile?.porosity || 'balanced'} porosity.`,
+    "name": `${hairTypeDisplay} Hair Routine for ${porosityDisplay} Porosity`,
+    "description": `Complete step-by-step ${hairTypeDisplay.toLowerCase()} hair care routine optimized for ${porosityDisplay.toLowerCase()} porosity. Includes cleansing, conditioning, moisturizing, styling, and maintenance steps.`,
     "totalTime": "PT30M",
-    "step": generatedRoutine?.morningRoutine?.map((step, index) => ({
-      "@type": "HowToStep",
-      "position": index + 1,
-      "name": step.title,
-      "text": step.description
-    })) || []
+    "step": getHowToSteps()
   };
 
   const productSchema = {
