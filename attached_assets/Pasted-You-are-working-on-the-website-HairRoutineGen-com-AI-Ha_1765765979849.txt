@@ -1,0 +1,76 @@
+You are working on the website HairRoutineGen.com (AI Hair Routine Generator).
+
+TASK:
+Fix and optimize the SEO meta title and meta description for the RESULT PAGE
+(the page that shows the personalized hair routine after quiz completion).
+
+CURRENT ISSUE:
+The current meta title uses a conversational format like:
+"Your Personalized Hair Routine for Straight, Low Porosity Hair"
+
+This is NOT SEO-optimal.
+
+GOAL:
+Rewrite the meta title and meta description to follow Google SEO best practices:
+- Keyword-first
+- Short, clean, search-intent focused
+- High CTR
+- Safe length (no truncation)
+- Unique per result page
+
+---------------------------------
+META TITLE RULE (VERY IMPORTANT):
+
+Use this EXACT format:
+"{Hair Type} Hair Routine – {Porosity} Care Plan"
+
+Examples:
+- "Straight Hair Routine – Low Porosity Care Plan"
+- "Curly Hair Routine – High Porosity Care Plan"
+- "Wavy Hair Routine – Medium Porosity Care Plan"
+
+Constraints:
+- Max length: 60 characters
+- No words like "Your", "My", "Best", or emojis
+- Capitalize each main word
+
+---------------------------------
+META DESCRIPTION RULE:
+
+Generate a dynamic meta description using this template:
+
+"Get a personalized daily and weekly hair routine for {Hair Type} hair with {Porosity} porosity. Includes step-by-step care and product tips."
+
+Constraints:
+- Length between 145–155 characters
+- Must include:
+  - hair type
+  - porosity
+  - routine
+- Natural, readable English
+- No keyword stuffing
+
+---------------------------------
+IMPLEMENTATION DETAILS:
+
+- Hair Type and Porosity values come from quiz results
+- Meta tags must be dynamically generated per user result
+- Each result page must output UNIQUE title & description
+- Ensure meta tags are rendered server-side or at page load (SEO-visible)
+
+---------------------------------
+TECHNICAL OUTPUT REQUIRED:
+
+1. Replace the existing meta title logic with the new format
+2. Replace the existing meta description logic with the new template
+3. Ensure no title exceeds 60 characters
+4. Ensure no description exceeds 160 characters
+5. If data is missing, fallback to:
+   Title: "Hair Routine Generator – Personalized Care Plan"
+   Description: "Generate a personalized hair routine based on your hair type, porosity, and care goals in seconds."
+
+This change is critical for:
+- Google ranking
+- Indexation of result pages
+- Adsense approval
+- Higher click-through rate
