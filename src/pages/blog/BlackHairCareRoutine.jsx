@@ -425,6 +425,16 @@ const BlackHairCareRoutine = () => {
                 <section id="deep-conditioning" className="scroll-mt-24">
                   <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">Deep Conditioning and Moisturizing Protocol</h2>
                   
+                  <div className="relative rounded-2xl overflow-hidden mb-8">
+                    <img 
+                      src="/images/blog/black_hair_deep_conditioning_treatment.jpg" 
+                      alt="Deep conditioning treatment for Black hair moisture and hydration" 
+                      className="w-full h-auto object-cover"
+                      loading="lazy"
+                    />
+                    <p className="text-sm text-gray-500 text-center mt-2 italic">Weekly deep conditioning is essential for moisture retention and hair health</p>
+                  </div>
+                  
                   <p className="text-gray-700 leading-relaxed mb-4">
                     Deep conditioning is the foundation of healthy Black hair. This intensive moisture treatment should be done weekly for optimal results, addressing the moisture deficit created by your hair's natural texture.
                   </p>
@@ -699,6 +709,16 @@ const BlackHairCareRoutine = () => {
 
                 <section id="growth-acceleration" className="scroll-mt-24">
                   <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">Tips for Hair Growth and Length Retention</h2>
+                  
+                  <div className="relative rounded-2xl overflow-hidden mb-8">
+                    <img 
+                      src="/images/blog/black_hair_growth_tips.jpg" 
+                      alt="Hair growth and length retention tips for Black hair care" 
+                      className="w-full h-auto object-cover"
+                      loading="lazy"
+                    />
+                    <p className="text-sm text-gray-500 text-center mt-2 italic">Proper care techniques support healthy hair growth and length retention</p>
+                  </div>
                   
                   <p className="text-gray-700 leading-relaxed mb-4">
                     Hair growth is a marathon, not a sprint. Black hair can grow 4-6 inches per year with proper care, but must be retained through protective practices. Length retention (keeping the hair you grow) is often more important than growth rate.
