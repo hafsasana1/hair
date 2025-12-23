@@ -469,16 +469,6 @@ const BlackHairCareRoutine = () => {
                     </div>
                   </div>
 
-                  <div className="relative rounded-2xl overflow-hidden my-8">
-                    <img 
-                      src="/images/blog/black_hair_deep_conditioning.jpg" 
-                      alt="Woman applying deep conditioning treatment to natural Black hair for moisture and health" 
-                      className="w-full h-auto object-cover"
-                      loading="lazy"
-                    />
-                    <p className="text-sm text-gray-500 text-center mt-2 italic">Deep conditioning is essential for maintaining moisture and preventing breakage in Black hair</p>
-                  </div>
-
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-6">
                     <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
                       <AlertTriangle className="w-5 h-5 text-yellow-600" />
@@ -502,16 +492,6 @@ const BlackHairCareRoutine = () => {
                   </p>
 
                   <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Popular Protective Styles for Black Hair</h3>
-
-                  <div className="relative rounded-2xl overflow-hidden my-8">
-                    <img 
-                      src="/images/blog/black_hair_protective_styles.jpg" 
-                      alt="Popular protective hairstyles for Black hair including braids, buns, and twists for growth" 
-                      className="w-full h-auto object-cover"
-                      loading="lazy"
-                    />
-                    <p className="text-sm text-gray-500 text-center mt-2 italic">Protective styles minimize manipulation and support healthy hair growth and length retention</p>
-                  </div>
 
                   <div className="grid md:grid-cols-2 gap-6 my-8">
                     <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
@@ -562,16 +542,6 @@ const BlackHairCareRoutine = () => {
                   </p>
 
                   <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Daily Scalp Massage Technique (5-10 minutes)</h3>
-
-                  <div className="relative rounded-2xl overflow-hidden my-8">
-                    <img 
-                      src="/images/blog/black_hair_scalp_massage_oil.jpg" 
-                      alt="Woman performing scalp massage with oil treatment for hair growth and relaxation" 
-                      className="w-full h-auto object-cover"
-                      loading="lazy"
-                    />
-                    <p className="text-sm text-gray-500 text-center mt-2 italic">Regular scalp massage improves blood circulation, nourishes follicles, and promotes faster hair growth</p>
-                  </div>
 
                   <div className="bg-gradient-to-br from-green-50 to-blue-50 border border-green-200 rounded-lg p-6 my-6">
                     <ol className="text-gray-700 space-y-3">
@@ -643,16 +613,6 @@ const BlackHairCareRoutine = () => {
                 <section id="product-recommendations" className="scroll-mt-24">
                   <h2 className="text-3xl font-bold text-gray-900 mt-12 mb-6">Best Products for Black Hair Care</h2>
                   
-                  <div className="relative rounded-2xl overflow-hidden my-8">
-                    <img 
-                      src="/images/blog/black_hair_care_products.jpg" 
-                      alt="Natural hair care products including shea butter, argan oil, coconut oil, and conditioners for Black hair" 
-                      className="w-full h-auto object-cover"
-                      loading="lazy"
-                    />
-                    <p className="text-sm text-gray-500 text-center mt-2 italic">Quality products with natural ingredients are essential for effective Black hair care and maintenance</p>
-                  </div>
-
                   <p className="text-gray-700 leading-relaxed mb-4">
                     Choosing the right products is crucial for Black hair success. Look for sulfate-free, silicone-free formulas with nourishing ingredients. Avoid products containing drying alcohols, and prioritize natural and organic options when possible.
                   </p>
