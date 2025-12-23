@@ -474,6 +474,15 @@ const FourCHairRoutine = () => {
                     </div>
                   </div>
 
+                  <img 
+                    src="/images/blog/4c_deep_conditioning_treatment.webp" 
+                    alt="Deep conditioning treatment being applied to damp 4C coily hair with rich moisturizing product"
+                    className="w-full rounded-2xl shadow-lg mb-8"
+                    loading="lazy"
+                    width="1200"
+                    height="675"
+                  />
+
                   <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg mb-6">
                     <div className="flex items-start gap-3">
                       <AlertCircle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-1" />
@@ -490,6 +499,15 @@ const FourCHairRoutine = () => {
                 {/* Protective Styling */}
                 <section id="protective-styling" className="mb-12">
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">Protective Styling Strategies</h2>
+                  
+                  <img 
+                    src="/images/blog/4c_protective_braids.webp" 
+                    alt="Beautiful protective box braided hairstyle on 4C natural coily hair showing secure tucked ends"
+                    className="w-full rounded-2xl shadow-lg mb-8"
+                    loading="lazy"
+                    width="1200"
+                    height="675"
+                  />
                   
                   <p className="text-gray-700 leading-relaxed mb-6">
                     Protective styles are crucial for 4C hair growth and health. These styles tuck ends away, minimize daily manipulation, and allow hair to retain moisture and length. However, protective styles must be done correctly to protect rather than damage.
@@ -560,6 +578,15 @@ const FourCHairRoutine = () => {
                   <p className="text-gray-700 leading-relaxed mb-6">
                     A healthy scalp is the foundation for healthy hair growth. 4C hair's tight texture makes scalp care particularly important, as product buildup and lack of circulation can inhibit growth.
                   </p>
+
+                  <img 
+                    src="/images/blog/4c_scalp_massage_oil.webp" 
+                    alt="Woman receiving relaxing scalp massage with nourishing oil to improve circulation and promote 4C hair growth"
+                    className="w-full rounded-2xl shadow-lg mb-8"
+                    loading="lazy"
+                    width="1200"
+                    height="675"
+                  />
 
                   <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Weekly Scalp Care Routine</h3>
 
