@@ -105,6 +105,17 @@ const blogPosts = [
     image: '/images/blog/shaggy_hair_before_and_after_styling.webp',
     wordCount: '3,500+'
   },
+  {
+    id: 10,
+    title: '4C Hair Routine: Complete Moisture, Growth & Definition Guide',
+    excerpt: 'Master the ultimate 4C hair care routine with science-backed moisture management, protective styling, scalp health, and growth techniques for healthy, defined natural hair.',
+    date: '2025-12-24',
+    readTime: '24 min read',
+    category: 'Natural Hair Care',
+    slug: '/blog/4c-hair-routine',
+    image: '/images/blog/woman_with_4c_natural_coily_hair.webp',
+    wordCount: '4,500+'
+  }
 ];
 
 const schemaMarkup = {
