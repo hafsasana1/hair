@@ -38,6 +38,7 @@ import DIYHairMasks from '@/pages/blog/DIYHairMasks';
 import HairGrowthGuide from '@/pages/blog/HairGrowthGuide';
 import HairOilingRoutine from '@/pages/blog/HairOilingRoutine';
 import HairShaggyRoutine from '@/pages/blog/HairShaggyRoutine';
+import HairNewYearsEveRoutine from '@/pages/blog/HairNewYearsEveRoutine';
 
 function App() {
   return (
@@ -87,6 +88,7 @@ function App() {
               <Route path="/blog/hair-growth-guide" element={<HairGrowthGuide />} />
               <Route path="/blog/hair-oiling-routine" element={<HairOilingRoutine />} />
               <Route path="/blog/shaggy-hair-routine" element={<HairShaggyRoutine />} />
+              <Route path="/blog/nye-hair-routine" element={<HairNewYearsEveRoutine />} />
             </Routes>
           </main>
           <Footer />

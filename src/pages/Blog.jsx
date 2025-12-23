@@ -104,6 +104,17 @@ const blogPosts = [
     slug: '/blog/shaggy-hair-routine',
     image: '/images/blog/shaggy_hair_before_and_after_styling.webp',
     wordCount: '3,500+'
+  },
+  {
+    id: 10,
+    title: 'New Year\'s Eve Hair Routine: Complete Styling Guide',
+    excerpt: 'Learn stunning New Year\'s Eve hairstyles including glamorous updos, elegant waves, and party-perfect styles. Master styling techniques for celebration night.',
+    date: '2025-12-23',
+    readTime: '16 min read',
+    category: 'Party & Event Hair',
+    slug: '/blog/nye-hair-routine',
+    image: '/images/blog/nye_glamorous_hairstyle.webp',
+    wordCount: '3,200+'
   }
 ];
 
