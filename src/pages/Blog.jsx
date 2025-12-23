@@ -82,6 +82,17 @@ const blogPosts = [
     slug: '/blog/hair-growth-guide',
     image: '/images/blog/healthy_hair_growth_results.webp',
     wordCount: '4,500+'
+  },
+  {
+    id: 8,
+    title: 'Hair Oiling Routine for Growth: Complete Before and After Guide',
+    excerpt: 'Discover the proven hair oiling routine that accelerates growth by 2-3x. Learn the best oils, techniques, and see real transformation results from consistent scalp care and nourishment.',
+    date: '2025-12-23',
+    readTime: '20 min read',
+    category: 'Hair Growth',
+    slug: '/blog/hair-oiling-routine',
+    image: '/images/blog/hair_growth_before_and_after_results.webp',
+    wordCount: '3,800+'
   }
 ];
 
