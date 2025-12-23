@@ -37,6 +37,7 @@ import SeasonalHairCare from '@/pages/blog/SeasonalHairCare';
 import DIYHairMasks from '@/pages/blog/DIYHairMasks';
 import HairGrowthGuide from '@/pages/blog/HairGrowthGuide';
 import HairOilingRoutine from '@/pages/blog/HairOilingRoutine';
+import HairShaggyRoutine from '@/pages/blog/HairShaggyRoutine';
 
 function App() {
   return (
@@ -85,6 +86,7 @@ function App() {
               <Route path="/blog/diy-hair-masks" element={<DIYHairMasks />} />
               <Route path="/blog/hair-growth-guide" element={<HairGrowthGuide />} />
               <Route path="/blog/hair-oiling-routine" element={<HairOilingRoutine />} />
+              <Route path="/blog/shaggy-hair-routine" element={<HairShaggyRoutine />} />
             </Routes>
           </main>
           <Footer />

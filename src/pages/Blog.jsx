@@ -93,6 +93,17 @@ const blogPosts = [
     slug: '/blog/hair-oiling-routine',
     image: '/images/blog/hair_growth_before_and_after_results.webp',
     wordCount: '3,800+'
+  },
+  {
+    id: 9,
+    title: 'Hair Routine for Shaggy Hair: Styling & Care Guide',
+    excerpt: 'Master shaggy hair styling with expert techniques, product recommendations, and maintenance tips. Learn to style layers for maximum volume and texture every day.',
+    date: '2025-12-23',
+    readTime: '18 min read',
+    category: 'Hair Styling',
+    slug: '/blog/shaggy-hair-routine',
+    image: '/images/blog/shaggy_hair_before_and_after_styling.webp',
+    wordCount: '3,500+'
   }
 ];
 
