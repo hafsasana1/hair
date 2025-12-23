@@ -58,60 +58,6 @@ const HairOilingRoutine = () => {
     }
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How long does it take to see results from hair oiling?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most people notice visible improvements in hair texture and strength within 2-4 weeks of consistent oiling. For significant growth acceleration, expect 8-12 weeks. Hair growth cycles are gradual, so patience and consistency are essential."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which oil is best for hair growth?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Coconut oil, argan oil, castor oil, and sesame oil are among the best for hair growth. Coconut oil reduces protein loss, castor oil improves blood circulation, and sesame oil strengthens follicles. Choose based on your hair type and porosity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I oil my hair every day?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Daily oiling may be too much for most hair types and can lead to buildup. 2-3 times per week is optimal for most people. Those with very dry hair or low porosity might benefit from 4-5 times weekly, while oily hair types do well with 1-2 times weekly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I oil my scalp or hair length?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For maximum growth benefits, oil your scalp and roots for improved blood circulation and follicle health. Extend to mid-lengths and ends to prevent dryness and breakage. Avoid the scalp if you have oily/combination skin."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I remove oil from my hair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use a sulfate-free shampoo and warm (not hot) water. Apply shampoo to dry hair first, massage for 2-3 minutes, then rinse. For stubborn oil buildup, use a clarifying shampoo once monthly or apply shampoo twice in one wash."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is warming the oil before application important?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Warming oil slightly improves absorption and feels more pleasant, but it's not strictly necessary. Use lukewarm (not hot) oil to avoid scalp burns. Cold oil works fine if you're in a rush."
-        }
-      }
-    ]
-  };
 
   const howToSchema = {
     "@context": "https://schema.org",
@@ -182,7 +128,6 @@ const HairOilingRoutine = () => {
         <meta name="twitter:image" content="/images/blog/hair_growth_before_and_after_results.webp" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
 

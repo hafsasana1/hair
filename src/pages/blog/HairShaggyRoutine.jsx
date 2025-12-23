@@ -58,60 +58,6 @@ const HairShaggyRoutine = () => {
     }
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How often should I wash shaggy hair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Shaggy hair should be washed 2-3 times per week to maintain natural oils and texture. Over-washing strips moisture from layered ends, causing frizz and dryness. Use dry shampoo between washes for volume."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the best way to style shaggy hair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use a blow dryer with a round brush for volume, applying heat from root to tip. Tousle layers with fingers for texture, or use texturizing spray for piece-y movement. Avoid straightening for flat appearance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How often should I get shaggy hair trimmed?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Get trims every 6-8 weeks to maintain shape, definition, and prevent split ends from spreading to upper layers. Regular maintenance keeps your shaggy cut looking intentional and healthy."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I have shaggy hair with all hair types?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! Shaggy cuts work with straight, wavy, curly, and coily hair. The styling techniques and products adjust based on your hair type, but the layered foundation suits everyone."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I prevent frizz in shaggy hair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use smoothing serums, anti-frizz creams, or oils on damp hair before styling. Deep condition weekly, avoid touching hair excessively, and use microfiber towels or t-shirts instead of regular towels."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What products work best for shaggy hair texture?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Texturizing sprays, sea salt sprays, volumizing mousses, and lightweight conditioners work great. Avoid heavy oils unless you have dry hair. Use products that enhance rather than weigh down layers."
-        }
-      }
-    ]
-  };
 
   const howToSchema = {
     "@context": "https://schema.org",
@@ -172,7 +118,6 @@ const HairShaggyRoutine = () => {
         <meta name="twitter:image" content="/images/blog/shaggy_hair_before_and_after_styling.webp" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
 

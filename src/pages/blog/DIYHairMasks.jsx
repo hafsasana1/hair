@@ -69,76 +69,6 @@ const DIYHairMasks = () => {
     "wordCount": "3800"
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How often should I use a DIY hair mask?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For most hair types, using a DIY hair mask once a week is ideal. Dry or damaged hair may benefit from twice-weekly treatments, while oily hair should stick to once every 7-10 days. Over-masking can lead to product buildup and weigh hair down, so monitor how your hair responds and adjust frequency accordingly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I leave a homemade hair mask overnight?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Some oil-based masks (coconut, olive, argan) are safe for overnight use when wrapped in a silk scarf or shower cap. However, masks containing eggs, yogurt, or mayonnaise should never be left on overnight as they can spoil and cause scalp irritation. Protein-heavy masks should be limited to 30 minutes maximum to prevent hair from becoming brittle."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why isn't my DIY hair mask working?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Common reasons include: using the wrong mask for your hair type, not leaving it on long enough, applying to dirty or product-laden hair, using cold ingredients that don't penetrate well, or washing out with hot water that strips benefits. Also, DIY masks work gradually - expect results after 4-6 consistent applications rather than overnight transformation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the best DIY mask for extremely dry hair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The most effective DIY mask for extremely dry hair combines avocado, honey, and olive oil. Mash one ripe avocado with 2 tablespoons honey and 1 tablespoon olive oil. Apply to damp hair, cover with a shower cap, and leave for 30-45 minutes. The healthy fats in avocado and humectant properties of honey provide intense hydration that rivals professional treatments."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can DIY hair masks cause hair damage?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "When used incorrectly, yes. Protein-rich masks (eggs, gelatin) can cause protein overload, making hair stiff and prone to breakage. Acidic ingredients like lemon juice can damage hair if used undiluted or too frequently. Always patch test new ingredients, follow recommended times, and balance protein treatments with moisturizing masks for optimal hair health."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I store leftover DIY hair mask?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most DIY masks should be made fresh for each use as natural ingredients spoil quickly. Oil-based masks (pure coconut or olive oil) can be stored at room temperature. Masks with eggs, dairy, or fresh fruits must be refrigerated and used within 2-3 days. For convenience, freeze banana or avocado in portions for future mask preparation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I apply hair mask before or after shampooing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For most DIY masks, apply to clean, damp hair after shampooing but before conditioning. This allows ingredients to penetrate the hair shaft effectively. However, oil-based pre-wash treatments should be applied to dry hair before shampooing. Deep conditioning masks work best on towel-dried hair that's been gently squeezed to remove excess water."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What kitchen ingredients should I never put in my hair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Avoid using undiluted lemon juice or citrus (damages cuticle), cinnamon (can burn scalp), baking soda in large amounts (disrupts pH balance), white sugar (too abrasive), hot sauce or spicy peppers, and expired or moldy ingredients. Also avoid artificial food dyes that can stain hair and essential oils without proper dilution."
-        }
-      }
-    ]
-  };
 
   const howToSchema = {
     "@context": "https://schema.org",
@@ -263,7 +193,6 @@ const DIYHairMasks = () => {
         <meta name="twitter:image" content="/images/blog/diy_hair_mask_ingredients.webp" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(recipeSchema)}</script>
       </Helmet>

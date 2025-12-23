@@ -60,60 +60,6 @@ const HairGrowthGuide = () => {
     }
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How fast does hair grow on average?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hair grows approximately 0.5 inches (1.25 cm) per month, or about 6 inches (15 cm) per year on average. However, this varies based on genetics, age, health, and hair care practices."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the best vitamin for hair growth?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Biotin (Vitamin B7) is widely considered the best vitamin for hair growth, along with Vitamin D, Vitamin E, Iron, and Zinc. A balanced diet or quality supplement containing these nutrients supports optimal hair health."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does scalp massage really help hair growth?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, research published in Eplasty journal shows that regular scalp massage for 4 minutes daily over 24 weeks increased hair thickness. Massage improves blood circulation to hair follicles, delivering more nutrients and oxygen."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can stress cause hair loss?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, chronic stress can trigger telogen effluvium, pushing hair follicles into a resting phase prematurely, causing increased shedding 2-3 months after a stressful event. Managing stress through exercise, meditation, and adequate sleep helps maintain healthy hair growth."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does it take to see results from hair growth treatments?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most hair growth treatments require 3-6 months of consistent use before visible results appear. This is because hair grows slowly and needs to complete a growth cycle. Patience and consistency are key to seeing improvements."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is it possible to make hair grow faster?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "While you cannot dramatically speed up your genetic growth rate, you can optimize growth by maintaining scalp health, eating nutrient-rich foods, reducing damage, managing stress, and using proven treatments like minoxidil or rosemary oil."
-        }
-      }
-    ]
-  };
 
   const howToSchema = {
     "@context": "https://schema.org",
@@ -174,7 +120,6 @@ const HairGrowthGuide = () => {
         <meta name="twitter:image" content="/images/blog/healthy_hair_growth_results.webp" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
 

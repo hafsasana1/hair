@@ -64,76 +64,6 @@ const FourCHairRoutine = () => {
     "wordCount": "4500"
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What makes 4C hair different from other coily hair types?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "4C hair has the tightest coil pattern, often described as zigzag or kinky-coily. Unlike Type 4A and 4B with visible coils, 4C hair's texture is so tightly coiled that it often appears as texture rather than defined curls. This makes 4C hair the most prone to dryness and requires specialized moisture management techniques."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How often should I wash 4C hair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most 4C hair benefits from washing every 7-14 days to preserve natural oils. Use co-washing (conditioner-only washing) between shampoos to maintain moisture while gently cleansing. When you do shampoo, use sulfate-free, moisturizing formulas. Overwashing strips natural oils that 4C hair desperately needs for health and definition."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is shrinkage and why does 4C hair shrink so much?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Shrinkage is the difference between your hair's wet length and dry length. 4C hair can shrink 30-75% of its actual length when dry due to its extremely tight coil pattern. This is normal and healthy—it means your natural curl pattern is intact. Protective styles, stretching techniques, and moisturizing help manage shrinkage while protecting hair."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can 4C hair get long?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely! 4C hair grows just as fast as other hair types (approximately ½ inch per month). The difference is that shrinkage makes it appear shorter. With consistent moisture, gentle handling, protective styling, regular trims, and scalp care, 4C hair can grow to waist-length and beyond. Length retention is about protecting what you grow."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the best moisturizing method for 4C hair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The LOC method (Liquid, Oil, Cream) or LCO method is most effective for 4C hair. Apply liquid (water or leave-in conditioner) to damp hair, seal with oil (coconut, castor, or jojoba), then finish with cream for hold. This layering technique traps moisture and provides lasting hydration that 4C hair needs throughout the day."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is it normal for 4C hair to break easily?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "4C hair's tight texture makes it more prone to breakage when dry or handled roughly. However, proper care prevents this. Key strategies include: keeping hair moisturized, detangling only when wet and conditioned, using wide-tooth combs, sleeping on silk/satin, regular trims (every 8-12 weeks), and minimizing heat and manipulation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I use the Curly Girl Method with 4C hair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The basic principles of the Curly Girl Method (sulfate-free, silicone-free, gel-based styling) work well for 4C hair, but modifications are often necessary. Standard CGM can be too lightweight for 4C's moisture needs. Many 4C-texture people use modified versions incorporating richer products, occasional protein treatments, and customized moisture-protein balance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What products are best for 4C hair texture?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Look for products with shea butter, coconut oil, argan oil, glycerin, and other humectants. Avoid sulfates, harsh drying alcohols, and heavy silicones. Products should feel moisturizing and nourishing. Creams, butters, and thick leave-in conditioners work better than lightweight lotions. Always patch test new products since 4C hair texture varies significantly between individuals."
-        }
-      }
-    ]
-  };
 
   const howToSchema = {
     "@context": "https://schema.org",
@@ -202,7 +132,6 @@ const FourCHairRoutine = () => {
         <meta name="twitter:image" content="/images/blog/woman_with_4c_natural_coily_hair.webp" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
 
