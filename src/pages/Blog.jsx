@@ -104,6 +104,17 @@ const blogPosts = [
     slug: '/blog/shaggy-hair-routine',
     image: '/images/blog/shaggy_hair_before_and_after_styling.webp',
     wordCount: '3,500+'
+  },
+  {
+    id: 10,
+    title: 'Hair Care Routine for Black Hair: Moisture, Growth & Health',
+    excerpt: 'Complete hair care routine for Black hair with moisture management, scalp health, protective styling, and proven growth techniques. Science-backed guide for healthy, thriving hair.',
+    date: '2025-12-23',
+    readTime: '22 min read',
+    category: 'Natural Hair Care',
+    slug: '/blog/black-hair-care-routine',
+    image: '/images/blog/black_hair_care_routine_moisturized.webp',
+    wordCount: '4,200+'
   }
 ];
 
