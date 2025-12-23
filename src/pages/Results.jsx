@@ -1090,18 +1090,6 @@ const Results = () => {
 
   const effectiveAnswers = answers && Object.keys(answers).length > 0 ? answers : localAnswers || {};
   const faqs = getFAQsForProfile(generatedRoutine?.hairProfile, effectiveAnswers);
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
 
   const getHowToSteps = () => {
     const hairType = (generatedRoutine?.hairProfile?.type || '').toLowerCase();
@@ -1220,9 +1208,6 @@ const Results = () => {
         <meta property="og:description" content={getSEODescription()} />
         <meta property="og:type" content="article" />
         <link rel="canonical" href={`/routine/${getSEOSlug()}`} />
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
         <script type="application/ld+json">
           {JSON.stringify(howToSchema)}
         </script>

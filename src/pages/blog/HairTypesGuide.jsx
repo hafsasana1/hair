@@ -65,77 +65,6 @@ const HairTypesGuide = () => {
     "wordCount": "3500"
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the Andre Walker Hair Typing System?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Andre Walker Hair Typing System is the most widely used hair classification system, created by celebrity hairstylist Andre Walker. It categorizes hair into four main types: Type 1 (Straight), Type 2 (Wavy), Type 3 (Curly), and Type 4 (Coily). Each type has three subcategories (A, B, C) based on the tightness of the curl or wave pattern."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I determine my hair type?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "To determine your hair type, wash your hair with a sulfate-free shampoo, skip conditioner, and let it air dry completely without any products. Observe your natural curl pattern: if it's completely straight, you're Type 1; if it has S-shaped waves, you're Type 2; if it has defined spiral curls, you're Type 3; if it has tight coils or zigzag patterns, you're Type 4."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can your hair type change over time?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, your hair type can change due to hormonal changes (pregnancy, menopause), aging, medications, chemical treatments, and heat damage. However, these changes are often temporary, and with proper care, your natural pattern may return. Genetics primarily determine your base hair type."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between hair type and hair texture?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hair type refers to your curl pattern (straight, wavy, curly, coily), while hair texture refers to the thickness of individual hair strands (fine, medium, coarse). You can have any combination of type and texture - for example, fine Type 3A curly hair or coarse Type 2B wavy hair."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What hair type is the most common?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Type 2 wavy hair is considered the most common hair type globally. However, hair type distribution varies significantly by ethnicity and geographic region. Straight hair (Type 1) is most common in Asian populations, while coily hair (Type 4) is predominant in African descent populations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How often should I wash my hair based on my hair type?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Wash frequency depends on your hair type: Type 1 (straight) may need washing every 1-2 days due to oiliness; Type 2 (wavy) typically every 2-3 days; Type 3 (curly) every 3-5 days; Type 4 (coily) can go 5-7 days or more between washes. Coily and curly hair types retain less natural oils, so they need less frequent washing."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What products work best for curly and coily hair?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Curly and coily hair types benefit from moisturizing products like leave-in conditioners, curl creams, hair oils, and deep conditioning treatments. Look for ingredients like shea butter, coconut oil, and glycerin. Avoid products with sulfates, silicones, and drying alcohols. The LOC (Liquid, Oil, Cream) or LCO method is especially effective for Type 3 and 4 hair."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is it possible to have multiple hair types?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, it's very common to have multiple hair types on the same head. Many people have different curl patterns in different areas - for example, looser waves at the crown and tighter curls at the nape. Your hair care routine should address the needs of all your hair types."
-        }
-      }
-    ]
-  };
-
   return (
     <>
       <Helmet>
@@ -165,7 +94,6 @@ const HairTypesGuide = () => {
         <meta name="twitter:image" content="/images/blog/hair_types_comparison_guide.webp" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <article className="min-h-screen bg-white">

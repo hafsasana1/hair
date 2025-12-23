@@ -107,59 +107,6 @@ const Home = () => {
             }
           }
         ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is this hair routine generator really free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, our hair routine generator is 100% free to use. There are no hidden fees, subscriptions, or signup requirements. Simply take our quick quiz, and you'll receive a complete personalized hair care routine instantly. We believe everyone deserves access to professional-quality hair care advice."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does hair porosity affect my routine?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Hair porosity determines how well your hair absorbs and retains moisture. Low porosity hair has tightly closed cuticles that resist moisture, requiring lightweight products and heat during conditioning. High porosity hair absorbs moisture quickly but loses it fast, needing heavier products and protein treatments. Our AI analyzes your porosity to recommend the right products and techniques for optimal moisture balance."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this routine suitable for curly and coily hair?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely! Our hair routine generator is designed for all hair types from straight 1A to coily 4C. For curly and coily hair, we recommend specific techniques like the LOC/LCO method, diffusing tips, protective styling routines, and products that enhance curl definition while providing deep hydration."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How often should I wash my hair based on my hair type?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Wash frequency varies by hair type and lifestyle. Straight and oily hair may need washing every 1-2 days, while curly and coily hair benefits from washing once a week or less to prevent dryness. Our AI considers your hair type, scalp condition, activity level, and climate to recommend the ideal wash schedule."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I use this routine for hair growth?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! Our hair routine generator includes specific recommendations for promoting hair growth. Based on your answers, we suggest scalp massage techniques, growth-stimulating ingredients like rosemary and peppermint oils, protein-moisture balance tips, and protective styling advice."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does climate really affect hair care routines?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Climate has a significant impact on hair health. Humid environments cause frizz, dry climates lead to brittle hair, cold weather causes static and dryness, while hot weather increases oil production. Our AI factors in your local climate to recommend products and techniques that keep your hair healthy year-round."
-            }
-          }
-        ]
       }
     ]
   };

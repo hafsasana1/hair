@@ -68,77 +68,6 @@ const SeasonalHairCare = () => {
     "wordCount": "3200"
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How often should I change my hair care routine for different seasons?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You should reassess your hair care routine during seasonal transitions, typically 4 times per year. However, gradual changes work best - start adjusting your routine 2-3 weeks before the season fully changes. Pay attention to how your hair responds to weather changes and adapt accordingly."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why does my hair get frizzy in summer and dry in winter?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Summer humidity causes hair to absorb excess moisture from the air, causing the cuticle to swell and create frizz. In winter, dry indoor heating and cold outdoor air strip moisture from your hair, leaving it dehydrated and prone to static and breakage. Understanding your hair's porosity helps you combat these seasonal challenges effectively."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can seasonal changes cause hair loss?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, seasonal hair shedding is normal. Research shows increased hair shedding in late summer and fall due to the natural hair growth cycle syncing with daylight changes. Most people shed 50-100 hairs daily, but this can increase to 150+ during seasonal transitions. If excessive shedding persists beyond 6-8 weeks, consult a dermatologist."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I use different shampoo in summer vs winter?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, switching shampoos seasonally can benefit your hair. Use clarifying shampoos in summer to remove chlorine, salt, and sunscreen buildup. Switch to moisturizing, sulfate-free formulas in winter to prevent dryness. Spring calls for gentle clarifying to remove winter product buildup, while fall benefits from strengthening formulas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I protect my hair from chlorine and saltwater in summer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Wet your hair with fresh water before swimming to reduce chlorine/salt absorption. Apply a leave-in conditioner or coconut oil as a barrier. Wear a swim cap for maximum protection. After swimming, rinse immediately with fresh water and use a chelating shampoo weekly to remove mineral buildup. Deep condition after every pool or beach day."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What causes winter static in hair and how do I prevent it?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Winter static occurs when dry air causes hair to lose moisture and become positively charged. Prevent it by: using a humidifier indoors, applying leave-in conditioner daily, using ionic or boar bristle brushes, avoiding plastic combs, applying a tiny amount of hair oil to ends, and using anti-static sheets on your brush."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does UV exposure damage hair and how can I protect it?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "UV rays break down hair proteins, fade color, weaken the cuticle, and cause dryness and brittleness. Protect your hair by wearing hats or scarves, using UV-protective hair products, applying leave-in treatments with UV filters, limiting sun exposure during peak hours (10am-4pm), and deep conditioning weekly during summer months."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is it better to air dry or blow dry in different seasons?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "In summer, air drying is generally better as warm temperatures dry hair quickly without heat damage. In winter, blow drying on low-medium heat is preferable - going outside with wet hair in cold weather can cause the water in your hair shaft to freeze and expand, leading to breakage. Always use heat protectant when blow drying."
-        }
-      }
-    ]
-  };
-
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -221,7 +150,6 @@ const SeasonalHairCare = () => {
         <meta name="twitter:image" content="/images/blog/autumn_fall_hair_care.webp" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>
       </Helmet>
 

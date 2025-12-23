@@ -58,36 +58,6 @@ const HairPorosityGuide = () => {
     }
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is hair porosity?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hair porosity refers to your hair's ability to absorb and retain moisture. It is determined by the structure of your hair's cuticle layer - the outermost protective layer of each hair strand."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I test my hair porosity at home?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The most common method is the float test: take a clean strand of hair and place it in a glass of room temperature water. If it floats, you have low porosity. If it sinks slowly, you have medium porosity. If it sinks quickly, you have high porosity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can hair porosity change over time?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, hair porosity can change due to chemical treatments (coloring, perming, relaxing), heat damage, environmental factors, and aging. While genetic porosity cannot change, the condition of your cuticle layer can be affected by these external factors."
-        }
-      }
-    ]
-  };
 
   return (
     <>
