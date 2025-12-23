@@ -161,14 +161,14 @@ const HairOilingRoutine = () => {
   return (
     <>
       <Helmet>
-        <title>Hair Oiling Routine for Growth: Before and After Guide | Hair Routine Generator</title>
-        <meta name="description" content="Complete hair oiling routine for faster growth and thickness. See before-and-after results, learn best oils and techniques. Increase hair growth by 2-3x with science-backed methods." />
+        <title>Hair Oiling Routine for Growth: Before & After</title>
+        <meta name="description" content="Learn the proven hair oiling routine for 2-3x faster growth. Scalp massage techniques, best oils, and real before-and-after results within 8-12 weeks." />
         <meta name="keywords" content="hair oiling routine, hair growth oil, best oil for hair growth, hair oil benefits, scalp massage, hair growth tips, before and after hair growth, hair thickness, thicker hair, healthy hair routine" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href="https://hairroutinegen.com/blog/hair-oiling-routine" />
         
-        <meta property="og:title" content="Hair Oiling Routine for Growth: Before and After Results | Hair Routine Generator" />
-        <meta property="og:description" content="Learn the ultimate hair oiling routine that increases growth by 2-3x. See before-and-after transformations and science-backed techniques." />
+        <meta property="og:title" content="Hair Oiling Routine for Growth: Before & After" />
+        <meta property="og:description" content="Proven hair oiling routine for 2-3x faster growth. Learn scalp massage, best oils, and see real before-and-after results in 8-12 weeks." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://hairroutinegen.com/blog/hair-oiling-routine" />
         <meta property="og:image" content="/images/blog/hair_growth_before_and_after_results.webp" />
@@ -177,8 +177,8 @@ const HairOilingRoutine = () => {
         <meta property="article:section" content="Hair Growth" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hair Oiling Routine for Growth: Before and After Guide" />
-        <meta name="twitter:description" content="Complete guide to hair oiling for faster, thicker growth. Science-backed routine with real before-and-after results." />
+        <meta name="twitter:title" content="Hair Oiling Routine for Growth: Before & After" />
+        <meta name="twitter:description" content="Proven hair oiling routine for 2-3x faster growth. Learn scalp massage, best oils, and see real before-and-after results in 8-12 weeks." />
         <meta name="twitter:image" content="/images/blog/hair_growth_before_and_after_results.webp" />
         
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
